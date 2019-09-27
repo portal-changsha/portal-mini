@@ -6,7 +6,9 @@
     "pages/hospitalSelect/main",
     "pages/hospitalArea/main",
     "pages/developing/main",
-    "pages/myRegister/main"
+    "pages/myRegister/main",
+    "pages/hospitalNavigation/main",
+    "pages/navigationMap/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,6 +22,11 @@
     "scope.userLocation": {
       "desc": "需要获取您当前的地理位置"
     }
+  },
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.1",
+      "provider": "wx50b5593e81dd937a"
+    }
   }
-
 }
