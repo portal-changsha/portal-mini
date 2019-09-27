@@ -8,7 +8,7 @@
       <div class="content row row-center" @click="goDetail(item)">
         <div class="left">
           <p>挂号时间 {{item.orderTime}} </p>
-          <p>就诊时间  {{item.regDate}} {{item.phaseDesc}}</p>
+          <p>就诊时间  {{item.regDate}} {{item.phaseDesc}}</p> 
         </div>
         <div class="arrow">
           <img :src="originImgUrl + 'hos-def-logo.png'" alt="">
