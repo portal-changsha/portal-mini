@@ -9,7 +9,7 @@
         </div>
         <div class="doc-info">
           <p>{{item.rankName}}&nbsp;{{item.doctName}}</p>
-          <p>挂号金额： <span>{{item.fee / 100 + '.00'}}</span> 元</p>
+          <p style="padding: 2px 0;">挂号金额： <span>{{item.fee / 100 + '.00'}}</span> 元</p>
           <p>{{item.doctDesc ? item.doctDesc : '暂无介绍'}}</p>
         </div>
         <div class="doc-arrow">
@@ -88,17 +88,18 @@ export default {
       let hosInfo = getItem('selectedHospital')
       let price = (item.fee / 100).toFixed(2)
       let params = {
-        orgId: hosInfo.orgId,
-        hospitalId: hosInfo.id,
+        // orgId: hosInfo.orgId,
+        hospitalId: hosInfo.hospitald,
         areaId: this.areaId,
         deptId: this.deptId,
         regDate: this.regDate,
-        doctId: item.doctId,
-        rankId: item.rankId
+        doctId: item.doctId
+        // rankId: item.rankId
       }
-      mpvue.navigateTo({
-        url: '../timeSchedule/main?params=' + JSON.stringify(params) + '&price=' + price + '&item=' + JSON.stringify(item)
-      })
+      this.$utils.navigateTo('timeSchedule', { params: JSON.stringify(params), price: price, item: JSON.stringify(item) })
+      // mpvue.navigateTo({
+      //   url: '../timeSchedule/main?params=' + JSON.stringify(params) + '&price=' + price + '&item=' + JSON.stringify(item)
+      // })
     }
   }
 }

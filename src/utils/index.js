@@ -68,37 +68,45 @@ const utils = {
       resolve(arr)
     })
   },
+  formateDesc (date) {
+    if (date.length === 17) {
+      return date.substring(0, 5) + '-' + date.substring(9, 14)
+    }
+    return date
+  },
   /**
    * 转换时间
    * @param {当前时间} date
    */
-  formatTime (date, mode) {
-    return new Promise((resolve) => {
-      const year = date.getFullYear()
-      let month = date.getMonth() + 1
-      let day = date.getDate()
-      const hour = date.getHours()
-      const minute = date.getMinutes()
-      const second = date.getSeconds()
-      // const t1 = [year, month, day].map(formatNumber).join('/')
-      // const t2 = [hour, minute, second].map(formatNumber).join(':')
-      month = month < 10 ? ('0' + month) : month
-      day = day < 10 ? ('0' + day) : day
-      if (mode === 'picker') {
-        const res = year + '-' + month + '-' + day
-        resolve(res)
-        return
-      }
-      const t1 = month + '月' + day + '日'
-      const t2 = [hour, minute].map(formatNumber).join(':')
-      const t3 = second
-      let timeObj = {
-        curDate: t1,
-        curTime: t2,
-        curSec: t3
-      }
-      resolve(timeObj)
-    })
+  formatTime (time, mode) {
+    // return new Promise((resolve) => {
+    let date = new Date(time)
+    const year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    const hour = date.getHours()
+    const minute = date.getMinutes()
+    const second = date.getSeconds()
+    // const t1 = [year, month, day].map(formatNumber).join('/')
+    // const t2 = [hour, minute, second].map(formatNumber).join(':')
+    month = month < 10 ? ('0' + month) : month
+    day = day < 10 ? ('0' + day) : day
+    if (mode === 'picker') {
+      const res = year + '-' + month + '-' + day
+      // resolve(res)
+      return res
+    }
+    const t1 = month + '月' + day + '日'
+    const t2 = [hour, minute].map(formatNumber).join(':')
+    const t3 = second
+    let timeObj = {
+      curDate: t1,
+      curTime: t2,
+      curSec: t3
+    }
+    return timeObj
+    // resolve(timeObj)
+    // })
   },
   /**
    * 模块弹框

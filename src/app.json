@@ -9,7 +9,8 @@
     "pages/myRegister/main",
     "pages/hospitalNavigation/main",
     "pages/navigationMap/main",
-    "pages/dateDoctorSchedule/main"
+    "pages/dateDoctorSchedule/main",
+    "pages/timeSchedule/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

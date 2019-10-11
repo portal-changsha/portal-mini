@@ -115,4 +115,31 @@ button::after{
   flex: 0 0 50%;
   max-width: 50%;
 }
+.f3s15{
+  color: #333;
+  font-size: 15px;
+}
+.field-list{
+  background: #fff;
+  li{
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    border-bottom: 1px solid #D6D6D6;
+    &:last-child{
+      border-bottom: 0;
+    }
+    span{
+      font-size: 15px;
+    }
+    span:nth-child(1){
+      color: #666;
+      float: left;
+    }
+    span:nth-child(2){
+      color: #111;
+      float: right;
+    }
+  }
+}
 </style>
