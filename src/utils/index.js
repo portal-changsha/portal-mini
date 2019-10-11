@@ -43,7 +43,14 @@ function formatNumber (n) {
 // }
 
 const utils = {
-
+  getWeekDay: function (date) {
+    let temp = date
+    // if(typeof b === 'string'){
+    temp = new Date(date)
+    // }
+    var Week = ['日', '一', '二', '三', '四', '五', '六']
+    return '周' + Week[temp.getDay()]
+  },
   /**
    * 计算天数
    * @param {开始时间} startDate

@@ -110,9 +110,10 @@ export default {
       this.$store.commit('setRegDate', null)
       if (type === 1) {
         //  跳转到该科室所有医生排班
-        mpvue.navigateTo({
-          url: '../dateDoctorSchedule/main?deptId=' + item.deptId + '&areaId=' + this.areaId
-        })
+        this.$utils.navigateTo('dateDoctorSchedule', { deptId: item.deptId, areaId: this.areaId })
+        // mpvue.navigateTo({
+        //   url: '../dateDoctorSchedule/main?deptId=' + item.deptId + '&areaId=' + this.areaId
+        // })
       } else {
         //  跳转到该医生排班
         let hosInfo = getItem('selectedHospital')

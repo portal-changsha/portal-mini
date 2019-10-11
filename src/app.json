@@ -8,7 +8,8 @@
     "pages/developing/main",
     "pages/myRegister/main",
     "pages/hospitalNavigation/main",
-    "pages/navigationMap/main"
+    "pages/navigationMap/main",
+    "pages/dateDoctorSchedule/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

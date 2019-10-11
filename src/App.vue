@@ -54,6 +54,9 @@ button::after{
   display: flex;
   width: 100%;
 }
+.row-center{
+  align-items: center;
+}
 .row-wrap {
   flex-wrap: wrap;
 }

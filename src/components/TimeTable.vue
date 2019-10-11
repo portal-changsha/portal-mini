@@ -25,14 +25,14 @@
   </div>
 </template>
 <script>
-import { getTimeTable } from '@/service/api.service'
-import { getItem } from '@/utils/store'
-const commitDate = function (vm, dateObj) {
-  // vm.$store.commit('updateParam', {
-  //     namespace: 'register',
-  //     date: dateObj
-  // });
-}
+// import { getTimeTable } from '@/service/api.service'
+// import { getItem } from '@/utils/store'
+// const commitDate = function (vm, dateObj) {
+// vm.$store.commit('updateParam', {
+//     namespace: 'register',
+//     date: dateObj
+// });
+// }
 export default {
   props: {
     areaId: String,
@@ -76,56 +76,65 @@ export default {
     },
     // 加载可用时段
     loadTimeTable () {
-      let data = getItem('selectedHospital')
-      var requestParams = {
-        orgId: data.orgId,
-        hospitalId: data.id,
-        areaId: this.areaId,
-        deptId: this.deptId
+      // let data = getItem('selectedHospital')
+      let current = new Date().getTime()
+      let tables = []
+      for (let i = 0; i < 7; i++) {
+        let obj = {
+          date: current + 24 * 3600 * 1000 * i
+        }
+        tables.push(obj)
       }
-      getTimeTable(requestParams).then(res => {
-        if (res.resultCode !== '1') {
-          this.$utils.alert(res.resultMsg)
-          return
-        }
-        var tables = res.data || []
+      console.log(tables)
+      // var requestParams = {
+      //   orgId: data.orgId,
+      //   hospitalId: data.id,
+      //   areaId: this.areaId,
+      //   deptId: this.deptId
+      // }
+      // getTimeTable(requestParams).then(res => {
+      //   if (res.resultCode !== '1') {
+      //     this.$utils.alert(res.resultMsg)
+      //     return
+      //   }
+      //   var tables = res.data || []
 
-        // 判断数组不为空
-        if (tables.length === 0) {
-          return
-        }
+      //   // 判断数组不为空
+      //   if (tables.length === 0) {
+      //     return
+      //   }
 
-        const utils = this.$utils
-        const today = new Date()
-        for (let i = 0; i < tables.length; i++) {
-          const dateStr = tables[i].date
-          const date = new Date(parseInt(dateStr))
-          const isToday =
+      const utils = this.$utils
+      const today = new Date()
+      for (let i = 0; i < tables.length; i++) {
+        const dateStr = tables[i].date
+        const date = new Date(parseInt(dateStr))
+        const isToday =
             date.getDate() === today.getDate() &&
             date.getMonth() === today.getMonth()
-          const temp_date = date.format('yyyy-MM-dd')
-          const timeObj = {
-            weekDay: utils.getWeekDay(date),
-            isToday: isToday,
-            monthDay: isToday ? '今' : date.getDate(),
-            value: temp_date,
-            mounth: temp_date.substring(5, 7),
-            day: temp_date.substring(8, 10)
-          }
-          this.dateList.push(timeObj)
-          if (this.selectedDay.value === date.format('yyyy-MM-dd')) {
-            // this.isInCity = true
-            this.$emit('change', timeObj)
-          }
+        const tempDate = date.format('yyyy-MM-dd')
+        const timeObj = {
+          weekDay: utils.getWeekDay(date),
+          isToday: isToday,
+          monthDay: isToday ? '今' : date.getDate(),
+          value: tempDate,
+          mounth: tempDate.substring(5, 7),
+          day: tempDate.substring(8, 10)
         }
+        this.dateList.push(timeObj)
+        if (this.selectedDay.value === date.format('yyyy-MM-dd')) {
+          // this.isInCity = true
+          this.$emit('change', timeObj)
+        }
+      }
 
-        // 判断市内、市外挂号
-        // if (this.isInCity === false) {
-        //     this.selectedDay = this.dateList[0];
-        //     commitDate(this, this.dateList[0]);
-        //     this.$emit('change', this.dateList[0]);
-        // }
-      })
+      // 判断市内、市外挂号
+      // if (this.isInCity === false) {
+      //     this.selectedDay = this.dateList[0];
+      //     commitDate(this, this.dateList[0]);
+      //     this.$emit('change', this.dateList[0]);
+      // }
+      // })
     },
     // 翻页
     onRollPage (next) {
@@ -185,16 +194,16 @@ $main-blue: #51a8ec;
     background-repeat: no-repeat;
     background-position: center;
     &.left {
-      background-image: url(http://bmob-cdn-20712.b0.upaiyun.com/2019/03/29/bc4a2fc94039fa19806136c6fc1add67.png);
+      background-image: url($main-img-url + 'btn-left.png');
     }
     &.disabled-left {
-      background-image: url(http://bmob-cdn-20712.b0.upaiyun.com/2019/03/29/fcf7ee67406a222a8095dadd233d02a2.png);
+      background-image: url($main-img-url + 'btn-left-m.png');
     }
     &.right {
-      background-image: url(http://bmob-cdn-20712.b0.upaiyun.com/2019/03/29/711f9d4140b2234d80ba0a91a50c7819.png);
+      background-image: url($main-img-url + 'btn-right.png');
     }
     &.disabled-right {
-      background-image: url(http://bmob-cdn-20712.b0.upaiyun.com/2019/03/29/44f218e040cb6b3480359bc10d101760.png);
+      background-image: url($main-img-url + 'btn-right-m.png');
     }
   }
 }

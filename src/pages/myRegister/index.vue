@@ -95,7 +95,7 @@ export default {
             params.regId = item.regId
           }
           let res = type === 1 ? await getRegisterUnlock(params) : await getRegisterRefund(params)
-          if (res.resultCode === '1') {
+          if (res.result === '1') {
             let t = type === 1 ? this.constant.REGISTERER_BUSI_STATUS.UNABLE_PAYMENT : this.constant.REGISTERER_BUSI_STATUS.RETIRED_NUMBER
             let title = type === 1 ? '取消成功' : '退号成功，退款到账时间以银行到账时间为准。'
             this.registerList[index].busiStatus = t

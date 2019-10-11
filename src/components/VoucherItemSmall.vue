@@ -54,7 +54,7 @@ export default {
         this.flag = 0
       }
       getVoucherList().then((res) => {
-        if (res.resultCode === '1') {
+        if (res.result === '1') {
           this.voucherList = res.data
           if (!!v && res.data.length > 0) {
             for (let i = 0; i < res.data.length; i++) {

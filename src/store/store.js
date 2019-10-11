@@ -10,7 +10,8 @@ const store = new Vuex.Store({
     travelName: '',
     travelDate: [],
     tabIndex: 0,
-    fromIndex: false
+    fromIndex: false,
+    regDate: {} //  选择的挂号日期
   },
   mutations: {
     calHeight: (state, value = 42) => {
@@ -26,6 +27,10 @@ const store = new Vuex.Store({
     setHospitalList: (state, value) => {
       const obj = state
       obj.hospitalList = value
+    },
+    setRegDate: (state, value) => {
+      const obj = state
+      obj.regDate = value
     }
   },
   getters: {
@@ -37,6 +42,9 @@ const store = new Vuex.Store({
     },
     getHospitalList: (state) => {
       return state.hospitalList
+    },
+    getRegDate: (state) => {
+      return state.regDate
     }
   }
 })
