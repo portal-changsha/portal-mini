@@ -91,7 +91,7 @@ fly.interceptors.response.use(
 
     if (response.data.result !== '1') {
       mpvue.showToast({
-        title: response.data.message || '服务异常,请稍后再试',
+        title: response.data != null ? response.data.message : '' || '服务异常,请稍后再试',
         icon: 'none',
         duration: 2000
       })

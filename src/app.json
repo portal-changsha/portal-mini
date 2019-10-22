@@ -10,7 +10,10 @@
     "pages/hospitalNavigation/main",
     "pages/navigationMap/main",
     "pages/dateDoctorSchedule/main",
-    "pages/timeSchedule/main"
+    "pages/timeSchedule/main",
+    "pages/inpatientRecharge/main",
+    "pages/pay/main",
+    "pages/payResult/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
