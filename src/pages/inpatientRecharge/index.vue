@@ -2,33 +2,36 @@
   <div class="myreport">
     <Hos-Voucher-Select v-on:select="select" ></Hos-Voucher-Select>
     <div v-if="inpatientInfoList.length > 0">
-      <section class="thick">
-        <div class="content charge-list">
-          <span class="f-minor">住院号</span><span class="fr">{{inpatientInfo.inPatientNo}}</span>
-        </div>
-        <div class="content charge-list">
-          <span class="f-minor">院区科室</span><span class="fr">{{inpatientInfo.deptName}}</span>
-        </div>
-        <div class="content charge-list">
-          <span class="f-minor">床位号</span><span class="fr">{{inpatientInfo.bedNo}}</span>
-        </div>
-        <div class="content charge-list">
-          <span class="f-minor">入院时间</span><span class="fr">{{inpatientInfo.inDate  | formatDate}}</span>
-        </div>
-      </section>
-      <section class="thick">
-        <div class="content charge-list">
-          <span class="f-minor">住院预缴金总额</span><span class="fr f-strongest">{{inpatientInfo.total  | formatFee}}</span>
-        </div>
-        <div class="content charge-list">
-                        <span class="f-minor">住院预缴金余额
-                            <span class="f-strongest" v-show="inpatientInfo.balance < 0">(余额不足)</span>
-                        </span>
-          <span class="fr f-strongest">{{inpatientInfo.balance  | formatFee}}</span>
-        </div>
-      </section>
-      <div class="money-input" v-if="inpatientInfo.status === '2'">
-        <input type="number" name= "price" id = 'price' placeholder="请输入金额..." v-model="payFee" @input="oninput" @change="oninput(payFee)"><span>元</span>
+      <ul class="field-list marginTop5">
+        <li>
+          <span>住院号</span>
+          <span>{{inpatientInfo.inPatientNo}}</span>
+        </li>
+        <li>
+          <span>院区科室</span>
+          <span>{{inpatientInfo.deptName}}</span>
+        </li>
+        <li>
+          <span>床位号</span>
+          <span>{{inpatientInfo.bedNo}}</span>
+        </li>
+        <li>
+          <span>入院时间</span>
+          <span>{{inpatientInfo.inDate  | formatDate}}</span>
+        </li>
+      </ul>
+      <ul class="field-list marginTop5">
+        <li>
+          <span>住院预缴金总额</span>
+          <span>{{inpatientInfo.total  | formatFee}}</span>
+        </li>
+        <li>
+          <span>{{inpatientInfo.balance < 0 ? '(余额不足)' : '住院预缴金余额'}}</span>
+          <span>{{inpatientInfo.balance  | formatFee}}</span>
+        </li>
+      </ul>
+      <div class="money-input marginTop5" v-if="inpatientInfo.status === '2'">
+        <input type="number" name="price" id= 'price' placeholder="请输入金额..." v-model="payFee" @input="oninput" @change="oninput(payFee)"><span>元</span>
       </div>
       <div class="inpatient-pay-btn" v-if="inpatientInfo.status === '2'">
         <button @click="goPay">确认支付</button>
@@ -155,49 +158,22 @@
   }
 </script>
 <style lang="scss" scoped>
-  .charge-list {
-    border-bottom: 1px solid #e9e9e9;
-    .fr {
-      float: right;
-    }
-  }
-  .thick {
-    margin-bottom: 5px;
-  }
-  .content {
-    padding: .5rem .75rem;
-  }
-  .f-minor {
-    color: #999999;;
-  }
-  .f-strongest{
-    color: #ff0000;
-  }
-  .money-input{
-    height: 45px;
-    line-height: 45px;
-    padding: 0 .75rem;
-    background: #fff;
-    input{
-      float:left;
-      border: 0px;
-    }
-    span{
-      float: right;
-    }
-  }
   .inpatient-pay-btn{
-    padding: 0 .65rem 0 .75rem;
-    margin: 45px 0px 10px 0px;
+    margin: 45px 13px 10px 16px;
     button{
       background: #51A8EC;
       border-radius: 5px;
-      color: #ffffff;
       height: 44px;
       width: 100%;
+      font-size:18px;
+      font-family:PingFang;
+      font-weight:500;
+      color:rgba(255,255,255,1);
     }
   }
   .myreport{
+    height: inherit;
+    background: #E9E9E9;
     .tips{
       text-align: center;
       height: 40px;
@@ -272,6 +248,22 @@
         }
       }
     }
+  }
+  .money-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 0 15px;
+    input{
+      height: 44.5px;
+      line-height: 44.5px;
+      font-size: 15px;
+    }
+  }
+  .marginTop5{
+    margin-top: 5px;
+    box-shadow:0px 1px 2px 0px rgba(81,168,236,0.2);
   }
 </style>
 
