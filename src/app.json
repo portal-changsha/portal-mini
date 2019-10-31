@@ -13,7 +13,8 @@
     "pages/timeSchedule/main",
     "pages/inpatientRecharge/main",
     "pages/pay/main",
-    "pages/payResult/main"
+    "pages/payResult/main",
+    "pages/registerConfirm/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

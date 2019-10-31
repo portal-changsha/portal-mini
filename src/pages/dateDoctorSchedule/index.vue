@@ -5,11 +5,11 @@
     <div v-if="schedules.length>0">
       <div  class="row row-center doc-list" v-for="(item,i) in schedules" :key="i" @click="toPage(item)">
         <div class="doc-logo">
-          <img :src="item.doctAvatar ? item.doctAvatar: originImgUrl + 'ico-doctor.png'" alt="">
+          <img v-if="item.doctAvatar || originImgUrl" :src="item.doctAvatar ? item.doctAvatar: originImgUrl + 'ico-doctor.png'" alt="">
         </div>
         <div class="doc-info">
           <p>{{item.rankName}}&nbsp;{{item.doctName}}</p>
-          <p style="padding: 2px 0;">挂号金额： <span>{{item.fee / 100 + '.00'}}</span> 元</p>
+          <p style="padding: 2px 0;">挂号金额： <span>{{item.fee / 100}}</span> 元</p>
           <p>{{item.doctDesc ? item.doctDesc : '暂无介绍'}}</p>
         </div>
         <div class="doc-arrow">

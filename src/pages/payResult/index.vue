@@ -110,16 +110,16 @@
 <style lang="scss">
 
   .f-largest{
-    font-size: .65rem;
+    font-size: 13px;
   }
   .f-large{
-    font-size: .65rem;
+    font-size: 13px;
   }
   .f-middle {
-    font-size: .55rem;
+    font-size: 11px;
   }
   .f-small{
-    font-size: .45rem;
+    font-size: 9px;
   }
 
   .f-strongest{
@@ -138,10 +138,10 @@
     color: #999999;
   }
   .pay-success-bg {
-    top: 3.8rem;
-    right: 0rem;
-    bottom: 0rem;
-    left: 0rem;
+    top: 76px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: white;
     position: absolute;
     text-align: center
@@ -158,15 +158,15 @@
   }
 
   .pay-btn {
-    margin-top: 1.5rem;
+    margin-top: 30px;
     text-align: center;
     width: 100%;
     button {
       background: #51A8EC;
-      border-radius: .25rem;
-      width: 3rem;
-      height: 1.2rem;
-      font-size: .45rem;
+      border-radius: .5px;
+      width: 60px;
+      height: 24px;
+      font-size: 9px;
       box-shadow: 0 4px 10px #51A8EC;
     }
 
@@ -174,16 +174,16 @@
       @include display-flex();
       @include align-items(center);
       //width: 100%;
-      height: 2rem;
+      height: 40px;
       // line-height: 2rem;
       @include border(bottom);
-      padding: .75rem;
+      padding: 15px;
       &.last{
         @include border(none);
       }
       dt {
         text-align: left;
-        width: 4.5rem;
+        width: 90px;
         color: #999999;
       }
       dd{

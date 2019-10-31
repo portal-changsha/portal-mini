@@ -1,5 +1,6 @@
 <script>
 // import { login } from '@/service/user.service'
+import { setItem } from '@/utils/store'
 export default {
   created () {
     // 调用API从本地缓存中获取数据
@@ -10,6 +11,15 @@ export default {
      * 百度：mpvue === swan, mpvuePlatform === 'swan'
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
+    let voucher = {
+      'cardType': '3',
+      'cardNo': '430702199508284019',
+      'certNo': '430702199508284019',
+      'mobileNo': '13574517403',
+      'holderName': '张腾',
+      'extraMap': { }
+    }
+    setItem('selectedVoucher', voucher)
   },
   methods: {
 

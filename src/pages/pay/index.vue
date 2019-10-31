@@ -1,5 +1,33 @@
 <template>
-  <div class="app" id="wrapper">
+ <div class="payType">
+    <div class="tips row row-center">
+      <div class="tips-logo">
+        <img v-if="originImgUrl" :src="originImgUrl + 'yellow-warning.png'" alt="">
+      </div>
+      <p v-if="busiType === '1301'">请尽快完成支付</p>
+      <!-- <p v-if="busiType === '1006'">请在<span>15分钟</span>内完成支付，超时订单自动取消.</p> -->
+      <p v-else>请在<span>15分钟</span>内完成支付，超时订单自动取消.</p>
+    </div>
+    <div class="pay-content row row-center">
+      <div class="unpay-icon">
+        <img v-if="originImgUrl" :src="originImgUrl + 'unpay-icon.png'" alt="">
+      </div>
+      <div class="pay-tips">
+        <p>预约成功，请马上支付！</p>
+        <p>订单号：{{orderId}}</p>
+      </div>
+      <div class="price">
+        {{totalFee / 100}}元
+      </div>
+    </div>
+
+    <div class="pay">
+      <p class="f3s15">请选择支付方式</p>
+      <Nav-List :navList="navList" v-on:toPage="selectPayType" ></Nav-List>
+    </div>
+  </div>
+
+  <!-- <div class="app" id="wrapper">
     <scroll @refresh="refresh">
       <p class="top-tips" v-if="busiType === '1301'"> 请尽快完成支付</p>
       <p class="top-tips" v-if="busiType === '1006'"> 请在<span class='f-strongest'>15分钟</span>内完成支付，超时订单自动取消...</p>
@@ -35,10 +63,11 @@
         </ul>
       </section>
     </scroll>
-  </div>
+  </div> -->
 </template>
 <script>
   import NoRecord from '@/components/NoRecord'
+  import NavList from '@/components/NavList'
   import HosVoucherSelect from '@/components/hos-voucher-select'
   import { createPayOrder } from '@/service/pay.service.js'
   import { setItem, getItem } from '@/utils/store'
@@ -61,12 +90,25 @@
         showMin: true,
         showWindow: false,
         voucherList: [],
-        payCode: ''
+        payCode: '',
+        navList: [
+          {
+            imgSrc: this.constant.LOCAL_IMG + 'ico-weixin.png',
+            name: '微信支付',
+            url: ''
+          }
+        ]
       }
     },
     components: {
       NoRecord,
-      HosVoucherSelect
+      HosVoucherSelect,
+      NavList
+    },
+    computed: {
+      originImgUrl () {
+        return this.constant.LOCAL_IMG
+      }
     },
     onLoad () {
     },
@@ -108,7 +150,7 @@
         if (res.result === this.constant.RESULT_SUCCESS) {
           this.forMatData(res.data)
         } else {
-          this.$utils.showToast(res.resultMsg)
+          this.$utils.showToast(res.message)
         }
       },
       forMatData (data) {
@@ -149,242 +191,70 @@
   }
 </script>
 <style lang="scss" scoped>
-  .row{
-    padding: 0.75rem;
-    &.thick {
-      padding: 0.5rem;
-    }
-    &.small {
-      padding: 0.25rem;
-    }
-    &.border-bottom {
-      border-bottom: 1px solid #e9e9e9;
-    }
-    .left {
-      text-align: left;
-      width: 4.5rem;
-      color: #999999;
-    }
-    .right {
-      margin-left: .5rem;
-    }
-    &.without-margin-bottom {
-      margin-bottom: -1.5rem;
-    }
-  }
-  .doctor-info {
-    @include display-flex();
-    @include align-items(center);
-    padding: 0.4rem 0 0.4rem 0.75rem;
-    .head {
-      width: 1.0rem;
-      height: 1.0rem;
-    }
-    .info {
-      @include flex(1);
-      @include ellipsis();
-      width: 1px;
-      padding-left:10px;
-    }
-    .remain {
-      margin-right: 10px;
-    }
-  }
-
-  .f-largest{
-    font-size: .9rem;
-  }
-  .f-large{
-    font-size: .8rem;
-  }
-  .f-middle {
-    font-size: .75rem;
-  }
-  .f-small{
-    font-size: .65rem;
-  }
-
-  .f-strongest{
-    color: #ff0000;
-  }
-  .f-identify {
-    color: #fd9c03;
-  }
-  .f-strong{
-    color: #51a8ec;
-  }
-  .f-normal {
-    color: #333333;
-  }
-  .f-minor {
-    color: #999999;
-  }
-  .pay-type {
-    float: right;
-    vertical-align: middle;
-    margin-top: -5px;
-    margin-right: 10px;
-  }
-
-  .pay-tips {
-    margin-bottom: 5px;
-  }
-
-  .top-tips{
-    background: #dfe4e8;
-    color: #51abec;
-    // text-align: center;
-    @extend .f-small;
-    padding-left: 0.75rem;
-    //line-height: 2rem;
-    //text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    &::before{
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      content: ' ';
-      vertical-align: sub;
-      background: url($main-img-url + + "tips.png") no-repeat;
-      background-size: 100%;
-    }
-  }
-  .big-tips{
-    height: 60px;
-    // line-height:90px;
-    padding-top:29px;
-    @include border(bottom);
-    text-align: center;
-  }
-
-  .panel {
-    height: .8rem;
-    line-height: .8rem;
-    padding-left: .75rem;
-    padding-right: .75rem;
-    @include border(bottom);
-  }
-
-  .panel-title {
-    padding: .25rem .75rem;
-    @include border(top);
-    @include border(bottom);
-  }
-
-  .panel-title-large {
-    padding: .45rem .75rem;
-    @include border(top);
-    @include border(bottom);
-  }
-
-  %arrow{
-    position: absolute;
-    display: block;
-    content:' ';
-    top:0;
-    width: 8px;
-    right:.75rem;
-    bottom:0;
-    background-size:100%;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .arrow-right{
-    @extend %arrow;
-    background-image: url($main-img-url + 'more-arrow.png') ;
-  }
-  .arrow-right-blue{
-    @extend %arrow;
-    background-image: url($main-img-url + 'more-right-blue.png') ;
-  }
-  .arrow-right-guide{
-    @extend %arrow;
-    background-image: url($main-img-url + 'icon-navigation.png') ;
-  }
-
-  .list {
-    background: #fff;
-    li{
-      @include border(bottom);
-      padding-left: .75rem;
-      padding-right: .75rem;
-    }
-    .list-item {
-      padding: .75rem;
-      height: auto;
-      &.with-ipt{
-        padding: 2px .75rem;
+  .payType{
+    height: inherit;
+    background: #EFF2F5;
+    .tips{
+      height: 40px;
+      width: auto;
+      padding: 0 15px;
+      .tips-logo{
+        img{
+          width: 17px;
+          height: 17px;
+          display: block;
+        }
+      }
+      p{
+        color: #51A8EC;
+        font-size: 13px;
+        padding-left: 4px;
+        span{
+          color: #FF3636;
+          font-size: 13px;
+        }
       }
     }
-    .ipt-item{
-      padding-top: .25rem;
-      padding-bottom: .25rem;
-    }
-    .thick-item{
-      padding: .45rem .75rem;
-      .left-text {
-        margin-right: .75rem;
-        width: 4rem;
-        @extend .f-minor;
-      }
-    }
-    .arr-item{
+    .pay-content{
+      height: 63px;
+      background: #fff;
       position: relative;
-      padding-right:.75rem + .9rem;
-      &::after{
-        @extend .arrow-right;
+      padding: 0 15px;
+      width: auto;
+      .unpay-icon{
+        img{
+          width: 33px;
+          height: 35px;
+          display: block;
+        }
+      }
+      .pay-tips{
+        padding-left: 11px;
+        p:nth-child(1){
+          color: #51A8EC;
+          font-size: 15px;
+        }
+        p:nth-child(2){
+          color: #999;
+          font-size: 13px;
+        }
+      }
+      .price{
+        position: absolute;
+        color: #FF0101;
+        font-size: 18px;
+        right: 15px;
       }
     }
-    .arr-item-blue{
-      position: relative;
-      padding-right:.75rem + .9rem;
-      &::after{
-        @extend .arrow-right-blue;
+    .pay{
+      margin-top: 10px;
+      p{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        background: #fff;
+        border-bottom: 1px solid #D6D6D6;
       }
-    }
-    .arr-item-guide{
-      position: relative;
-      padding-right:.75rem + .9rem;
-      &::after{
-        @extend .arrow-right-guide;
-      }
-    }
-    .selected{
-      padding-right:.75rem * 2;
-      position: relative;
-      &::after{
-        //上次选中图标
-        @extend %arrow;
-        width: 25px;
-        background-image:url($main-img-url + "selected.png")
-      }
-    }
-  }
-
-  .pay-header {
-    background: url($main-img-url + 'unpay-icon.png') center no-repeat;
-    background-size: 100%;
-  }
-
-  .top-tips::before {
-    background: url($main-img-url + 'yellow-warning.png') no-repeat;
-    background-size: 100%;
-  }
-  .doctor-info .info{
-    @include display-flex;
-    @include justify-content(space-between);
-    padding-right: 10px;
-  }
-
-  .pay-icon{
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    &.weixin{
-      background-image: url($main-img-url + 'center_icon_wechat.png') ;
     }
   }
 </style>

@@ -85,7 +85,6 @@ export default {
         }
         tables.push(obj)
       }
-      console.log(tables)
       // var requestParams = {
       //   orgId: data.orgId,
       //   hospitalId: data.id,

@@ -29,10 +29,10 @@
       </ul>
 
       <div class="timeList">
-        <div class="row row-center" v-for="(item,i) in schedules" :key="i" @click="item.status === 1 ? chooseSchedule(item):''">
+        <div class="row row-center" v-for="(item,i) in schedules" :key="i" @click="item.status === '1' ? chooseSchedule(item):''">
           <div class="f3s15">{{item.phaseDesc}}</div>
           <div class="time-status">
-            <p class="f3s15" :class="{isActive:item.status === 1}">{{item.status === 1 ? '预约':(item.status === 2)?'满诊':'停诊'}}</p>
+            <p class="f3s15" :class="{isActive:item.status === '1'}">{{item.status === '1' ? '预约':(item.status === '2')?'满诊':'停诊'}}</p>
             <img v-if="item.status === 1" :src="originImgUrl + 'more-arrow.png'" alt="">
           </div>
         </div>
@@ -98,7 +98,7 @@ export default {
   methods: {
     chooseSchedule (item) {
       //  跳转到挂号确认界面
-      this.$utils.navigateTo('registerConfirm', { params: JSON.stringify(this.params), item: JSON.stringify(item) })
+      this.$utils.navigateTo('registerConfirm', { params: JSON.stringify(this.params), item: JSON.stringify(item), docInfo: JSON.stringify(this.docInfo) })
     },
     formatDate (date) {
       let res = this.$utils.formatTime(this.params.regDate)
@@ -117,6 +117,7 @@ export default {
       }
       let res = await getHospitalDoct(data)
       if (res.result === this.constant.RESULT_SUCCESS) {
+        console.log('医生信息', '...', res)
         this.docInfo = res.data
       }
     },

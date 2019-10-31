@@ -13,7 +13,7 @@
       <div class="col row left">
         <div class="col content" :class="{active:flag === index}" v-for="(item,index) in deptInfo" :key="index" @click="flag = index" >{{item.deptName}}</div>
       </div>
-      <div class="col row right">
+      <div class="col row right" v-if="deptInfo[flag] && deptInfo[flag].children">
         <div class="col content"  v-for="(subItem,i) in deptInfo[flag].children" :key="i" @click="toPage(subItem,1)">{{subItem.deptName}}</div>
       </div>
     </div>
@@ -96,6 +96,7 @@ export default {
     },
     async getHospitalDept () {
       let hosInfo = getItem('selectedHospital')
+      this.deptInfo = []
       let data = {
         hospitalId: hosInfo.hospitald,
         areaId: this.areaId
@@ -127,9 +128,10 @@ export default {
           doctId: item.doctId,
           rankId: item.rankId
         }
-        mpvue.navigateTo({
-          url: '../timeSchedule/main?params=' + JSON.stringify(params) + '&item=' + JSON.stringify(item)
-        })
+        this.$utils.navigateTo('timeSchedule', { params: JSON.stringify(params), item: JSON.stringify(item) })
+        // mpvue.navigateTo({
+        //   url: '../timeSchedule/main?params=' + JSON.stringify(params) + '&item=' + JSON.stringify(item)
+        // })
       }
     }
   }
