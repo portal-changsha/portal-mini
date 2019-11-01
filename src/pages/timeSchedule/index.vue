@@ -65,9 +65,7 @@ export default {
       params: {},
       regDate: '',
       price: '',
-      docInfo: {
-
-      },
+      docInfo: {},
       hosInfo: {}
     }
   },
@@ -87,11 +85,11 @@ export default {
       this.$utils.back()
       return
     }
+    this.hosInfo = getItem('selectedHospital')
     this.params = JSON.parse(q.params)
-    // this.docInfo = JSON.parse(q.item)
+    this.params.hospitalId = this.hosInfo.hospitald
     this.price = q.price
     this.regDate = this.formatDate(this.params.regDate)
-    this.hosInfo = getItem('selectedHospital')
     this.getDocTimeSchedules(this.params)
     this.getDocInfo()
   },
@@ -111,13 +109,12 @@ export default {
     },
     async getDocInfo () {
       let data = {
-        'hospitalId': this.params.hospitalId,
+        'hospitalId': this.hosInfo.hospitald,
         'areaId': this.params.areaId,
         'doctId': this.params.doctId
       }
       let res = await getHospitalDoct(data)
       if (res.result === this.constant.RESULT_SUCCESS) {
-        console.log('医生信息', '...', res)
         this.docInfo = res.data
       }
     },

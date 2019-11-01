@@ -129,7 +129,7 @@
       },
       goPay () {
         //  判断金额是否正确
-        if (this.payFee === '' || parseFloat(this.payFee) <= 0 || parseFloat(this.payFee) > 3000) {
+        if (this.payFee === undefined || this.payFee === '' || parseFloat(this.payFee) <= 0 || parseFloat(this.payFee) > 3000) {
           this.$utils.showToast('请输入0-3000内的金额')
           return
         }

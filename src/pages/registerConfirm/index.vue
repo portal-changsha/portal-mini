@@ -53,7 +53,7 @@
       </div> -->
     </div>
     <div class="confirm-btn">
-      <button :disabled="vouchers.length === 0" @click="confirm()" :class="{disabled: vouchers.length === 0}">确认挂号</button>
+      <button :disabled="vouchers.length === 0 || voucherInfo.cardNo === undefined" @click="confirm()" :class="{disabled: vouchers.length === 0 || voucherInfo.cardNo === undefined}">确认挂号</button>
     </div>
   </div>
 </template>
@@ -152,7 +152,7 @@ export default {
     //  选择电子健康卡
     selectVoucher (e) {
       this.voucherInfo = e
-      setItem('selectedVoucher')
+      setItem('selectedVoucher', e)
     },
     formatDate (date) {
       let res = this.$utils.formatTime(this.params.regDate)
@@ -164,6 +164,7 @@ export default {
       this.getDocTimeSchedules(this.params)
     },
     async getVoucherInfo () {
+      console.log('电子健康卡...', getItem('selectedVoucher'))
       this.vouchers = getItem('selectedVoucher') ? [getItem('selectedVoucher')] : []
       // this.vouchers = []
       // let res = await getVoucherList()
