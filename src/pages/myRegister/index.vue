@@ -8,17 +8,17 @@
       <div class="content row row-center" @click="goDetail(item)">
         <div class="left">
           <p>挂号时间 {{item.orderTime}} </p>
-          <p>就诊时间  {{item.regDate}} {{item.phaseDesc}}</p> 
+          <p>就诊时间  {{item.regDate}} {{item.phaseDesc}}</p>
         </div>
         <div class="arrow">
-          <img :src="originImgUrl + 'hos-def-logo.png'" alt="">
+          <img :src="originImgUrl + 'more-arrow.png'" alt="">
         </div>
       </div>
       <div class="reg-status row row-center">
         <p class="col">{{regStatus[item.regStatus]}}</p>
         <div class="col right">
-          <button v-if="(item.busiStatus === '2' || reg.busiStatus === '1') && reg.regStatus === '4'" @click.stop="toActive(1,item,index,'确认取消预约?')">取消</button>
-          <button v-if="item.busiStatus === '2' && reg.regStatus === '4'" @click.stop="toActive(2,item,index,'')">缴费</button>
+          <button v-if="(item.payStatus === '2' || item.payStatus === '1') && item.regStatus === '4'" @click.stop="toActive(1,item,index,'确认取消预约?')">取消</button>
+          <button v-if="item.payStatus === '2' && item.regStatus === '4'" @click.stop="toActive(2,item,index,'')">缴费</button>
           <!-- <button v-if="item.busiStatus === '4'" @click.stop="toActive(3,item,index,'确认退号?')">退号</button> -->
         </div>
       </div>
@@ -40,8 +40,9 @@ export default {
       registerList: [],
       voucher: {},
       hosInfo: {},
-      regStatus: { '1': '已取消', '2': '已取消', '3': '已取消', '4': '已预约', '5': '已取消', '6': '已完成', '7': '已完成', '8': '已完成', '9': '已取消' },
-      areaInfo: {}
+      regStatus: { '1': '已取消', '2': '已取消', '3': '已取消', '4': '已预约', '5': '已取消', '6': '已完成', '7': '已完成', '8': '已完成', '9': '已退号' },
+      areaInfo: {},
+      busiStatus: { '1': '未支付(不可支付)', '2': '未支付(可支付)', '3': '已支付(不可退费)', '4': '已支付(可退费)', '5': '已退费(已退号)', '6': '已退号(未退费)' }
     }
   },
   components: {
@@ -85,7 +86,7 @@ export default {
           //  确认按钮
           let params = {
             orgId: this.hosInfo.orgId,
-            hospitalId: this.hosInfo.id,
+            hospitalId: this.hosInfo.hospitald,
             orderId: item.orderId
           }
           if (type === 1) {
@@ -96,10 +97,9 @@ export default {
           }
           let res = type === 1 ? await getRegisterUnlock(params) : await getRegisterRefund(params)
           if (res.result === '1') {
-            let t = type === 1 ? this.constant.REGISTERER_BUSI_STATUS.UNABLE_PAYMENT : this.constant.REGISTERER_BUSI_STATUS.RETIRED_NUMBER
-            let title = type === 1 ? '取消成功' : '退号成功，退款到账时间以银行到账时间为准。'
-            this.registerList[index].busiStatus = t
-            this.$utils.showToast(title)
+            // let title = type === 1 ? '取消成功' : '退号成功，退款到账时间以银行到账时间为准。'
+            // this.$utils.showToast(title, 5000)
+            this.loadList()
           }
         }, () => {
           //  取消
@@ -121,7 +121,7 @@ export default {
     async loadList (type) {
       this.registerList = []
       let params = {
-        hospitalId: this.hosInfo.hospitalId,
+        hospitalId: this.hosInfo.hospitald,
         areaId: this.hosInfo.areaId,
         cardType: this.voucher.cardType,
         cardNo: this.voucher.cardNo,
@@ -137,13 +137,13 @@ export default {
       if (!data || data.length === 0) return
       this.registerList = []
       for (let i = 0; i < data.length; i++) {
-        data[i].orderTime = this.$utils.formatDate(data[i].orderTime)
-        data[i].regDate = this.$utils.formatDate(data[i].regDate)
+        data[i].orderTime = (this.$utils.formatTime(data[i].orderTime)).curDate + '     ' + (this.$utils.formatTime(data[i].orderTime)).curTime
+        data[i].regDate = (this.$utils.formatTime(data[i].regDate)).curDate
         this.registerList.push(data[i])
       }
     },
     goDetail (item) {
-      this.$utils.navigateTo('regDetail', {params: JSON.stringify(item)})
+      this.$utils.navigateTo('regDetails', {params: JSON.stringify(item)})
     },
     select (e) {
       this.$utils.navigateTo(e, { waitUrl: 'noredirect' })

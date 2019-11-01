@@ -135,15 +135,18 @@ const utils = {
    * @param {提示的标题} title
    * @param {提示的icon 默认无} icon
    */
-  showToast (title, icon = 'none') {
+  showToast (title, timeOut, icon = 'none') {
+    if (!timeOut) {
+      timeOut = 2000
+    }
     mpvue.showToast({
       title: title,
       icon: icon,
-      duration: 2000
+      duration: timeOut
     })
     setTimeout(() => {
       mpvue.hideToast()
-    }, 2000)
+    }, timeOut)
   },
   throttle (func, wait, mustRun) {
     let timeout
