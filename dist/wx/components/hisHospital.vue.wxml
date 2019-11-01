@@ -1,5 +1,0 @@
-<template name="6c9fb693">
-  <view class="_div data-v-59fd95fa his-hospital" wx:if="{{flag}}">
-    <view class="_div data-v-59fd95fa his-content"><label class="_span data-v-59fd95fa">上次选择:</label> <label class="_span data-v-59fd95fa"> {{selectHosInfo.name}}</label> <label bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_span data-v-59fd95fa">继续 <image src="http://bmob-cdn-20712.b0.upaiyun.com/2019/03/14/01f7edc4408d6f5e80cb437c51830356.png" alt class="_img data-v-59fd95fa"></image></label></view>
-  </view>
-</template>

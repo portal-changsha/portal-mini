@@ -1,5 +1,0 @@
-<template name="5ef60b7b">
-  <view hidden="{{!(condition)}}" class="_div data-v-24408518 noData-pic">
-    <view class="_p data-v-24408518 noData-text">{{tips}}</view>
-  </view>
-</template>

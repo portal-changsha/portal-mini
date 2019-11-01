@@ -1,4 +1,0 @@
-<import src="/components/hisHospital.vue.wxml" />
-<import src="/components/NavList.vue.wxml" /><template name="a38c4016">
-  <view class="_div data-v-88c4fcc8 hospitalSelect container"><template bindtoPage="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="6c9fb693"></template> <template bindtoPage="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="240cbbe8"></template></view>
-</template>

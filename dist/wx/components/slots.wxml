@@ -1,6 +1,0 @@
-<import src="/components/hisHospital.vue.wxml" />
-<import src="/components/NavList.vue.wxml" />
-<import src="/components/tabs.vue.wxml" />
-<import src="/components/MenusList.vue.wxml" />
-<import src="/components/hisHospital.vue.wxml" />
-<import src="/components/NoRecord.vue.wxml" />
