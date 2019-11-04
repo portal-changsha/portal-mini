@@ -28,7 +28,7 @@
             <menu-list :type="'hospitalService'"></menu-list>
             <menu-list :type="'otherService'"></menu-list>
             <div class="user-btn">
-                <button @click="toPage('userCenter')">前往个人中心></button>
+                <button @click="toPage('user')">前往个人中心></button>
             </div>
         </div>
     </div>
@@ -80,6 +80,9 @@
               }
             }
           })
+        },
+        toPage (name) {
+          this.$utils.navigateTo(name)
         }
       }
     }

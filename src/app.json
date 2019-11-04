@@ -17,7 +17,11 @@
     "pages/payResult/main",
     "pages/registerConfirm/main",
     "pages/voucherSelect/main",
-    "pages/departDoctor/main"
+    "pages/departDoctor/main",
+    "pages/voucherAdd/main",
+    "pages/profile/main",
+    "pages/user/main"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
