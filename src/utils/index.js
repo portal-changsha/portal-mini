@@ -72,6 +72,9 @@ const utils = {
     if (date.length === 17) {
       return date.substring(0, 5) + '-' + date.substring(9, 14)
     }
+    if (date.length > 20) {
+      return date.substring(0, 5) + '****' + date.substring(date.length - 5, date.length)
+    }
     return date
   },
   /**

@@ -1,9 +1,8 @@
 <template>
-  <div class="myreport">
+  <div class="my-register">
     <Hos-Voucher-Select v-on:select="select" ></Hos-Voucher-Select>
     <TimeSelect v-on:selectDate="selectDate"></TimeSelect>
-
-    <div class="clinic-info" v-for="(item,index) in registerList" :key="index" >
+    <div class="reg-info" v-for="(item,index) in registerList" :key="index" >
       <h3 class="f3s15">{{item.deptName}}&nbsp;&nbsp;{{item.doctName}}&nbsp;&nbsp;({{item.rankName}}) </h3>
       <div class="content row row-center" @click="goDetail(item)">
         <div class="left">
@@ -31,7 +30,7 @@ import NoRecord from '@/components/NoRecord'
 import HosVoucherSelect from '@/components/hos-voucher-select'
 import TimeSelect from '@/components/TimeSelect'
 import { getRegisterList, getRegisterRefund, getRegisterUnlock } from '@/service/register.service'
-import { getItem } from '@/utils/store'
+import { getItem, setItem } from '@/utils/store'
 export default {
   data: function () {
     return {
@@ -81,12 +80,14 @@ export default {
       }
     },
     toActive (type, item, index, tips) {
+      //  取消、退号
       if (type !== 2) {
         this.$utils.showModal('提示', tips, async () => {
           //  确认按钮
           let params = {
             orgId: this.hosInfo.orgId,
             hospitalId: this.hosInfo.hospitald,
+            areaId: item.areaId,
             orderId: item.orderId
           }
           if (type === 1) {
@@ -107,15 +108,17 @@ export default {
       } else {
         //  去缴费
         let payInfo = {
+          hospitalId: this.hosInfo.hospitald,
+          areaId: item.areaId,
           cardType: this.voucher.cardType,
           cardNo: this.voucher.cardNo,
           payFee: item.totalFee,
+          totalFee: item.totalFee,
           busiType: this.constant.BUSI_TYPE.REGISTRATION_PAYMENT,
           busiIds: [item.orderNo]
         }
-        mpvue.navigateTo({
-          url: '../payType/main?params=' + JSON.stringify(payInfo)
-        })
+        setItem('payInfo', payInfo)
+        this.$utils.navigateTo('pay', { params: JSON.stringify(payInfo) })
       }
     },
     async loadList (type) {
@@ -152,7 +155,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.myreport{
+.my-register {
   .tips{
     text-align: center;
     height: 40px;
@@ -160,9 +163,9 @@ export default {
     color: #333;
     font-size: 15px;
   }
-  .clinic-info{
+  .reg-info{
     background: #fff;
-    margin-bottom: 10px;
+    border-bottom: 10px solid #eff2f5;
     h3{
       height: 45px;
       line-height: 45px;
