@@ -85,7 +85,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'name': '其它服务',
                           'icon': REDIRECT_URL + IMG_FILE_PATH + 'icon0_title3.png',
                           'lists': [
-                            { name: '健康档案', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon13_jiankangdangan.png', url: 'voucherAdd', openUrl: '', isDeveloping: false, isNeedCard: false },
+                            { name: '健康档案', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon13_jiankangdangan.png', url: 'voucherSuccess', openUrl: '', isDeveloping: false, isNeedCard: false },
                             { name: '家庭医生', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon14_jiatingyisheng.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },
                             { name: '健康体检', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon15_yimiaojiezhong.png', url: 'HealthCheck', openUrl: '', isDeveloping: true, isNeedCard: false },
                             { name: '出生证明', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon16_chushengzhengming.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },

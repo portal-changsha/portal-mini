@@ -20,7 +20,8 @@
     "pages/departDoctor/main",
     "pages/voucherAdd/main",
     "pages/profile/main",
-    "pages/user/main"
+    "pages/user/main",
+    "pages/voucherSuccess/main"
 
   ],
   "window": {
