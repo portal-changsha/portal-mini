@@ -21,7 +21,8 @@
     "pages/voucherAdd/main",
     "pages/profile/main",
     "pages/user/main",
-    "pages/voucherSuccess/main"
+    "pages/voucherSuccess/main",
+    "pages/completeCard/main"
 
   ],
   "window": {

@@ -127,19 +127,20 @@ export default {
       if (errorMsg) {
         return this.$utils.showToast(errorMsg)
       }
+      console.log(obj)
       //  保存用户信息
-      this.$store.commit('updateParam', {
-        namespace: 'CompleteCard',
-        ocrInfo: this.userInfo
-      })
+      // this.$store.commit('updateParam', {
+      //   namespace: 'CompleteCard',
+      //   ocrInfo: this.userInfo
+      // })
+      this.$utils.navigateTo('completeCard', {userInfo: this.userInfo}, 1)
       //  电子健康卡授权,授权成功后跳转到 completeCard界面
-      let wechatObj = await this.getWechatCode()
-      if (wechatObj.isok) {
-        // this.wechatCode = wechatObj.result
-        this.$utils.navigateTo('completeCard', {wechatCode: this.wechatCode}, 1)
-      } else {
-        console.log('fail.....')
-      }
+      // let wechatObj = await this.getWechatCode()
+      // if (wechatObj.isok) {
+      /// / this.wechatCode = wechatObj.result
+      // this.$utils.navigateTo('completeCard', {wechatCode: this.wechatCode}, 1)
+      // } else {
+      // }
 
       // 配置回调地址
       // const redirect_uri = location.href.split('CheckInformation')[0] + 'CompleteCard';
@@ -319,7 +320,7 @@ export default {
         box-shadow: 0 3px 6px #51A8EF;
         height: 44px;
         color: #fff;
-        font-size: 15px;
+        font-size: 18px;
       }
     }
     .upload-card {
