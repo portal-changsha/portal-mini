@@ -25,7 +25,8 @@
     "pages/completeCard/main",
     "pages/voucherDetail/main",
     "pages/surveyDoctList/main",
-    "pages/survey/main"
+    "pages/survey/main",
+    "pages/waitDoctor/main"
 
   ],
   "window": {

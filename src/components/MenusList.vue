@@ -52,7 +52,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                 { name: '挂 号', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon1_guahao.png', url: 'departDoctor', openUrl: '', isDeveloping: false, isNeedCard: false, isNeedSelectHos: true },
                 { name: '门诊缴费', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon2_jiaofei.png', url: 'clinicUnpayList', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
                 { name: '报告查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon3_baogao.png', url: 'myreport', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
-                { name: '排队候诊', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon4_paidui.png', url: 'WaitDoctor', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true }
+                { name: '排队候诊', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon4_paidui.png', url: 'waitDoctor', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true }
               ]
             },
             'multipleService':

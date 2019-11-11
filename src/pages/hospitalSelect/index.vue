@@ -38,6 +38,7 @@ import hisHospital from '@/components/hisHospital'
 import NavList from '@/components/NavList'
 import NoRecord from '@/components/NoRecord'
 import { getHospitalList } from '@/service/hospital.service'
+import eventLister from '@/service/eventListener'
 // import { getUserInfo } from '@/service/user.service'
 import { setItem } from '@/utils/store'
 export default {
@@ -111,6 +112,8 @@ export default {
     go () {
       if (this.waitUrl === 'noredirect') {
         this.$utils.back(1)
+        //  发布事件
+        eventLister.$emit('backEvent')
         return
       }
       this.$utils.navigateTo(this.waitUrl)

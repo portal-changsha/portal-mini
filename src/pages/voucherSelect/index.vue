@@ -10,6 +10,7 @@ import VoucherItem from '@/components/VoucherItemSmall'
 import { getVoucherList } from '@/service/voucher.service'
 import NoRecord from '@/components/NoRecord'
 import { setItem, getItem } from '@/utils/store'
+import eventLister from '@/service/eventListener'
 export default {
   data () {
     return {
@@ -37,6 +38,7 @@ export default {
     },
     selectVoucher (e) {
       setItem('selectedVoucher', e)
+      eventLister.$emit('backEvent')
       this.$utils.back(1)
     }
   }
