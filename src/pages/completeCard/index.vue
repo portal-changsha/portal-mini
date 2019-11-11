@@ -26,6 +26,7 @@
 <script>
     import { getVoucherSend, getVoucherAdd } from '@/service/voucher.service'
     import { setItem } from '@/utils/store'
+    import { getInpatientBill } from '@/service/inpatient.service'
 
     const checkMobile = function (mobile) {
       if (!/^1\d{10}$/.test(mobile)) {
@@ -43,6 +44,24 @@
         }
       },
       onLoad () {
+        //  测试住院费用查询接口
+        let param = {
+          orgId: '1001',
+          hospitalId: '430121002',
+          areaId: '1001',
+          cardType: '3',
+          cardNo: '430702199508284019',
+          inPatientNo: '1564033070016',
+          startDate: '2019-11-01',
+          endDate: '2019-11-08',
+          pageNo: 'null',
+          pageRows: 'null'
+        }
+        getInpatientBill(param).then(res => {
+          console.log(res)
+        }).catch(e => {
+          console.log(e)
+        })
         //  接收从上级页面传过来的姓名和名族
         // this.userInfo = this.$store.state.paramModule.param.CompleteCard.ocrInfo
       },

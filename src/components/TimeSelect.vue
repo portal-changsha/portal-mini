@@ -11,7 +11,7 @@
             <picker class="option" mode="date" :value="startDate" start="2010-01-01" end="2099-01-01" @change="setStartDate">{{startDate}}</picker>
             <span></span>
             <picker class="option" mode="date" :value="endDate" start="2010-01-01" end="2099-01-01" @change="setEndDate">{{endDate}}</picker>
-            <button class="btn-ok" style="margin: 0 15px 0 0;" @click="chooseNewDate()">确定</button>
+            <button class="btn-ok" @click="chooseNewDate()">确定</button>
         </div>
     </div>
   </div>

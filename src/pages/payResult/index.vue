@@ -1,201 +1,140 @@
 <template>
-  <div class="app">
-    <scroll class="pay-result-view">
-      <section class="pay-result-title">
-        <dl class="field pay-title-height">
-          <span class="f-strong f-middle" style="float: left">订单号：{{ orderId }}</span>
-          <dd class="right-item f-strongest f-largest" style="float: right">{{ payFee | formatFee }}</dd>
-        </dl>
-      </section>
-      <section v-show="payload" class="pay-success-bg">
-        <div class="failed-photo"></div>
-        <label class="f-largest">支付确认中，请耐心等待</label>
-      </section>
-      <section v-show="payOvertime" class="pay-success-bg">
-        <div class="failed-photo"></div>
-        <label class="f-largest">网络错误，请稍后重试</label>
-        <div class="pay-btn">
-          <button @click="backHome()">完成</button>
-        </div>
-      </section>
-      <section v-show="payFailed" class="pay-success-bg">
-        <div class="failed-photo"></div>
-        <label class="f-largest">支付失败</label>
-        <div class="pay-btn">
-          <button @click="goModule()">{{ busiName }}列表</button>
-          <button @click="backHome()">完成</button>
-        </div>
-      </section>
-      <section v-show="paySuccess" class="pay-success-bg">
-        <div class="success-photo"></div>
-        <label class="f-largest">支付成功</label>
-        <div class="pay-btn">
-          <button @click="goModule()">{{busiName}}列表</button>
-          <button @click="backHome()">完成</button>
-        </div>
-      </section>
-    </scroll>
+  <div class="payResult">
+    <div class="row row-center content">
+      <p>订单号：{{ orderId }}</p>
+      <p>{{ payFee/100 }}元</p>
+    </div>
+    <div class="pay-img">
+      <img v-if="paySuccess && baseSrc" :src="baseSrc + 'pay-success-bg.png'" alt="">
+      <img v-if="(payOvertime || payFailed) && baseSrc" :src="baseSrc + 'fail.png'" alt="">
+    </div>
+    <div class="pay-btn">
+      <p>{{paySuccess ? '支付成功' : '支付失败'}}</p>
+      <button @click="payConfirm"> {{paySuccess? '完成' : '确认'}}</button>
+    </div>
   </div>
 </template>
-<script>
-  import { getItem } from '@/utils/store'
-  import { getPaySync } from '@/service/pay.service.js'
-  export default {
-    data () {
-      return {
-        payFee: '0',
-        orderId: '0',
-        busiType: '',
-        busiName: '',
-        payFailed: false,
-        payOvertime: false,
-        paySuccess: false,
-        payload: true,
-        payResultInfo: {}
-      }
-    },
-    onLoad () {
-    },
-    onShow () {
-      const payResult = getItem('payResult')
-      console.log(payResult)
-      this.orderId = payResult.orderId
-      this.payFee = payResult.payFee
-      this.busiType = payResult.busiType
 
-      // 通过busiType判断业务名称，显示到界面
-      if (this.busiType === this.constant.BUSI_TYPE.REGISTRATION_PAYMENT) {
-        this.busiName = '挂号'
-      }
-      if (this.busiType === this.constant.BUSI_TYPE.OUT_PATIENT_PAYMENT) {
-        this.busiName = '缴费'
-      }
-      if (this.busiType === this.constant.BUSI_TYPE.IN_PATIENT_RECHARGE_PAYMENT) {
-        this.busiName = '充值'
-      }
-      this.syncOrder(payResult)
+<script>
+import { getItem } from '@/utils/store'
+import { getPaySync } from '@/service/pay.service.js'
+export default {
+  data () {
+    return {
+      flag: -1, //  判断支付的结果1:成功 -1:失败
+      baseSrc: this.constant.LOCAL_IMG,
+      payFee: '0',
+      orderId: '0',
+      busiType: '',
+      busiName: '',
+      payFailed: false,
+      payOvertime: false,
+      paySuccess: false,
+      payload: true,
+      payResultInfo: {}
+    }
+  },
+  onLoad () {
+    // let q = this.$root.$mp.query
+    // this.flag = q.flag
+    const payResult = getItem('payResult')
+    console.log(payResult)
+    this.orderId = payResult.orderId
+    this.payFee = payResult.payFee
+    this.busiType = payResult.busiType
+
+    // 通过busiType判断业务名称，显示到界面
+    if (this.busiType === this.constant.BUSI_TYPE.REGISTRATION_PAYMENT) {
+      this.busiName = '挂号'
+    }
+    if (this.busiType === this.constant.BUSI_TYPE.OUT_PATIENT_PAYMENT) {
+      this.busiName = '缴费'
+    }
+    if (this.busiType === this.constant.BUSI_TYPE.IN_PATIENT_RECHARGE_PAYMENT) {
+      this.busiName = '充值'
+    }
+    this.syncOrder(payResult)
+  },
+  methods: {
+    payConfirm () {
+      mpvue.reLaunch({
+        url: '../index/main'
+      })
     },
-    methods: {
-      async syncOrder (payResultInfo) {
-        const paySyncParams = {
-          hospitalId: payResultInfo.hospitalId,
-          areaId: payResultInfo.areaId,
-          orderId: payResultInfo.orderId,
-          extraMap: { }
-        }
-        let res = await getPaySync(paySyncParams)
-        console.log(res)
-        if (res.result === this.constant.RESULT_SUCCESS) {
-          if (res.data.orderStatus === this.constant.ORDER_STATUS.ALREADY_PAYMENT) {
-            this.payload = false
-            this.paySuccess = true
-          } else if (res.data.orderStatus === this.constant.ORDER_STATUS.UN_PAYMENT || res.data.orderStatus === this.constant.ORDER_STATUS.PAYING) {
-            this.syncOrder(this.payResultInfo)
-          } else {
-            this.payload = false
-            this.payFailed = true
-          }
+    async syncOrder (payResultInfo) {
+      const paySyncParams = {
+        hospitalId: payResultInfo.hospitalId,
+        areaId: payResultInfo.areaId,
+        orderId: payResultInfo.orderId,
+        extraMap: { }
+      }
+      let res = await getPaySync(paySyncParams)
+      console.log(res)
+      if (res.result === this.constant.RESULT_SUCCESS) {
+        if (res.data.orderStatus === this.constant.ORDER_STATUS.ALREADY_PAYMENT) {
+          this.payload = false
+          this.paySuccess = true
+        } else if (res.data.orderStatus === this.constant.ORDER_STATUS.UN_PAYMENT || res.data.orderStatus === this.constant.ORDER_STATUS.PAYING) {
+          this.syncOrder(this.payResultInfo)
         } else {
           this.payload = false
-          this.payOvertime = true
+          this.payFailed = true
         }
-      },
-      backHome () {
-        this.$utils.navigateTo('index', {}, 2)
+      } else {
+        this.payload = false
+        this.payOvertime = true
       }
     }
   }
+}
 </script>
 
-<style lang="scss">
-
-  .f-largest{
-    font-size: 13px;
-  }
-  .f-large{
-    font-size: 13px;
-  }
-  .f-middle {
-    font-size: 11px;
-  }
-  .f-small{
-    font-size: 9px;
-  }
-
-  .f-strongest{
-    color: #ff0000;
-  }
-  .f-identify {
-    color: #fd9c03;
-  }
-  .f-strong{
-    color: #51a8ec;
-  }
-  .f-normal {
-    color: #333333;
-  }
-  .f-minor {
-    color: #999999;
-  }
-  .pay-success-bg {
-    top: 76px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    position: absolute;
-    text-align: center
-  }
-
-  .failed-photo {
-    background: url($main-img-url + 'fail.png');
-    background-size: contain;
-  }
-
-  .success-photo {
-    background: url($main-img-url + 'success-pay.png');
-    background-size: contain;
-  }
-
-  .pay-btn {
-    margin-top: 30px;
-    text-align: center;
-    width: 100%;
-    button {
-      background: #51A8EC;
-      border-radius: .5px;
-      width: 60px;
-      height: 24px;
-      font-size: 9px;
-      box-shadow: 0 4px 10px #51A8EC;
+<style lang="scss" scoped>
+  .payResult{
+    height: inherit;
+    background: rgb(239,242,245);
+    .content{
+      width: auto;
+      background: #fff;
+      padding: 0 15px;
+      height: 60px;
+      line-height: 60px;
+      justify-content: space-between;
+      p:nth-child(1){
+        color: #51A8EC;
+        font-size: 15px;
+      }
+      p:nth-child(2){
+        color: #FF0000;
+        font-size: 18px;
+      }
     }
+    .pay-img{
+      text-align: center;
+      padding: 40px 0 18px 0;
+      img{
+        width: 110px;
+        height: 110px;
+        display: block;
+        margin: 0 auto;
+      }
 
-    .field {
-      @include display-flex();
-      @include align-items(center);
-      //width: 100%;
-      height: 40px;
-      // line-height: 2rem;
-      @include border(bottom);
-      padding: 15px;
-      &.last{
-        @include border(none);
+    }
+    .pay-btn{
+      text-align: center;
+      p{
+        color: #333;
+        font-size: 18px;
+        padding-bottom: 30px;
       }
-      dt {
-        text-align: left;
-        width: 90px;
-        color: #999999;
-      }
-      dd{
-        width: 1px;
-        text-align: right;
-        @include flex(1);
-        @include ellipsis();
-      }
-      .right-item {
-        float: right;
-        text-align: right;
-        //margin-right: 1.75rem;
+      button{
+        font-size: 18px;
+        background: #51A8EC;
+        color: #fff;
+        border-radius: 5px;
+        width: 120px;
+        height: 44px;
+        box-shadow: 0 1px 2px #51A8EC;
       }
     }
   }

@@ -22,7 +22,10 @@
     "pages/profile/main",
     "pages/user/main",
     "pages/voucherSuccess/main",
-    "pages/completeCard/main"
+    "pages/completeCard/main",
+    "pages/voucherDetail/main",
+    "pages/surveyDoctList/main",
+    "pages/survey/main"
 
   ],
   "window": {
