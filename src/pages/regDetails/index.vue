@@ -79,7 +79,6 @@
       this.regDetail.totalFee = (this.regDetail.totalFee / 100).toFixed(2)
       this.regDetail.regDate = (this.$utils.formatTime(this.regDetail.regDate)).curDate
       this.regDetail.phaseDesc = this.$utils.formateDesc(this.regDetail.phaseDesc)
-      debugger
     },
     onShow () {
     },

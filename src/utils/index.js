@@ -143,7 +143,7 @@ const utils = {
       timeOut = 2000
     }
     mpvue.showToast({
-      title: title,
+      title: title || '',
       icon: icon,
       duration: timeOut
     })
@@ -352,6 +352,9 @@ const utils = {
       }
     })
     return targetObj
+  },
+  formatFee (fee) {
+    return (fee / 100).toFixed(2)
   }
 }
 export default utils

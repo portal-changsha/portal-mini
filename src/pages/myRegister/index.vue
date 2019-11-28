@@ -97,7 +97,7 @@ export default {
             params.regId = item.regId
           }
           let res = type === 1 ? await getRegisterUnlock(params) : await getRegisterRefund(params)
-          if (res.result === '1') {
+          if (res.result === this.constant.RESULT_SUCCESS) {
             // let title = type === 1 ? '取消成功' : '退号成功，退款到账时间以银行到账时间为准。'
             // this.$utils.showToast(title, 5000)
             this.loadList()

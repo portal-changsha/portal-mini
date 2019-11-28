@@ -26,8 +26,9 @@
     "pages/voucherDetail/main",
     "pages/surveyDoctList/main",
     "pages/survey/main",
-    "pages/waitDoctor/main"
-
+    "pages/waitDoctor/main",
+    "pages/clinicUnpayList/main",
+    "pages/clinicUnpayDetail/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
