@@ -60,10 +60,10 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'name': '综合服务',
                           'icon': REDIRECT_URL + IMG_FILE_PATH + 'icon0_title1.png',
                           'lists': [
-                            { name: '挂号记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon5_guahaojilu.png', url: 'myRegister', openUrl: '', isDeveloping: false, isNeedCard: true },
-                            { name: '缴费记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon6_jiaofeijilu.png', url: 'myPay', openUrl: '', isDeveloping: false, isNeedCard: true },
+                            { name: '挂号记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon5_guahaojilu.png', url: 'myRegister', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
+                            { name: '缴费记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon6_jiaofeijilu.png', url: 'myPay', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
                             { name: '电子处方', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon7_chufang.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },
-                            { name: '满意度调查', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon8_manyidu.png', url: 'surveyDoctList', openUrl: '', isDeveloping: false, isNeedCard: true },
+                            { name: '满意度调查', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon8_manyidu.png', url: 'surveyDoctList', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
                             { name: '来院导航', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon10_yuannei.png', url: 'hospitalNavigation', openUrl: '', isDeveloping: false, isNeedCard: false },
                             { name: '院内导航', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon9_laiyuan.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: false },
                             { name: '名医名科', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon11_mingyimingke.png', url: '', openUrl: 'http://www.mybmall.comindex.php?g=Wap&m=Index&a=lists&classid=1175&token=ajrbpx1458269639&diymenu=1', isDeveloping: false, isNeedCard: false },
