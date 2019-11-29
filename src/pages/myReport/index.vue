@@ -37,8 +37,8 @@ export default {
     return {
       tab: [{name: '检验报告'}, {name: '检查报告'}],
       tabIndex: 0,
-      endDate: '',
-      startDate: '',
+      endDate: '2019-11-29',
+      startDate: '2019-01-01',
       reprotList: [],
       voucher: {},
       hosInfo: {},
@@ -52,10 +52,10 @@ export default {
     HosVoucherSelect
   },
   onLoad () {
-    let today = new Date()
-    this.endDate = today.format('yyyy-MM-dd')
-    today.setDate(today.getDate() - 14)
-    this.startDate = today.format('yyyy-MM-dd')
+    // let today = new Date()
+    // this.endDate = today.format('yyyy-MM-dd')
+    // today.setDate(today.getDate() - 14)
+    // this.startDate = today.format('yyyy-MM-dd')
     eventLister.$on('backEvent', () => {
       this.loadList(this.tabIndex)
     })
@@ -81,8 +81,8 @@ export default {
       }
     },
     forMatData (data) {
-      if (!data || data.length === 0) return
       this.reprotList = []
+      if (!data || data.length === 0) return
       for (let i = 0; i < data.length; i++) {
         let temp = {
           id: data[i].examId ? data[i].examId : data[i].labId,
@@ -131,6 +131,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .myreport{
+  min-height: 100%;
+  background: rgb(239, 242, 245);
   .tips{
     padding: 15px 7px 12px 11px;
     width:auto;

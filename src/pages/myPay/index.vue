@@ -4,7 +4,7 @@
     <TimeSelect v-on:selectDate="selectDate"></TimeSelect>
 
     <div class="clinic-info" v-for="(item,index) in payList" :key="index" >
-      <h3 class="f3s15">{{item.deptName}}&nbsp;&nbsp;{{item.doctName}}&nbsp;&nbsp;({{item.rankName}}) </h3>
+      <h3 class="f3s15">{{item.deptName}}&nbsp;&nbsp;{{item.doctName}}</h3>
       <div class="content row row-center" @click="goDetail(item)">
         <div class="left">
           <p>总金额 {{item.copy_totalFee}} </p>
@@ -131,6 +131,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .myreport{
+  min-height: 100%;
+  background: rgb(239, 242, 245);
   .tips{
     text-align: center;
     height: 40px;

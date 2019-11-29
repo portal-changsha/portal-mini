@@ -96,6 +96,8 @@ export default {
 
 <style lang="scss" scoped>
 .report{
+  min-height: 100%;
+  background: rgb(239, 242, 245);
   .title{
     height: 55px;
     width: auto;

@@ -124,8 +124,9 @@ export default {
   border-bottom: 10px solid #eff2f5;
 }
 .unpay-detail{
+  // margin-bottom: 10px;
   .title{
-    margin-top: 10px;
+    margin-bottom: 2px;
     justify-content: space-between;
     position: relative;
     padding: 0 15px;
