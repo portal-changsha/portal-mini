@@ -28,7 +28,11 @@
     "pages/survey/main",
     "pages/waitDoctor/main",
     "pages/clinicUnpayList/main",
-    "pages/clinicUnpayDetail/main"
+    "pages/clinicUnpayDetail/main",
+    "pages/myReport/main",
+    "pages/labDetail/main",
+    "pages/examDetail/main",
+    "pages/myPay/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

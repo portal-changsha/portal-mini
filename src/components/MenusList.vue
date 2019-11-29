@@ -51,7 +51,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
               'lists': [
                 { name: '挂 号', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon1_guahao.png', url: 'departDoctor', openUrl: '', isDeveloping: false, isNeedCard: false, isNeedSelectHos: true },
                 { name: '门诊缴费', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon2_jiaofei.png', url: 'clinicUnpayList', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
-                { name: '报告查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon3_baogao.png', url: 'myreport', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
+                { name: '报告查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon3_baogao.png', url: 'myReport', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
                 { name: '排队候诊', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon4_paidui.png', url: 'waitDoctor', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true }
               ]
             },
@@ -61,7 +61,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'icon': REDIRECT_URL + IMG_FILE_PATH + 'icon0_title1.png',
                           'lists': [
                             { name: '挂号记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon5_guahaojilu.png', url: 'myRegister', openUrl: '', isDeveloping: false, isNeedCard: true },
-                            { name: '缴费记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon6_jiaofeijilu.png', url: 'mypay', openUrl: '', isDeveloping: false, isNeedCard: true },
+                            { name: '缴费记录', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon6_jiaofeijilu.png', url: 'myPay', openUrl: '', isDeveloping: false, isNeedCard: true },
                             { name: '电子处方', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon7_chufang.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },
                             { name: '满意度调查', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon8_manyidu.png', url: 'surveyDoctList', openUrl: '', isDeveloping: false, isNeedCard: true },
                             { name: '来院导航', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon10_yuannei.png', url: 'hospitalNavigation', openUrl: '', isDeveloping: false, isNeedCard: false },
