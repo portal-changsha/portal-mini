@@ -89,7 +89,8 @@ export default {
         doctName: unpay.doctName,
         canPay: unpay.canPay,
         visitName: unpay.visitName,
-        visitDate: unpay.visitDate
+        visitDate: unpay.visitDate,
+        areaId: this.hosInfo.areaId
       }
       let unpayList = unpay.recipes
       this.$utils.navigateTo('clinicUnpayDetail', {unpayInfo: JSON.stringify(unpayInfo), unpayList: JSON.stringify(unpayList)})
@@ -104,7 +105,9 @@ export default {
         cardNo: this.voucherInfo.cardNo,
         payFee: item.totalFee,
         busiType: this.constant.BUSI_TYPE.OUT_PATIENT_PAYMENT,
-        busiIds: busiIds
+        busiIds: busiIds,
+        hospitalId: this.hosInfo.hospitald,
+        areaId: this.hosInfo.areaId
       }
       setItem('payInfo', data)
       this.$utils.navigateTo('pay', {params: JSON.stringify(data)})

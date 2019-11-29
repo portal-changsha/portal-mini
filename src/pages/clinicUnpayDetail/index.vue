@@ -108,7 +108,9 @@ export default {
         cardNo: this.unpayInfo.cardNo,
         payFee: this.unpayInfo.payFee,
         busiType: this.constant.BUSI_TYPE.OUT_PATIENT_PAYMENT,
-        busiIds: this.busiIds
+        busiIds: this.busiIds,
+        hospitalId: this.unpayInfo.hospitalId,
+        areaId: this.unpayInfo.areaId
       }
       setItem('payInfo', data)
       this.$utils.navigateTo('pay', {params: JSON.stringify(data)})

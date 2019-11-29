@@ -355,6 +355,15 @@ const utils = {
   },
   formatFee (fee) {
     return (fee / 100).toFixed(2)
+  },
+  formatpayDate (formatDate) {
+    // ios new Data要转成2017/07格式
+    const temDate = formatDate.replace(/-/g, '/')
+    const week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+    const myData = new Date(temDate)
+    const myformat = myData.format('yyyy-MM-dd hh:mm:ss')
+    const myWeek = week[myData.getDay()]
+    return myformat.substring(5, 11) + myWeek + myformat.substring(10, 16)
   }
 }
 export default utils
