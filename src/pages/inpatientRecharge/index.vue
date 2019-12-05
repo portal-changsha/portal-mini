@@ -90,7 +90,7 @@
         if (res.result === this.constant.RESULT_SUCCESS) {
           this.forMatData(res.data)
         } else {
-          this.$utils.showToast(res.resultMsg)
+          this.$utils.showToast(res.message)
         }
       },
       forMatData (data) {
