@@ -70,10 +70,6 @@
     },
     onShow () {
       this.voucher = getItem('selectedVoucher')
-      this.voucher = {
-        cardType: '3',
-        cardNo: '430922198711228911'
-      }
       if (!this.voucher) {
         this.$utils.showToast('请先绑定电子健康卡')
         return
