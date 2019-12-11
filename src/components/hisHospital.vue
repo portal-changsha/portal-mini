@@ -1,9 +1,10 @@
 <template>
   <div class="his-hospital" v-if="flag">
     <div class="his-content">
-      <span>上次选择:</span>
-      <span> {{selectHosInfo.hospitalName}}({{selectHosInfo.areaName}})</span>
-      <span @click="toPage(selectHosInfo)">继续 <img :src="originImgUrl + 'more-arrow.png'" alt=""></span>
+      <span>上次选择:{{selectHosInfo.hospitalName}}({{selectHosInfo.areaName}})</span>
+      <!-- <span> {{selectHosInfo.hospitalName}}({{selectHosInfo.areaName}})</span> -->
+      <!-- <img :src="originImgUrl + 'more-arrow.png'" alt=""> -->
+      <span @click="toPage(selectHosInfo)">继续 ></span>
     </div>
   </div>
 </template>
@@ -38,17 +39,20 @@ export default {
 <style lang="scss" scoped>
   .his-hospital{
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    // min-height: 40px;
+    // line-height: 40px;
     color: #3272C9;
     // padding: 0 15px;
     font-size: 15px;
     position: relative;
     background: #E0EDFA;
     .his-content{
-      padding: 0 15px;
-      span:nth-child(3){
-        float: right;
+      @include display-flex;
+      @include align-items(center);
+      padding: 10px 15px;
+      span:nth-child(2){
+        // float: right;
+        white-space: nowrap;
         img{
           width: 7px;
           height: 12px;

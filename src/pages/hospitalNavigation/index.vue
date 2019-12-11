@@ -17,7 +17,7 @@
       <input type="text" placeholder="请输入您要搜索的医院" confirm-type="search" placeholder-class="holderStyle" v-model="searchKey" v-on:input="search" @blur="inputBlur">
     </div>
 
-    <hisHospital v-on:toPage="toContinue"></hisHospital>
+    <hisHospital v-on:toPage="selectHospital"></hisHospital>
 
     <div v-if="hospitalList.length >0" style="width:100%;">
       <div class="hos-list row row-center" v-for="(item,index) in hospitalList" :key="index" @click="selectHospital(item)">
@@ -95,8 +95,10 @@
       async selectHospital (item) {
         //  将选择的医院信息保存在本地
         setItem('selectedHospital', item)
+        console.log(item)
         //  跳转到对应的页面
-        this.go(item)
+        this.$utils.openLocation(parseFloat(item.latitude), parseFloat(item.longitude), item.hospitalName + item.areaName, item.areaAddress)
+        // this.go(item)
       },
       go (item) {
         if (this.waitUrl === 'noredirect') {

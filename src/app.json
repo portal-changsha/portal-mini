@@ -32,7 +32,8 @@
     "pages/myReport/main",
     "pages/labDetail/main",
     "pages/examDetail/main",
-    "pages/myPay/main"
+    "pages/myPay/main",
+    "pages/myRecharge/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

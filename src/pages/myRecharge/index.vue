@@ -2,40 +2,37 @@
   <div class="clinic">
     <Hos-Voucher-Select v-on:select="select" ></Hos-Voucher-Select>
     <TimeSelect v-on:selectDate="selectDate"></TimeSelect>
-    <div class="clinic-info" v-for="(unpay,index) in unpayList" :key="index" @click="goDetail(unpay)">
-      <h3 class="f3s15">{{unpay.deptName}}</h3>
+    <div class="clinic-info" v-for="(item,index) in rechargeList" :key="index" @click="goDetail(unpay)">
+      <h3 class="f3s15">订单号: {{item.orderId}}</h3>
       <div class="content row row-center">
         <div class="left">
-          <p>总金额 <span>{{unpay.totalFee / 100}}元</span> </p>
-          <p>开单时间 {{unpay.visitDate}}</p>
+          <p>充值时间 {{item.operateTime}}</p>
         </div>
         <div class="rigth">
-          <button @click.stop="toPay(unpay)">缴费</button>
-        </div>
-        <div class="arrow">
-          <img :src="baseSrc + 'more-arrow.png'" alt="">
+         {{item.amount / 100}}元
         </div>
       </div>
     </div>
-    <no-record :condition="unpayList.length === 0" :tips="'暂无缴费!'"></no-record>
+    <no-record :condition="rechargeList.length === 0" :tips="'暂无缴费!'"></no-record>
   </div>
 </template>
 
 <script>
 import NoRecord from '@/components/NoRecord'
 import HosVoucherSelect from '@/components/hos-voucher-select'
-import { getClinicUnpay } from '@/service/clinic.service'
-import { getItem, setItem } from '@/utils/store'
+import { getInpatientInfo, getInpatientRechargeList } from '@/service/inpatient.service'
+import { getItem } from '@/utils/store'
 import TimeSelect from '@/components/TimeSelect'
 import eventLister from '@/service/eventListener'
 export default {
   data () {
     return {
-      unpayList: [],
+      rechargeList: [],
       hosInfo: {},
       voucherInfo: {},
       areaInfo: {},
       baseSrc: this.constant.LOCAL_IMG,
+      inPatientNo: '',
       startDate: '',
       endDate: ''
     }
@@ -47,12 +44,13 @@ export default {
   },
   onLoad () {
     eventLister.$on('backEvent', () => {
-      this.getClinicUnpayInfo()
+      this.getInfo()
     })
-    this.getClinicUnpayInfo()
+    this.getInfo()
   },
   methods: {
-    async getClinicUnpayInfo () {
+    async getInfo () {
+      this.rechargeList = []
       this.hosInfo = getItem('selectedHospital')
       this.voucherInfo = getItem('selectedVoucher')
       if (!this.hosInfo || !this.hosInfo.hospitald) {
@@ -67,14 +65,36 @@ export default {
         hospitalId: this.hosInfo.hospitald,
         cardType: this.voucherInfo.cardType,
         cardNo: this.voucherInfo.cardNo,
+        areaId: this.hosInfo.areaId
+      }
+      getInpatientInfo(data).then(res => {
+        if (res.result === this.constant.RESULT_SUCCESS) {
+          this.inPatientNo = res.data[0].inPatientNo
+          this.getRechargeList()
+        } else {
+          this.$utils.showToast('查找住院信息出错')
+        }
+      }).catch(() => {
+        this.$utils.showToast('查找住院信息出错')
+      })
+    },
+    getRechargeList () {
+      let params = {
+        hospitalId: this.hosInfo.hospitald,
         areaId: this.hosInfo.areaId,
+        inPatientNo: this.inPatientNo,
         startDate: this.startDate,
         endDate: this.endDate
       }
-      getClinicUnpay(data).then(res => {
-        this.unpayList = res.data || []
+      getInpatientRechargeList(params).then(res => {
+        if (res.result === this.constant.RESULT_SUCCESS) {
+          this.rechargeList = res.data || []
+          this.rechargeList.forEach(item => {
+            item.operateTime = this.$utils.formatpayDate(item.operateTime)
+          })
+        }
       }).catch(() => {
-        this.unpayList = []
+        this.rechargeList = []
       })
     },
     // 去未缴费详单
@@ -102,33 +122,10 @@ export default {
     select (e) {
       this.$utils.navigateTo(e, { waitUrl: 'noredirect' })
     },
-    async toPay (item) {
-      let busiIds = await this.getBusiIds(item.recipes)
-      let data = {
-        cardType: this.voucherInfo.cardType,
-        cardNo: this.voucherInfo.cardNo,
-        payFee: item.totalFee,
-        busiType: this.constant.BUSI_TYPE.OUT_PATIENT_PAYMENT,
-        busiIds: busiIds,
-        hospitalId: this.hosInfo.hospitald,
-        areaId: this.hosInfo.areaId
-      }
-      setItem('payInfo', data)
-      this.$utils.navigateTo('pay', {params: JSON.stringify(data)})
-    },
-    getBusiIds (arr) {
-      return new Promise((resolve) => {
-        let busiIds = []
-        for (let i = 0; i < arr.length; i++) {
-          busiIds.push(arr[i].recipeId)
-        }
-        resolve(busiIds)
-      })
-    },
     selectDate (time) {
       this.startDate = time.startDate
       this.endDate = time.endDate
-      this.getClinicUnpayInfo()
+      this.getRechargeList()
     }
   }
 }
@@ -152,33 +149,16 @@ export default {
         padding: 0 15px;
         position: relative;
         justify-content: space-between;
-        height: 80px;
+        height: 45px;
         .left{
           font-size: 15px;
           p{
             color: #999999;
           }
-          span{
-            color: #FE0000;
-          }
         }
         .rigth{
-          position: absolute;
-          right:33px;
-          button{
-            color: #fff;
-            font-size: 15px;
-            height: 40px;
-            width: 70px;
-            background: #51A8EC;
-            border-radius: 5px;
-          }
-        }
-        .arrow{
-          img{
-            width: 8px;
-            height: 13px;
-          }
+          color: #FE0000;
+          font-size: 14px;
         }
       }
     }

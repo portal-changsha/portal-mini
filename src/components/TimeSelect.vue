@@ -159,7 +159,7 @@ button::after {
     }
     .btn-ok {
       width: 16%;
-      height: 30px;
+      // height: 30px;
       top: 0;
       font-size: 13px;
       float: right;

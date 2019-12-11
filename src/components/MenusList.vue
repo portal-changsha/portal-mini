@@ -77,7 +77,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'lists': [
                             { name: '住院预缴金充值', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon21_zyfw.png', url: 'inpatientRecharge', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
                             { name: '住院费用查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon19_zyfycx.png', url: 'HospitalCostList', openUrl: '', isDeveloping: false, isNeedCard: true },
-                            { name: '住院预缴金充值查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon20_zyczcx.png', url: 'MyRecharge', openUrl: '', isDeveloping: false, isNeedCard: true }
+                            { name: '住院预缴金充值查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon20_zyczcx.png', url: 'myRecharge', openUrl: '', isDeveloping: false, isNeedCard: true }
                           ]
                         },
             'otherService':
@@ -85,7 +85,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'name': '其它服务',
                           'icon': REDIRECT_URL + IMG_FILE_PATH + 'icon0_title3.png',
                           'lists': [
-                            { name: '健康档案', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon13_jiankangdangan.png', url: 'completeCard', openUrl: '', isDeveloping: false, isNeedCard: false },
+                            { name: '健康档案', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon13_jiankangdangan.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: false },
                             { name: '家庭医生', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon14_jiatingyisheng.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },
                             { name: '健康体检', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon15_yimiaojiezhong.png', url: 'HealthCheck', openUrl: '', isDeveloping: true, isNeedCard: false },
                             { name: '出生证明', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon16_chushengzhengming.png', url: '', openUrl: '', isDeveloping: true, isNeedCard: true },
