@@ -34,7 +34,8 @@
     "pages/examDetail/main",
     "pages/myPay/main",
     "pages/myRecharge/main",
-    "pages/inpatientCostList/main"
+    "pages/inpatientCostList/main",
+    "pages/inMap/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
