@@ -33,7 +33,8 @@
     "pages/labDetail/main",
     "pages/examDetail/main",
     "pages/myPay/main",
-    "pages/myRecharge/main"
+    "pages/myRecharge/main",
+    "pages/inpatientCostList/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
