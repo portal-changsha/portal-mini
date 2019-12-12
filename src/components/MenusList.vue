@@ -76,7 +76,7 @@ const IMG_FILE_PATH = process.env.IMG_FILE_PATH
                           'icon': REDIRECT_URL + IMG_FILE_PATH + 'icon0_title2.png',
                           'lists': [
                             { name: '住院预缴金充值', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon21_zyfw.png', url: 'inpatientRecharge', openUrl: '', isDeveloping: false, isNeedCard: true, isNeedSelectHos: true },
-                            { name: '住院费用查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon19_zyfycx.png', url: 'HospitalCostList', openUrl: '', isDeveloping: false, isNeedCard: true },
+                            { name: '住院费用查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon19_zyfycx.png', url: 'inpatientCostList', openUrl: '', isDeveloping: false, isNeedCard: true },
                             { name: '住院预缴金充值查询', icon: REDIRECT_URL + IMG_FILE_PATH + 'icon20_zyczcx.png', url: 'myRecharge', openUrl: '', isDeveloping: false, isNeedCard: true }
                           ]
                         },
