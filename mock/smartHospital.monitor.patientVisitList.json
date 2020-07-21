@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "jzhj": "门诊就诊提醒",
+      "no": 1,
+      "yjqk": null,
+      "csqk": null,
+      "sfyy": "否",
+      "zllx": "诊疗",
+      "name": "陈**",
+      "jzid": "2020030411253",
+      "jzks": "口腔科门诊",
+      "yytj": null,
+      "extraMap": {
+        "hosId": "2222"
+      }
+    },
+    {
+      "jzhj": "开具医嘱",
+      "no": 19,
+      "yjqk": "0位",
+      "csqk": "7分57秒",
+      "sfyy": "是",
+      "zllx": "诊疗",
+      "name": "徐*",
+      "jzid": "2020030510616",
+      "jzks": "骨伤科门诊骨伤科门诊骨伤科门诊骨伤科门诊骨伤科门诊",
+      "yytj": null,
+      "extraMap": {
+        "hosId": "2222"
+      }
+    }
+  ],
+  "resultCode": "1",
+  "resultMsg": "成功"
+}

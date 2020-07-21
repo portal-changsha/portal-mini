@@ -1,0 +1,399 @@
+@import './_variable.scss';
+.base-content {
+  background: #f5f5f5 !important;
+}
+
+.hc-list-item {
+  background: rgba(255, 255, 255, 1);
+  margin-top: 0.6rem;
+  padding: 0 0.6rem 0.5rem 0.6rem;
+  
+  .content {
+    padding-bottom: 0.5rem;
+  }
+  
+  .date-item-content {
+    padding: 0.6rem 0.6rem 0.6rem 0;
+
+    .date-content {
+      padding-left: 0.6rem;
+      display: flex;
+      align-items: center;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 0.2rem;
+        height: 0.9rem;
+        background: #2A8DFF;
+        left: 0.6rem;
+      }
+      .date-left {
+        font-size: 0.8rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #3C3C3C;
+        flex: 1;
+      }
+      
+      .date-right {
+        // background: linear-gradient(180deg, rgba(71, 184, 255, 1) 0%, rgba(42, 141, 255, 1) 100%);
+        // box-shadow: 0px 0.1rem 0.5rem 0px rgba(42, 141, 255, 0.5);
+        padding: 0;
+        border-radius: 100%;
+        text-align: center;
+        float: right;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .item-content {
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin: 0 0.6rem 0 0.6rem;
+    border-bottom: 1px solid #E8E8E8;
+
+    .left {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Light, PingFang SC;
+      font-weight: 300;
+      color: #3C3C3C;
+    }
+
+    .right {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #3C3C3C;
+      float: right;
+      text-align: right;
+      width: 11rem;
+      @include ellipsis();
+    }
+  }
+  
+  .area-content {
+    margin: 0 0.6rem 0 0.6rem;
+    border-bottom: 1px solid #E8E8E8;
+  
+    .top {
+      height: 2.25rem;
+      line-height: 2.25rem;
+      font-size: 0.8rem;
+      font-family: PingFangSC-Light, PingFang SC;
+      font-weight: 300;
+      color: #3C3C3C;
+    }
+  
+    .bottom {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #3C3C3C;
+      background:rgba(233,243,255,0.3); 
+      padding: 0.35rem 0.4rem 0.35rem 0.4rem;
+    }
+  }
+  
+  .flex-content {
+    margin: 0 0.6rem;
+    .title-content {
+       display: flex;
+       height: 2.25rem;
+       line-height: 2.25rem;
+       font-size: 0.8rem;
+       font-family: PingFangSC-Light, PingFang SC;
+       font-weight: 300;
+       color: #3C3C3C;
+       .left {
+         flex: 2;
+       }
+       .right {
+         flex: 1
+       }
+    }
+    .val-content {
+      background: rgba(233,243,255,0.3);
+      padding: .35rem 0.2rem 0.35rem 0.2rem;
+      border-bottom: 1px solid #E8E8E8;
+      .value-content{
+        display: flex;
+        font-size: 0.8rem;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #3C3C3C;
+        .left {
+          flex: 2;
+        }
+        .right {
+          flex: 1
+        }
+      }
+      .tips-content{
+        padding-top: 0.35rem;
+        .tip {
+          font-size: 0.6rem;
+          font-family:PingFangSC-Regular,PingFang SC;
+          font-weight:400;
+          color:rgba(156,156,156,1);
+        }
+      }
+    }
+  }
+  
+  .western-content {
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin: 0 0.6rem 0 0.6rem;
+    border-bottom: 1px solid #E8E8E8;
+
+    .left {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 300;
+      color: #3C3C3C;
+    }
+  }
+  
+  .western-val-content {
+    height: 2.25rem;
+    margin:  0 0.6rem 0 0.6rem;
+    background:rgba(233,243,255,0.3);
+    border-bottom: 1px solid #E8E8E8;
+    @include display-flex;
+    @include align-items(center);
+    .left {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Light, PingFang SC;
+      font-weight: 300;
+      color: #3C3C3C;
+      padding-left: 0.35rem;
+    }
+  
+    .right {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #3C3C3C;
+      width: 11rem;
+      @include ellipsis();
+      flex: 1;
+    }
+  }
+  
+  .dash-border{
+     border-bottom: 1px dashed #E8E8E8 !important;
+  }
+}
+  
+.hc-cell-content {
+  height: 256px;
+  background: white;
+  margin-bottom: 12px;
+
+  .item-content {
+    height: 48px;
+    line-height: 48px;
+    margin: 0 12px 0 24px;
+    border-bottom: 1px solid #E8E8E8;
+    .left {
+      font-size: 16px;
+      font-family: PingFangSC-Light, PingFang SC;
+      font-weight: 300;
+      color: #3C3C3C;
+    }
+
+    .right {
+      font-size: 16px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #3C3C3C;
+      float: right;
+      text-align: right;
+      width: 220px;
+      @include ellipsis();
+    }
+  }
+}
+
+.hc-grid-content {
+  background-color: white;
+  padding: 0.6rem;
+
+  .item-content {
+    display: flex;
+    height: 3.25rem;
+    line-height: 3.25rem;
+    text-align: left;
+
+    &.border-bottom {
+      border-bottom: 1px solid #E8E8E8;
+    }
+
+    .item {
+      flex: 1;
+      margin-left: 0.8rem;
+      font-size: 0.8rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #3C3C3C;
+
+      .icon {
+        font-size: 1rem;
+        margin-right: 0.25rem;
+      }
+      
+      &.border-right {
+        border-right: 1px solid #E8E8E8;
+      }
+    }
+  }
+}
+
+.thick {
+    margin-bottom: 12px
+}
+.health-tab {
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+.tab-hospital {
+    display: flex;
+    justify-content: space-between;
+}
+.tab-crumb {
+    position: absolute;
+    width: 0.2rem;
+    height: 0.9rem;
+    top: 0.25rem;
+    left: -0.73rem;
+    background-color: #2A8DFF;
+}
+.tab-item {
+    height: 2.0rem;
+    line-height: 2.0rem;
+    border-bottom: 1px solid #E8E8E8;
+}
+.tab-icon {
+    float: right;
+    margin-top: 0.15rem;
+    background: linear-gradient(180deg, rgba(71, 184, 255, 1) 0%, rgba(42, 141, 255, 1) 100%);
+    box-shadow: 0px 0.1rem 0.5rem 0px rgba(42, 141, 255, 0.5);
+    padding: 0;
+    border-radius: 100%;
+    text-align: center;
+    color: #fff;
+}
+.tab-thick {
+    margin: 0.6rem 0 0 0;
+}
+
+.health-field-list{
+  background: #fff;
+  li{
+    min-height: 2.4rem;
+    align-items: center;
+    border-bottom: 1px solid #E8E8E8;
+    @include display-flex;
+    @include justify-content(space-between);
+  
+    span{
+      font-size: 0.8rem;
+    }
+    span:nth-child(1){
+      color: #3C3C3C;
+      flex: 0.4;
+      font-weight: 300;
+    }
+    span:nth-child(2){
+      font-weight: 400;
+      color: #3C3C3C;
+      flex: 0.6;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: right;
+    }
+  }
+}
+
+.menu-info-row{
+  @include display-flex;
+  flex-wrap: wrap;
+  padding-top: 0.6rem;
+}
+.menu-info-col{
+  width: 50%;
+  height: 3.1rem;
+  margin-bottom: 0.6rem;
+  &:nth-child(2n+1){
+      .menu-info-col-area{
+          margin: 0 0.375rem 0 0;
+      }
+  }
+  &:nth-child(2n){
+      .menu-info-col-area{
+          margin: 0 0 0 0.375rem;
+      }
+  }
+  &-area{
+      @include display-flex;
+      background:rgba(255,255,255,1);
+      box-shadow:0px 0.2rem 0.6rem 0px rgba(0,0,0,0.1);
+      border-radius:0.8rem;
+      height: 100%;
+      @include align-items(center);
+      .menu-img{
+          width: 1.6rem;
+          height: 1.6rem;
+          display: inline-block;
+          margin-right: 0.6rem;
+          border-radius: 0.4rem;
+          text-align: center;
+          line-height: 1.8rem;
+          margin-left: 0.6rem;
+          @include display-flex;
+          @include align-items(center);
+          @include justify-content(center);
+          .svg-class{
+              color: #fff;
+              font-size: 0.8rem;
+              width: 0.8rem;
+              height: 0.8rem;
+          }
+      }
+      .menu-title{
+          @include display-flex;
+          @include justify-content(space-between);
+          flex-direction: column;
+          flex: 1;
+          p:nth-child(1){
+              font-weight:500;
+              color:rgba(60,60,60,1);
+          }
+          p:nth-child(2){
+              font-size:0.6rem;
+              font-weight:300;
+              color:rgba(156,156,156,1);
+          }
+      }
+  }
+}
+.health-jc{
+background:linear-gradient(180deg,rgba(71,184,255,1) 0%,rgba(42,141,255,1) 100%);
+}
+.health-jy{
+background:linear-gradient(360deg,rgba(0,202,204,1) 0%,rgba(11,179,241,1) 99%);
+}
+.health-cf{
+background:linear-gradient(360deg,rgba(107,106,253,1) 0%,rgba(122,121,255,1) 100%);
+}
+.health-mz{
+background:rgba(35,184,153,1);
+}
+.health-cy{
+  background:rgba(88,207,255,1);
+}
+.margin12{
+  margin: 0 .6rem;
+}

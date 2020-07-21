@@ -1,0 +1,1247 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html,
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: PingFang-SC-Medium, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #333;
+    -webkit-overflow-scrolling: touch;
+}
+// html{
+//     font-size:125%;
+// }
+
+// body{
+//     font-size:.75rem;
+// }
+
+input, textarea {
+    font-family: PingFang-SC-Medium, sans-serif;
+     -webkit-appearance: none;
+}
+
+strong {
+    color: #000;
+}
+
+textarea {
+    border: 0;
+    outline: none;
+    resize : none;
+}
+
+#app,
+.app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+//默认背景为灰色 内容白色
+.content {
+    background: #fff;
+}
+
+//块状布局 默认10像素间隔，
+section {
+    background: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 2px 0px rgba(81, 168, 236, 0.2);
+    //小号间距 5像素
+    &.thick {
+        margin-bottom: 5px;
+    }
+    //小号间距 5像素
+    &.smaller {
+        margin-bottom: 2px;
+    }
+    &.bigger {
+        margin-bottom: 15px;
+    }
+    &.no-bottom {
+        margin-bottom: 0;
+    }
+    .title {
+        height: 2.25rem;
+        border-bottom: 1px solid #f4f4f4;
+        line-height: 2.25rem;
+        padding-left: .75rem;
+    }
+    .bottom {
+        height: 2.75rem;
+        line-height: 2.75rem;
+        padding-left: .75rem;
+        border-top: 1px solid #f4f4f4;
+    }
+    .content {
+        padding: .5rem .75rem;
+    }
+}
+
+// scroll距离顶部高度
+.scroll-query-more-bar {
+    top: 6.6rem !important;
+}
+.scroll-query-more {
+    top: 7.1rem !important;
+}
+.scroll-query-more-thick {
+    top: 6.85rem !important;
+}
+
+.clearfix {
+    @include clearfix();
+}
+.clear-border{
+    border: none !important;
+}
+.bg-gray {
+    background: $common-bg-color;
+}
+
+.bg-green {
+    background: $main-green;
+    color: #fff;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.f-largest{
+    font-size: .9rem;
+}
+.f-large{
+    font-size: .8rem;
+}
+.f-middle {
+    font-size: .75rem;
+}
+.f-small{
+    font-size: .65rem;
+}
+
+.f-strongest{
+    color: $main-red;
+}
+.f-identify {
+    color: $main-orange;
+}
+.f-strong{
+    color: $main-blue;
+}
+.f-normal {
+    color: $main-black;
+}
+.f-minor {
+    color: $main-gray;
+}
+.f-minorest {
+    color: $main-light-gray;
+}
+.f-dark-gray {
+    color: $main-dark-gray;
+}
+
+h3 {
+    @extend .f-large;
+    @extend .f-strong;
+    margin: 1rem;
+    text-align: center;
+}
+
+.text-dsc {
+    @extend .f-large;
+    margin: 1rem;
+    text-align: left;
+}
+
+
+
+header {
+    height: $header-height;
+    width: 100%;
+    line-height: $header-height;
+    background: $main-black;
+    color: #fff;
+    text-align: center;
+    font-size: .9rem;
+    .operation {
+        position: absolute;
+        right: .5rem;
+        font-size:.7rem;
+        top: 0;
+        // height: 3rem;
+    }
+    .center{
+        display: inline-block;
+        max-width: 220px;
+        @include ellipsis();
+    }
+    .back {
+        position: absolute;
+        left: 15px;
+        top: 0;
+        font-size: .7rem;
+        display: table;
+        .icon{
+            display: table-cell;
+            vertical-align: middle;
+            width: 11px;
+            background: url($redirect-url + $img-file-path + "back.png") no-repeat center;
+            background-size:100%;
+        }
+        .text{
+            display: inline-block;
+            padding-left:5px;
+        }
+    }
+    .center {}
+}
+
+
+
+.text-right {
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+%list-right-icon{
+
+}
+.container{
+    padding: 0 15px;
+}
+%arrow{
+    position: absolute;
+    display: block;
+    content:' ';
+    top:0;
+    width: 8px;
+    right:$common-padding;
+    bottom:0;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.arrow-right{
+    @extend %arrow;
+    background-image:url($redirect-url + $img-file-path + "more-arrow.png") ;
+}
+.arrow-right-blue{
+    @extend %arrow;
+    background-image:url($redirect-url + $img-file-path + "more-right-blue.png") ;
+}
+.arrow-right-guide{
+    @extend %arrow;
+    background-image:url($redirect-url + $img-file-path + "icon-navigation.png") ;
+}
+%row{
+    padding-left: $common-h-padding;
+    padding-right: $common-h-padding;
+}
+.arr-row{
+    position:relative;
+    @include border(bottom);
+    padding-right:$common-h-padding + .5rem;
+    background:#fff;
+    &::after{
+        @extend .arrow-right;
+    }
+}
+.row{
+    padding: 0.75rem;
+    &.thick {
+        padding: 0.5rem;
+    }
+    &.small {
+        padding: 0.25rem;
+    }
+    &.border-bottom {
+        border-bottom: 1px solid #e9e9e9;
+    }
+    .left {
+        text-align: left;
+        width: 4.5rem;
+        color: $main-gray;
+    }
+    .right {
+        margin-left: .5rem;
+    }
+    &.without-margin-bottom {
+        margin-bottom: -1.5rem;
+    }
+}
+// 各种列表开始
+.list {
+    background: #fff;
+    li{
+        @include border(bottom);
+        @extend %row;
+    }
+    .list-item {
+        padding:$common-h-padding;
+        &.with-ipt{
+            padding: 2px $common-h-padding;
+        }
+    }
+    .ipt-item{
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+    }
+    .thick-item{
+        padding: .45rem $common-h-padding ;
+        .left-text {
+            margin-right: .75rem;
+            width: 4rem;
+            @extend .f-minor;
+        }
+    }
+    .arr-item{
+        position: relative;
+        padding-right:$common-padding + .9rem;
+        &::after{
+            @extend .arrow-right;
+        }
+    }
+    .arr-item-blue{
+        position: relative;
+        padding-right:$common-padding + .9rem;
+        &::after{
+            @extend .arrow-right-blue;
+        }
+    }
+    .arr-item-guide{
+        position: relative;
+        padding-right:$common-padding + .9rem;
+        &::after{
+            @extend .arrow-right-guide;
+        }
+    }
+    .selected{
+        padding-right:$common-padding * 2;
+        position: relative;
+        &::after{
+            //上次选中图标
+            @extend %arrow;
+            width: 25px;
+            background-image:url($redirect-url + $img-file-path + "selected.png")
+        }
+    }
+}
+
+//选择医院/就诊凭证列表
+.list-select {
+    .list-item {
+        color: $main-blue;
+        padding: 0.6rem 0.75rem;
+        .voucher {
+            background: url($redirect-url + $img-file-path + "card-icon.png") left center no-repeat;
+            background-size: auto 100%;
+        }
+        .arr-row {
+            padding: 0 1rem 0 2rem;
+            border: none;
+            &::after {
+                right: 0;
+            }
+        }
+    }
+    .hospital-item {
+        color: $main-blue;
+        padding: 0.6rem 0.75rem;
+        .hospital {
+            background: url($redirect-url + $img-file-path + "hospital-icon.png") left center no-repeat;
+            background-size: auto 100%;
+        }
+        .arr-row {
+            padding: 0 1rem 0 2rem;
+            border: none;
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+
+//标题栏或者操作面板（有按钮）
+.panel{
+    height: 2rem;
+    line-height: 2rem;
+    @extend %row;
+    @include border(bottom);
+}
+
+.panel-title {
+    padding: .25rem .75rem;
+    @include border(top);
+    @include border(bottom);
+}
+
+.panel-title-large {
+    padding: .45rem .75rem;
+    @include border(top);
+    @include border(bottom);
+}
+
+.left-list {
+    width: 50%;
+    overflow-y: auto;
+    @include border(right);
+    background: $common-bg-color;
+    .list-item{
+        position: relative;
+        background: #e8ebed;
+    }
+    .active {
+        background: white;
+        color: $main-blue;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-left: 8px solid #fff;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+    }
+}
+.right-list {
+    width: 50%;
+    right: 0;
+    background: #fff;
+    overflow-y: auto;
+    .list-item{
+        border-bottom: none !important;
+    }
+    .active {
+        background: #e6f8ea;
+  }
+}
+//列表结束
+
+
+//参见确认挂号  用于页面部分漏底色 ，底部补白
+.gray-wrapper{
+    background: $common-bg-color;
+    padding-bottom:.1px;
+}
+//带箭头的一行
+
+.tips {
+    background: #dfe4e8;
+    color: #51abec;
+    @extend .f-small;
+    padding: 10px;
+    line-height: .9rem;
+    //text-align: center;
+}
+.top-tips{
+    background: #dfe4e8;
+    color: #51abec;
+    // text-align: center;
+    @extend .f-small;
+    padding-left: 0.75rem;
+    //line-height: 2rem;
+    //text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    &::before{
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        content: ' ';
+        vertical-align: sub;
+        background: url($redirect-url + $img-file-path + "tips.png") no-repeat;
+        background-size: 100%;
+    }
+}
+.big-tips{
+    height: 60px;
+    // line-height:90px;
+    padding-top:29px;
+    @include border(bottom);
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.doc-header {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url($redirect-url + $img-file-path + "ico-doctor.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.small{
+        width: 1.75rem;
+        height: 1.75rem;
+        margin:0;
+    }
+}
+
+.pay-header {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url($redirect-url + $img-file-path + "pay-success-bg.png") center no-repeat;
+    background-size: contain;
+    &.small{
+        width: 1.75rem;
+        height: 1.75rem;
+        margin:0;
+    }
+}
+
+.flex-row {
+    @include display-flex();
+}
+
+.flex-col {
+    @include display-flex();
+    @include flex-direction(column);
+}
+
+.flex-align-center {
+    @include align-items(center);
+}
+
+.flex-justify-center {
+    @include justify-content(center);
+}
+
+.flex-item {
+    @include flex(1);
+}
+
+.flex-1 {
+    @include flex(1);
+}
+.flex-2 {
+    @include flex(2);
+}
+.flex-3 {
+    @include flex(3);
+}
+.flex-4 {
+    @include flex(4);
+}
+.flex-5 {
+    @include flex(5);
+}
+.flex-6 {
+    @include flex(6);
+}
+.flex-7 {
+    @include flex(7);
+}
+.flex-8 {
+    @include flex(8);
+}
+.flex-9 {
+    @include flex(9);
+}
+
+.flex-width {
+    width: 1px;
+}
+
+.flex-height {
+    height: 1px;
+}
+
+.ellipsis {
+    @include ellipsis();
+}
+
+#alert {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 25px;
+    line-height: 25px;
+    bottom: 5rem;
+    text-align: center;
+    z-index:2000;
+    span {
+        background: rgba(0, 0, 0, .6);
+        display: inline-block;
+        color: #fff;
+        padding: 5px 10px;
+    }
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .3);
+    &.transparent {
+        background: rgba(0, 0, 0, 0);
+    }
+    .loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 60% auto 0 auto;
+        //border-radius: 10px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        background: url($redirect-url + $img-file-path + "loading.gif") no-repeat;
+        background-size: 100%;
+        p{
+            margin-top: 22px;
+            margin-left: 48px;
+            color:$main-blue;
+        }
+    }
+    .show-bar-code {
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        margin:auto;
+        height: 459px;
+        width: 95%;
+        text-align: center;
+        background-size:140px;
+        background-color: white;
+        box-shadow: 0 0 15px #444;
+    }
+}
+
+.box {
+    background: #fff;
+    margin-right: 10px;
+    margin-left:10px;
+    .title {
+        padding-bottom: 8px;
+        border-bottom: 1px solid #f4f4f4;
+    }
+    .content{
+        padding: 4px 0;
+    }
+    .bottom {
+        padding-top: 8px;
+        border-top: 1px solid #f4f4f4;
+    }
+}
+
+//通用字段展示样式
+.field {
+    @include display-flex();
+    @include align-items(center);
+    //width: 100%;
+    height: 2rem;
+    // line-height: 2rem;
+    @include border(bottom);
+    padding: 0 $common-padding;
+    &.last{
+        @include border(none);
+    }
+    dt {
+        text-align: left;
+        width: 4.5rem;
+        color: $main-gray;
+    }
+    dd{
+        width: 1px;
+        text-align: right;
+        @include flex(1);
+        @include ellipsis();
+    }
+    .right-item {
+        //float: right;
+        text-align: right;
+        //margin-right: 1.75rem;
+    }
+}
+
+.arr-down {
+    display: inline-block;
+    margin-left: 10px;
+    height: 7px;
+    width: 12px;
+    vertical-align: middle;
+    background-image: url($redirect-url + $img-file-path + "arr-down.png");
+    background-size:contain;
+}
+
+.arr-right {
+    float: right;
+    margin-left: 10px;
+    &::before {
+        display: inline-block;
+    }
+}
+
+.arr-gray-down {
+    display: inline-block;
+    margin-left: 5px;
+    height: 7px;
+    width: 12px;
+    vertical-align: middle;
+    background-image: url($redirect-url + $img-file-path + "more_gray_dwon.png") ;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.arr-gray-up {
+    display: inline-block;
+    margin-left: 5px;
+    height: 7px;
+    width: 12px;
+    vertical-align: middle;
+    background-image: url($redirect-url + $img-file-path + "more_gray_up.png") ;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.qc-code {
+  background: url($redirect-url + $img-file-path + "weixin-bg.png") center no-repeat;
+}
+
+.cardtype {
+    color: white;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.qrcode {
+    width: 175px;
+    padding-left: 20px;
+    margin: 0 auto;
+}
+.doctor-info {
+    @include display-flex();
+    @include align-items(center);
+    padding: 0.4rem 0 0.4rem 0.75rem;
+    .head {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .info {
+        @include flex(1);
+        @include ellipsis();
+        width: 1px;
+        padding-left:10px;
+    }
+    .remain {
+        margin-right: 10px;
+    }
+}
+
+.type-tag {
+    border-radius: 3px;
+    font-size: .35rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #fff;
+    position: relative;
+    left: 1.3rem;
+    top: 1.5rem;
+}
+.tag-zhuanjia {
+  background: $main-green;
+}
+.tag-putong {
+  background: $main-orange;
+}
+
+//
+.table-row, .icon-row {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    height: 3rem;
+    &.thick{
+        height: 2.25rem;
+    }
+    .col {
+        display: table-cell;
+        vertical-align: middle;
+        .have-serial-top {
+            margin: 0 0 .3rem 3rem;
+        }
+        .have-serial-middle {
+            margin: 0 0 .3rem 3rem;
+        }
+        .have-serial-bottom {
+            margin: 0 0 0 3rem;
+        }
+    }
+    .desc{
+        padding-left: 10px;
+    }
+}
+.input-area {
+    width: 100%;
+    height: 10rem;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 0;
+    outline: none;
+    resize: none;
+}
+
+.input-area-tips {
+  padding: 10px;
+  background: #fff;
+  text-align: right;
+}
+
+.icon-msg-h {
+    @include clearfix();
+    position: relative;
+    .icon {
+        float: left;
+        width: 27px;
+        height: 27px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    p {
+        float: left;
+        height: 27px;
+        line-height: 27px;
+        margin-left: 10px;
+    }
+}
+
+.tab-top{
+    @include display-flex();
+    background: #fff;
+    height: $tab-top-height;
+    @include border(bottom);
+    .tab-item{
+        @include flex(1);
+        text-align: center;
+        line-height: $tab-top-height - .2rem;
+        padding: 2px 0;
+    }
+    .tab-label{
+        display:inline-block;
+        padding: 0 1rem;
+        height: $tab-top-height - .2rem;
+    }
+    .active{
+        color:$main-blue;
+        border-bottom: 3px solid $main-blue;
+        @include transition(border-bottom-width 1s);
+    }
+}
+
+.hospital-logo-line {
+    height: 2rem;
+    width: 100%;
+    line-height: 2rem;
+    background: $main-blue;
+    color: #fff;
+    text-align: center;
+    font-size: 0.75rem;
+    .logo-img {
+        background-image: url($redirect-url + $img-file-path + "hisp-icon.png");
+        height: 0.75rem;
+        width: 0.7rem;
+        background-size: contain;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .logo-title {
+        display: inline-block;
+    }
+}
+
+.report-detail {
+    .report-table-container {
+        padding: 0.5rem 0;
+        background: #f8f8f8;
+        border: 0;
+        border-bottom: 1px solid #e9e9e9;
+        .report-table {
+            background-color: #f8f8f8;
+            width: 100%;
+            //@include border(all);
+            border-collapse: collapse;
+            tr {
+                //@include border(bottom);
+            }
+            td {
+                width: 32%;
+                height:1rem;
+                vertical-align:middle;
+                text-align: center;
+                &:first-child{
+                    //@include border(right);
+                    width: 36%;
+                }
+            }
+        }
+    }
+
+    .report-wrapper {
+        margin-top: 5px;
+        //padding: 0 20px;
+        background: #eff2f5;
+        margin-bottom: -10px;
+    }
+
+    .report-detail-title {
+        padding: 0.75rem;
+        background: #fff;
+        @include border(bottom);
+    }
+    .item-detail-title {
+        padding: 0.5rem 0 0.5rem 0;
+        background: #fff;
+        @include border(bottom);
+    }
+
+    //不要删除，仅仅给弹框使用
+    .report-detail-qrcode {
+        padding: 0.75rem;
+        background: #fff;
+        .info{
+            text-align: center;
+        }
+        .help{
+            //margin-top: 2rem;
+            .introduce-info {
+                width:70%;
+                margin-top: 10px;
+                display: inline-block;
+                text-align: left;
+            }
+            .zhj-img {
+                width: 62px;
+                height: 144px;
+                float: right;
+                margin-top: 1rem;
+                background-image: url($redirect-url + $img-file-path + "biaoge_image.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .bar-code-bg {
+            text-align: center;
+            margin: 1rem 0 0.6rem 0;
+        }
+    }
+
+    .report-item-img {
+        margin-right: .5rem;
+        background-image: url($redirect-url + $img-file-path + "presentation.png");
+    }
+}
+
+.bedsInfo {
+    .beds-header {
+        padding: 0.5rem 0;
+        background: white;
+        border: 0;
+        border-bottom: 1px solid #e9e9e9;
+        margin-bottom: .3rem;
+        .table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+            tr {
+            }
+            td {
+                height: 1rem;
+                vertical-align: middle;
+                text-align: center;
+                &:first-child {
+                    width: 36%;
+                }
+            }
+        }
+    }
+    .bedsInfo-container {
+        padding: 0.5rem 0;
+        background: white;
+        border: 0;
+        border-bottom: 1px solid #e9e9e9;
+        .table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+            tr {
+            }
+            td {
+                height:1rem;
+                vertical-align:middle;
+                text-align: center;
+                width: 36%;
+            }
+        }
+    }
+}
+
+.message-tips {
+    padding: 11.5px;
+    color: #51a8ec;
+    font-size: 13px;
+    background-color: #eff2f5;
+    p {
+        padding-left: 20px;
+        background: url($redirect-url + $img-file-path + "reminder.png") top left no-repeat;
+        background-size: 17px 17px;
+    }
+}
+
+.str-to-html {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*健康档案*/
+.table-list-info {
+    @include display-flex();
+    @include align-items(center);
+    position: relative;
+    margin-top: -.2rem;
+    margin-bottom: -.2rem;
+
+    .logo {
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        border-radius: 1rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #1FA9F0;
+        text-align: center;
+        color: white;
+    }
+
+    .info {
+        @include flex(1);
+        @include ellipsis();
+        width: 1px;
+        .min-bottom {
+            margin-bottom: .2rem;
+        }
+        .min-right {
+            margin-right: .2rem;
+        }
+        .min-left {
+            margin-left: .2rem;
+        }
+        .min-top {
+            margin-top: .1rem;
+            margin-bottom: .2rem;
+        }
+    }
+}
+
+.table-detail-field {
+    @include display-flex();
+    @include align-items(center);
+    height: 2rem;
+    @include border(bottom);
+    padding: 0 $common-padding;
+
+    .title-info-single {
+        text-align: left;
+    }
+    .title-info-left {
+        text-align: left;
+        margin-right: .2rem;
+    }
+    .title-info-right {
+        margin-left: .2rem;
+    }
+}
+.more-details {
+    display: flex;
+    @include border(bottom);
+    padding: 0 $common-padding;
+    span {
+        margin-bottom: $common-padding;
+    }
+}
+
+/*模糊查询搜索框样式*/
+.search-select-title {
+    @include display-flex();
+    @include align-items(center);
+    height: 2rem;
+    padding: 0 $common-padding;
+    &.last{
+        @include border(none);
+    }
+    dt {
+        text-align: center;
+        width: 2rem;
+        color: $main-black;
+        font-weight: bold;
+        margin-right: .25rem;
+    }
+    dd{
+        width: 1px;
+        text-align: left;
+        @include flex(1);
+        @include ellipsis();
+        color: $main-gray;
+    }
+}
+
+/*区域平台公共样式*/
+.smart-hospital {
+    .big-show {
+        font-family:PingFang-SC-Medium;
+        font-weight:bold;
+        border-radius: 8px;
+        border: 1px solid;
+        text-align: center;
+        border-color: $qy-gray-border;
+        font-size: 12px;
+        padding: 5px 0 5px 0;
+        .number-show {
+          font-size: 21px;
+        }
+        .units-show {
+          color: $qy-y-color;
+          font-size: 12px;
+            font-weight: normal;
+        }
+      }
+    .big-show-two-modules {
+        width: 96%;
+        margin: 4% 2% 5% 2%
+    }
+    .big-show-four-modules {
+        width: 92%;
+        margin: 7% 4%;
+    }
+    .big-show-three {
+        font-weight:bold;
+        border-radius: 8px;
+        border: 1px solid;
+        text-align: center;
+        width: 94%;
+        margin: 4% 3% 5% 3%;
+        border-color: $qy-gray-border;
+        font-size: 12px;
+        padding: 5px 0 5px 0;
+        .number-show {
+            font-size: 21px;
+        }
+        .units-show {
+            color: $qy-y-color;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        .percent-show {
+            color: $qy-title-small-color;
+            font-size: 12px;
+        }
+    }
+
+    .disable-click {
+          background-color: $qy-gray-bg;
+          border-color: $qy-gray-bg;
+      }
+    .modules-title {
+          font-weight: bolder;
+          margin: 0 4% 2% 4%;
+          font-size: 18px;
+      }
+    .refresh-time {
+          font-size: 12px;
+          margin-top: 4px;
+          float: right;
+          font-weight: 100;
+      }
+    .mzhzty-title-show {
+        width: 92%;
+        margin: 0 4%;
+        font-size: 12px;
+        font-family: PingFangSC-Medium;
+        font-weight: bold;
+        .num-min-sec-show {
+          font-size: 21px;
+        }
+        .right {
+          color: $qy-baby-blue;
+        }
+        .left {
+          color: $qy-blue;
+        }
+        .units-min-sec-show {
+          font-size: 12px;
+        }
+        .light-gray {
+            font-weight: normal;
+            color: $qy-y-color;
+        }
+        .bottom-title {
+            font-weight: bold;
+            font-size: 10px;
+            color: $qy-title-small-color;
+        }
+    }
+    .wait-duration-trend {
+        margin-left: 2px;
+        width: 0.4rem;
+        height: 100%;
+    }
+    .no-data-tips {
+        font-size: 13px;
+    }
+}

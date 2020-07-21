@@ -1,0 +1,56 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "sysTime": 1482974239274,
+  "data": [
+    {
+      "deptId": "234234",
+      "deptName": "内科",
+      "doctId": "12312",
+      "doctName": "测试1",
+      "regId": "12312",
+      "name": "李三",
+      "degree": null,
+      "isEvaluative": "0",
+      "visitDate": "2019-09-19",
+      "phaseDesc": "哈哈哈",
+      "rankName": "副主任医师",
+      "typeName": "",
+      "evaluation": "",
+      "extraMap": {}
+    },
+    {
+      "deptId": "234234",
+      "deptName": "内科",
+      "doctId": "12312",
+      "doctName": "测试1",
+      "regId": "12312",
+      "name": "李三",
+      "degree": "1",
+      "isEvaluative": "0",
+      "visitDate": "2019-09-19",
+      "phaseDesc": "哈哈哈",
+      "rankName": "副主任医师",
+      "typeName": "",
+      "evaluation": "",
+      "extraMap": {}
+    },
+	{
+	  "deptId": "234234",
+	  "deptName": "内科",
+	  "doctId": "12312",
+	  "doctName": "测试1",
+	  "regId": "12312",
+	  "name": "李三",
+	  "degree": "1",
+	  "isEvaluative": "1",
+	  "visitDate": "2019-09-19",
+	  "phaseDesc": "哈哈哈",
+	  "rankName": "副主任医师",
+	  "typeName": "",
+	  "evaluation": "1",
+	  "extraMap": {}
+	}
+  ]
+}

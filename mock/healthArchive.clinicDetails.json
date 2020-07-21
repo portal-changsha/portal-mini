@@ -1,0 +1,17 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data":{
+    "diagnoseTime": "2019-11-01",
+    "hospitalName": "八医院八医院八医院八医院八医院八医院八医院",
+    "deptName": "内科内科内科内科内科内科内科内科内科",
+    "doctName": "崔西玉",
+    "diagnose": "这是一段文字说明这是一段文字说明这是一这是一段文字说明这是一段文字说明这是一这是一段文字说明这是一段文字说明这是一这是一段文字说明这是一段文字说明这是一",
+    "extBid": "123456"
+  }
+}

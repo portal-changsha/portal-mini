@@ -1,0 +1,62 @@
+{
+  "resultCode": "1",
+  "resultMsg": "返回成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "deptId": "100",
+      "deptName": "内科",
+      "children": [
+        {
+          "deptId": "104",
+          "deptName": "骨伤科门诊(本)",
+          "isKey": "1",
+          "children": "0"
+        }
+      ]
+    },
+    {
+      "deptId": "101",
+      "deptName": "肾内科",
+      "children": [
+        {
+          "deptId": "100",
+          "deptName": "泌尿内科",
+          "isKey": "1",
+          "children": "0"
+        },
+        {
+          "deptId": "103",
+          "deptName": "妇内科",
+          "children": "0"
+        }
+      ]
+    },
+    {
+      "deptId": "102",
+      "deptName": "内分泌科",
+      "children": [
+        {
+          "deptId": "100",
+          "deptName": "泌尿内科",
+          "isKey": "1",
+          "children": "0"
+        },
+        {
+          "deptId": "103",
+          "deptName": "妇内科",
+          "children": "0"
+        },
+        {
+          "deptId": "104",
+          "deptName": "肾内科",
+          "children": "0"
+        }
+      ]
+    }
+  ]
+}

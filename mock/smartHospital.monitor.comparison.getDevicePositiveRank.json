@@ -1,0 +1,20 @@
+{
+    "data": {
+        "examNum": "5233",
+        "examPositiveNum": "4345",
+        "examPositivePrecent": "0.8303",
+        "examPositiveRank": [
+            {
+                "itemName": "长沙市中医医院",
+                "precent": "0.797"
+            },
+            {
+                "itemName": "长沙市第一医院",
+                "precent": "0.9413"
+            }
+        ]
+    },
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 0
+}

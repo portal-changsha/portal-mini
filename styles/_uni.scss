@@ -1,0 +1,8 @@
+// 更改uni自带的全局样式
+
+uni-button:after{
+	border: 0;
+}
+.uni-collapse-cell__title{
+  background: #fff;
+}

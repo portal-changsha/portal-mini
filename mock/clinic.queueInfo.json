@@ -1,0 +1,20 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "deptName": "内科",
+      "doctName": "刘德",
+      "location": "本部",
+      "currentNo": "234234",
+      "waitNo": "234243",
+      "status": "1",
+      "extraMap": {}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "data": {
+        "birthday": "",
+        "certType": "",
+        "address": "",
+        "extraMap": {},
+        "mail": "",
+        "sex": "1",
+        "avatar": "http://thirdwx.qlogo.cn/mmopen/vi_32/hFicWZ5po5Cr6PibyvvwvxsHq9Vlrsvt2ibichicxPExJROiafqGHWmpNHicqrARia7I5hBYIMzThed4OtnEsY9X0yfUhA/132",
+        "cityId": "",
+        "mobileNo": "",
+        "clientAppId": "{\"3\":\"ohMpu1BrvL3jLtgo7234234n9Y\",\"7\":\"oubkN5Gmub93S23423423sM\"}",
+        "provinceId": "",
+        "certNo": "",
+        "cityName": "长沙",
+        "countyId": "",
+        "name": "Jackey",
+        "provinceName": "",
+        "countyName": "",
+        "role": "1"
+    },
+    "tokenId": "",
+    "resultCode": "1",
+    "errorCode": "",
+    "sysTime": 1564562955489,
+    "resultMsg": ""
+}

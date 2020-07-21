@@ -1,0 +1,24 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [{
+    "directoryCode": "C0101.02",
+    "inHospitalRecordNo": "8169846328227328",
+    "extraMap": {},
+    "inpatientHospital": "",
+    "inpatientDiagnosis": "null",
+    "inHospitalDate": "2019-07-12"
+  },{
+    "directoryCode": "C0101.03",
+    "inHospitalRecordNo": "81698463282273282",
+    "extraMap": {},
+    "inpatientHospital": "宁乡县人民医院2",
+    "inpatientDiagnosis": "新冠肺炎2",
+    "inHospitalDate": "2019-07-12"
+  }]
+}

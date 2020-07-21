@@ -1,0 +1,17 @@
+{
+  "data": {
+    "cfTotal": 95663,
+    "fzy": 24958.55,
+    "fzyRank": 0.95,
+    "jby": 458175.44,
+    "jbyRank": 17.4,
+    "kjy": 191061.11,
+    "kjyRank": 7.26,
+    "mjz": 108.58013277255483,
+    "mjzTotal": 2633285.38,
+    "yzb": 29.58
+  },
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "sysTime": 1585287777826
+}

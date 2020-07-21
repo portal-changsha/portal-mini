@@ -1,0 +1,49 @@
+{
+    "data": {
+        "rank": [{
+                "ITEM": "艾滋病",
+                "TOTAL": 3997
+            },
+            {
+                "ITEM": "支气管炎",
+                "TOTAL": 2535
+            },
+            {
+                "ITEM": "发热",
+                "TOTAL": 2517
+            },
+            {
+                "ITEM": "腹痛",
+                "TOTAL": 2145
+            },
+            {
+                "ITEM": "咳嗽",
+                "TOTAL": 2132
+            },
+            {
+                "ITEM": "风热证",
+                "TOTAL": 2105
+            },
+            {
+                "ITEM": "动物伤",
+                "TOTAL": 1752
+            },
+            {
+                "ITEM": "流行性感冒",
+                "TOTAL": 1692
+            },
+            {
+                "ITEM": "高血压",
+                "TOTAL": 1681
+            },
+            {
+                "ITEM": "焦虑状态",
+                "TOTAL": 1168
+            }
+        ],
+        "total": 81194
+    },
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 0
+}

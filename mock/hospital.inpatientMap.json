@@ -1,0 +1,47 @@
+{
+  "resultCode": "1",
+  "resultMsg": "返回成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "araeAddr": "彭州市致和镇南三环二段257号",
+    "areaId": "10210050",
+    "areaName": "10210050",
+    "extraMap": null,
+    "maps": [
+      {
+        "mapName": "",
+        "mapSort": "1",
+        "mapUrl": ""
+      },
+      {
+        "mapName": "二楼二楼二楼二楼二楼二楼二楼二楼二楼二楼",
+        "mapSort": "2",
+        "mapUrl": "http://pzwjw-imts.hngwmt.com/archive/resource/20181130/二楼.JPG"
+      },
+      {
+        "mapName": "三楼",
+        "mapSort": "3",
+        "mapUrl": "http://pzwjw-imts.hngwmt.com/archive/resource/20181130/三楼.JPG"
+      },
+      {
+        "mapName": "四楼",
+        "mapSort": "4",
+        "mapUrl": "http://pzwjw-imts.hngwmt.com/archive/resource/20181130/四楼.JPG"
+      },
+      {
+        "mapName": "五楼",
+        "mapSort": "5",
+        "mapUrl": ""
+      },
+      {
+        "mapName": "六楼",
+        "mapSort": "6",
+        "mapUrl": "http://pzwjw-imts.hngwmt.com/archive/resource/20181130/六楼.JPG"
+      }
+    ]
+  }
+}

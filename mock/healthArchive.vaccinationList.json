@@ -1,0 +1,78 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "vaccinateName": "name1",
+      "vaccinateDate": "1999-02-02",
+      "vaccinateOrganization": "长沙市",
+      "inoculator": "接种人",
+      "inoculationNum": "疫苗编号",
+      "inoculationManufacturer": "疫苗生产厂家",
+      "inoculationSite": "接种部位",
+      "inoculatorDose": "剂次",
+      "inoculatorDoctor": "接种医生",
+      "sideReactionRecords": [
+        {
+          "sideReactionName": "副反应名称1",
+          "sideReactionDate": "副反应日期1"
+        },
+        {
+          "sideReactionName": "副反应名称2",
+          "sideReactionDate": "副反应日期2"
+        },
+        {
+          "sideReactionName": "副反应名称3",
+          "sideReactionDate": "副反应日期3"
+        }
+      ]
+    },
+    {
+      "vaccinateName": "name2",
+      "vaccinateDate": "1999-02-02",
+      "vaccinateOrganization": "长沙市222222222222222222222222222222",
+      "inoculator": "接种人",
+      "inoculationNum": "疫苗编号",
+      "inoculationManufacturer": "疫苗生产厂家",
+      "inoculationSite": "接种部位",
+      "inoculatorDose": "剂次",
+      "inoculatorDoctor": "接种医生",
+      "sideReactionRecords": [
+        {
+          "sideReactionName": "副反应名称1",
+          "sideReactionDate": "副反应日期1"
+        },
+        {
+          "sideReactionName": "副反应名称2",
+          "sideReactionDate": "副反应日期2"
+        }
+      ]
+    },
+    {
+      "vaccinateName": "name3",
+      "vaccinateDate": "1999-12-02",
+      "vaccinateOrganization": "长沙市3",
+      "inoculator": "接种人",
+      "inoculationNum": "疫苗编号",
+      "inoculationManufacturer": "疫苗生产厂家",
+      "inoculationSite": "接种部位",
+      "inoculatorDose": "剂次",
+      "inoculatorDoctor": "接种医生",
+      "sideReactionRecords": [
+        {
+          "sideReactionName": "副反应名称1",
+          "sideReactionDate": "副反应日期1"
+        },
+        {
+          "sideReactionName": "副反应名称2",
+          "sideReactionDate": "副反应日期2"
+        }
+      ]
+    }
+  ]
+}

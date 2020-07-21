@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "ORGCODE": "430105001",
+            "ORGNAME": "长沙市第一医院",
+            "TOTAL": "39688"
+        },
+        {
+            "ORGCODE": "430121002",
+            "ORGNAME": "长沙市中医医院",
+            "TOTAL": "41506"
+        }
+    ],
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 1
+}

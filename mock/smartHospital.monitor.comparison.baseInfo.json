@@ -1,0 +1,185 @@
+{
+  "data": {
+    "totalSourceNum": 4935,
+    "restSourceNum": 4577,
+    "regPreNum": 145,
+    "regTodayNum": 358,
+    "regPrePrecent": 0.405,
+    "examPreNum": 145,
+    "examTodayNum": 149,
+    "examPrePrecent": 1,
+    "allRegTotalNumRank": [
+      {
+        "name": "长沙市中医医院",
+        "value": 2871
+      },
+      {
+        "name": "长沙市第一医院",
+        "value": 2064
+      }
+    ],
+    "allRestSourceNumRank": [
+      {
+        "name": "长沙市中医医院",
+        "value": 2696
+      },
+      {
+        "name": "长沙市第一医院",
+        "value": 1881
+      }
+    ],
+    "allRegTodayNumRank": [
+      {
+        "name": "长沙市第一医院",
+        "value": 183
+      },
+      {
+        "name": "长沙市中医医院",
+        "value": 175
+      }
+    ],
+    "allRegPreNumRank": [
+      {
+        "name": "长沙市第一医院",
+        "value": 83
+      },
+      {
+        "name": "长沙市中医医院",
+        "value": 62
+      }
+    ],
+    "regCurrentWeeks": [
+      {
+        "orgCode": "430105001",
+        "orgName": "长沙市第一医院",
+        "regCurrentWeeks": [
+          {
+            "dateStr": "2020-03-02",
+            "weekends": "周一",
+            "value": 0.3144
+          },
+          {
+            "dateStr": "2020-03-03",
+            "weekends": "周二",
+            "value": 0.3211
+          },
+          {
+            "dateStr": "2020-03-04",
+            "weekends": "周三",
+            "value": 0.2753
+          },
+          {
+            "dateStr": "2020-03-05",
+            "weekends": "周四",
+            "value": 0.4536
+          }
+        ]
+      },
+      {
+        "orgCode": "430121002",
+        "orgName": "长沙市中医医院",
+        "regCurrentWeeks": [
+          {
+            "dateStr": "2020-03-02",
+            "weekends": "周一",
+            "value": 0.1444
+          },
+          {
+            "dateStr": "2020-03-03",
+            "weekends": "周二",
+            "value": 0.1177
+          },
+          {
+            "dateStr": "2020-03-04",
+            "weekends": "周三",
+            "value": 0.1172
+          },
+          {
+            "dateStr": "2020-03-05",
+            "weekends": "周四",
+            "value": 0.3543
+          }
+        ]
+      }
+    ],
+    "allExamTodayNumRank": [
+      {
+        "name": "长沙市中医医院",
+        "value": 138
+      },
+      {
+        "name": "长沙市第一医院",
+        "value": 11
+      }
+    ],
+    "allExamPreNumRank": [
+      {
+        "name": "长沙市中医医院",
+        "value": 138
+      },
+      {
+        "name": "长沙市第一医院",
+        "value": 7
+      }
+    ],
+    "examCurrentWeeks": [
+      {
+        "orgCode": "430105001",
+        "orgName": "长沙市第一医院",
+        "examCurrentWeeks": [
+          {
+            "dateStr": "2020-03-02",
+            "weekends": "周一",
+            "value": 0.934
+          },
+          {
+            "dateStr": "2020-03-03",
+            "weekends": "周二",
+            "value": 0.9235
+          },
+          {
+            "dateStr": "2020-03-04",
+            "weekends": "周三",
+            "value": 0.895
+          },
+          {
+            "dateStr": "2020-03-05",
+            "weekends": "周四",
+            "value": 0.6364
+          }
+        ]
+      },
+      {
+        "orgCode": "430121002",
+        "orgName": "长沙市中医医院",
+        "examCurrentWeeks": [
+          {
+            "dateStr": "2020-03-02",
+            "weekends": "周一",
+            "value": 1
+          },
+          {
+            "dateStr": "2020-03-03",
+            "weekends": "周二",
+            "value": 1
+          },
+          {
+            "dateStr": "2020-03-04",
+            "weekends": "周三",
+            "value": 1
+          },
+          {
+            "dateStr": "2020-03-05",
+            "weekends": "周四",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "extraMap": {
+      "hosId": "2222"
+    }
+  },
+  "resultCode": "1",
+  "resultMsg": "成功"
+}

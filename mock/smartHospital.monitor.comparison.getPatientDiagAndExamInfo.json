@@ -1,0 +1,48 @@
+{
+    "data":{
+        "diagInfo": {
+            "realDiagNum": 756, 
+            "diagPrecent": 0.828, 
+            "diagPrecentAndNumRank": [
+                {
+                    "completeRate": 0.8418, 
+                    "orgCode": "430121002", 
+                    "orgName": "长沙市中医医院",
+                    "actServTodayCount":33,
+                    "regTodayCount":62
+                }, 
+                {
+                    "completeRate": 0.8167, 
+                    "orgCode": "430105001", 
+                    "orgName": "长沙市第一医院",
+                    "actServTodayCount":0,
+                    "regTodayCount":0
+                }
+            ]
+        }, 
+        "examInfo": {
+            "realExamNum": 47, 
+            "realExamPrecent": 0.8393, 
+            "examPrecentRank": [
+                {
+                    "completeRate": 0.8393, 
+                    "orgCode": "430105001", 
+                    "orgName": "长沙市第一医院", 
+                    "examCount": 56, 
+                    "realExamNum": 47
+                }, 
+                {
+                    "completeRate": 0, 
+                    "orgCode": "430121002", 
+                    "orgName": "长沙市中医医院", 
+                    "examCount": 0, 
+                    "realExamNum": 0
+                }
+            ]
+        }
+    },
+    "extraMap": { },
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 0
+}

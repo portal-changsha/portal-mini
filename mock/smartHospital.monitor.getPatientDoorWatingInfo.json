@@ -1,0 +1,44 @@
+{
+  "data": {
+    "averageWaitHours": 2043.5,
+    "examWaitDurationTrend": -1,
+    "averageExamHoursRank": {
+      "time": [
+        "8:00",
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00"
+      ],
+      "value": [12.45, 10.11, 16.23, 20.44, 21.42, 20.12, 22.34, 35.22]
+    },
+    "averageExamHours": 2132.388,
+    "waitDurationTrend": -1,
+    "averageExamHoursYestoday": 3506.898,
+    "averageWaitHoursRank": {
+      "time": [
+        "8:00",
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00"
+      ],
+      "value": [29.44, 36.24, 32.34, 31.23, 23.44, 34.32, 11.23, 14.34]
+    },
+    "averageWaitHoursYestoday": 2043.5
+  },
+  "resultCode": "1",
+  "resultMsg": "成功"
+}

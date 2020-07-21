@@ -1,0 +1,16 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "inHosCondition": "入院病情啊啊",
+    "inHosDiagnosis": "入院诊断啊啊",
+    "inHosPath": "入院途径啊啊",
+    "inHosReasons": "入院原因啊啊",
+    "inHosSymptoms": "住院症状啊啊"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "unifyId": "",
+      "unifyName": "",
+      "unifyDesc": "",
+      "extraMap": {},
+      "depts": [
+        {
+          "hospitalId": "23423",
+          "hospitalName": "1长沙市第八医院（中医医院）",
+          "areaId": "23423",
+          "areaName": "星沙本部(星沙)",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        },
+        {
+          "hospitalId": "23423",
+          "hospitalName": "2长沙市第八医院",
+          "areaId": "23423",
+          "areaName": "星沙本部（河西）",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        },
+        {
+          "hospitalId": "23423",
+          "hospitalName": "3长沙市第八医院（中医医院）",
+          "areaId": "23423",
+          "areaName": "星沙本部",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        },
+        {
+          "hospitalId": "23423",
+          "hospitalName": "3长沙市第八医院（中医医院）",
+          "areaId": "23423",
+          "areaName": "星沙本部",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        },
+        {
+          "hospitalId": "23423",
+          "hospitalName": "3长沙市第八医院（中医医院）",
+          "areaId": "23423",
+          "areaName": "星沙本部",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        },
+        {
+          "hospitalId": "23423",
+          "hospitalName": "3长沙市第八医院（中医医院）",
+          "areaId": "23423",
+          "areaName": "星沙本部",
+          "deptId": "234234243",
+          "deptName": "不知道什么地方的一个内科",
+          "extraMap": {}
+        }
+      ]
+    }
+  ]
+}

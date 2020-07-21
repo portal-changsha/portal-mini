@@ -1,0 +1,466 @@
+{
+    "data": {
+        "hosId": "40001",
+        "totalSourceNum": 4582,
+        "examPreNum": 113,
+        "regPreRankByDoctor": [
+            {
+                "hisDoctorId": null,
+                "doctName": "肖钢",
+                "doctRegCount": 0,
+                "doctPreRegCount": 31,
+                "doctRegTotalNum": 0,
+                "deptActServCount": 0,
+                "regUseRate": null,
+                "haveCount": 0,
+                "outCount": 0
+            }
+        ],
+        "examTodayNum": 129,
+        "regPreRankByDepart": [
+            {
+                "deptName": "HIV门诊",
+                "hisDepartmentId": null,
+                "deptRegCount": 0,
+                "deptPreRegCount": 55,
+                "deptActServCount": 0,
+                "deptWaitDuration": 0.0,
+                "deptRegTotalNum": 0,
+                "deptClinicFee": null,
+                "doctDetail": null,
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": null,
+                "outCount": 0
+            }
+        ],
+        "examPrePrecent": 0.8760,
+        "regPrePrecent": 0.3243,
+        "regPreviousWeeks": [
+            {
+                "dateStr": "2020-02-24",
+                "weekends": "周一",
+                "value": 0.3163
+            },
+            {
+                "dateStr": "2020-02-25",
+                "weekends": "周二",
+                "value": 0.3057
+            },
+            {
+                "dateStr": "2020-02-26",
+                "weekends": "周三",
+                "value": 0.2687
+            },
+            {
+                "dateStr": "2020-02-27",
+                "weekends": "周四",
+                "value": 0.3084
+            },
+            {
+                "dateStr": "2020-02-28",
+                "weekends": "周五",
+                "value": 0.2930
+            },
+            {
+                "dateStr": "2020-02-29",
+                "weekends": "周六",
+                "value": 0.0450
+            },
+            {
+                "dateStr": "2020-03-01",
+                "weekends": "周日",
+                "value": 0.0049
+            }
+        ],
+        "regCurrentWeeks": [
+            {
+                "dateStr": "2020-03-02",
+                "weekends": "周一",
+                "value": 0.3144
+            },
+            {
+                "dateStr": "2020-03-03",
+                "weekends": "周二",
+                "value": 0.3211
+            },
+            {
+                "dateStr": "2020-03-04",
+                "weekends": "周三",
+                "value": 0.3243
+            }
+        ],
+        "examPreviousWeeks": [
+            {
+                "dateStr": "2020-02-24",
+                "weekends": "周一",
+                "value": 0.8811
+            },
+            {
+                "dateStr": "2020-02-25",
+                "weekends": "周二",
+                "value": 0.8977
+            },
+            {
+                "dateStr": "2020-02-26",
+                "weekends": "周三",
+                "value": 0.8357
+            },
+            {
+                "dateStr": "2020-02-27",
+                "weekends": "周四",
+                "value": 0.8304
+            },
+            {
+                "dateStr": "2020-02-28",
+                "weekends": "周五",
+                "value": 0.8553
+            },
+            {
+                "dateStr": "2020-02-29",
+                "weekends": "周六",
+                "value": 0.5833
+            },
+            {
+                "dateStr": "2020-03-01",
+                "weekends": "周日",
+                "value": 0.5323
+            }
+        ],
+        "examPreRank": [
+            {
+                "itemName": "超声",
+                "examCount": 60,
+                "reservationCount": 60,
+                "machineCount": 10,
+                "completeRate": "1",
+                "times": 650,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "CT",
+                "examCount": 52,
+                "reservationCount": 41,
+                "machineCount": 3,
+                "completeRate": "0.7885",
+                "times": 195,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "DR",
+                "examCount": 10,
+                "reservationCount": 9,
+                "machineCount": 5,
+                "completeRate": "0.9",
+                "times": 400,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "MR",
+                "examCount": 3,
+                "reservationCount": 2,
+                "machineCount": 1,
+                "completeRate": "0.6667",
+                "times": 80,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "内窥镜",
+                "examCount": 1,
+                "reservationCount": 1,
+                "machineCount": 3,
+                "completeRate": "1",
+                "times": 100,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "CR",
+                "examCount": 0,
+                "reservationCount": 0,
+                "machineCount": 2,
+                "completeRate": "0",
+                "times": 60,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "DSA",
+                "examCount": 0,
+                "reservationCount": 0,
+                "machineCount": 1,
+                "completeRate": "0",
+                "times": 10,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "数字胃肠",
+                "examCount": 3,
+                "reservationCount": 0,
+                "machineCount": 1,
+                "completeRate": "0",
+                "times": 8,
+                "hasExamCount": 0
+            },
+            {
+                "itemName": "乳腺钼靶",
+                "examCount": 0,
+                "reservationCount": 0,
+                "machineCount": 1,
+                "completeRate": "0",
+                "times": 10,
+                "hasExamCount": 0
+            }
+        ],
+        "doctorSourceRank": [
+            {
+                "hisDoctorId": "2671",
+                "doctName": "王敏",
+                "doctRegCount": 52,
+                "doctPreRegCount": 24,
+                "doctRegTotalNum": 56,
+                "deptActServCount": 52,
+                "regUseRate": 0.9286,
+                "haveCount": 0,
+                "outCount": 0
+            },
+            {
+                "hisDoctorId": "2670",
+                "doctName": "肖钢",
+                "doctRegCount": 63,
+                "doctPreRegCount": 31,
+                "doctRegTotalNum": 85,
+                "deptActServCount": 61,
+                "regUseRate": 0.7412,
+                "haveCount": 0,
+                "outCount": 0
+            },
+            {
+                "hisDoctorId": "8723",
+                "doctName": "陈思岑",
+                "doctRegCount": 17,
+                "doctPreRegCount": 16,
+                "doctRegTotalNum": 84,
+                "deptActServCount": 17,
+                "regUseRate": 0.2024,
+                "haveCount": 0,
+                "outCount": 0
+            },
+            {
+                "hisDoctorId": "2835",
+                "doctName": "鲁学明",
+                "doctRegCount": 16,
+                "doctPreRegCount": 7,
+                "doctRegTotalNum": 84,
+                "deptActServCount": 15,
+                "regUseRate": 0.1905,
+                "haveCount": 0,
+                "outCount": 0
+            },
+            {
+                "hisDoctorId": "2222",
+                "doctName": "戴月梅",
+                "doctRegCount": 14,
+                "doctPreRegCount": 2,
+                "doctRegTotalNum": 84,
+                "deptActServCount": 13,
+                "regUseRate": 0.1667,
+                "haveCount": 0,
+                "outCount": 0
+            }
+        ],
+        "departSourceRank": [
+            {
+                "deptName": "HIV门诊",
+                "hisDepartmentId": "2202",
+                "deptRegCount": 115,
+                "deptPreRegCount": 55,
+                "deptActServCount": 113,
+                "deptWaitDuration": 3397.1,
+                "deptRegTotalNum": 141,
+                "deptClinicFee": "3880888",
+                "doctDetail": [
+                    {
+                        "hisDoctorId": "2670",
+                        "doctName": "肖钢",
+                        "doctRegCount": 63,
+                        "doctPreRegCount": 31,
+                        "doctRegTotalNum": 85,
+                        "deptActServCount": 61,
+                        "regUseRate": 0.7412,
+                        "haveCount": 0,
+                        "outCount": 0
+                    },
+                    {
+                        "hisDoctorId": "2671",
+                        "doctName": "王敏",
+                        "doctRegCount": 52,
+                        "doctPreRegCount": 24,
+                        "doctRegTotalNum": 56,
+                        "deptActServCount": 52,
+                        "regUseRate": 0.9286,
+                        "haveCount": 0,
+                        "outCount": 0
+                    }
+                ],
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": 0.8156,
+                "outCount": 0
+            },
+            {
+                "deptName": "呼吸内科门诊",
+                "hisDepartmentId": "2104",
+                "deptRegCount": 27,
+                "deptPreRegCount": 4,
+                "deptActServCount": 10,
+                "deptWaitDuration": 609.8,
+                "deptRegTotalNum": 101,
+                "deptClinicFee": "845061",
+                "doctDetail": [
+                    {
+                        "hisDoctorId": "867",
+                        "doctName": "邓洁",
+                        "doctRegCount": 10,
+                        "doctPreRegCount": 4,
+                        "doctRegTotalNum": 0,
+                        "deptActServCount": 9,
+                        "regUseRate": 0,
+                        "haveCount": 0,
+                        "outCount": 0
+                    },
+                    {
+                        "hisDoctorId": "138",
+                        "doctName": "刘萍",
+                        "doctRegCount": 17,
+                        "doctPreRegCount": 0,
+                        "doctRegTotalNum": 0,
+                        "deptActServCount": 0,
+                        "regUseRate": 0,
+                        "haveCount": 0,
+                        "outCount": 0
+                    }
+                ],
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": 0.2673,
+                "outCount": 0
+            },
+            {
+                "deptName": "产科门诊",
+                "hisDepartmentId": "2124",
+                "deptRegCount": 19,
+                "deptPreRegCount": 16,
+                "deptActServCount": 19,
+                "deptWaitDuration": 2364.74,
+                "deptRegTotalNum": 84,
+                "deptClinicFee": "353712",
+                "doctDetail": [
+                    {
+                        "hisDoctorId": "8723",
+                        "doctName": "陈思岑",
+                        "doctRegCount": 17,
+                        "doctPreRegCount": 16,
+                        "doctRegTotalNum": 84,
+                        "deptActServCount": 17,
+                        "regUseRate": 0.2024,
+                        "haveCount": 0,
+                        "outCount": 0
+                    }
+                ],
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": 0.2262,
+                "outCount": 0
+            },
+            {
+                "deptName": "内分泌与代谢门诊",
+                "hisDepartmentId": "2112",
+                "deptRegCount": 18,
+                "deptPreRegCount": 8,
+                "deptActServCount": 18,
+                "deptWaitDuration": 1715.44,
+                "deptRegTotalNum": 84,
+                "deptClinicFee": "468443",
+                "doctDetail": [
+                    {
+                        "hisDoctorId": "822",
+                        "doctName": "皮银珍",
+                        "doctRegCount": 17,
+                        "doctPreRegCount": 8,
+                        "doctRegTotalNum": 0,
+                        "deptActServCount": 16,
+                        "regUseRate": 0,
+                        "haveCount": 0,
+                        "outCount": 0
+                    },
+                    {
+                        "hisDoctorId": "1733",
+                        "doctName": "刘罗坤",
+                        "doctRegCount": 1,
+                        "doctPreRegCount": 0,
+                        "doctRegTotalNum": 0,
+                        "deptActServCount": 1,
+                        "regUseRate": 0,
+                        "haveCount": 0,
+                        "outCount": 0
+                    }
+                ],
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": 0.2143,
+                "outCount": 0
+            },
+            {
+                "deptName": "结核门诊",
+                "hisDepartmentId": "2135",
+                "deptRegCount": 16,
+                "deptPreRegCount": 7,
+                "deptActServCount": 15,
+                "deptWaitDuration": 1805.07,
+                "deptRegTotalNum": 84,
+                "deptClinicFee": "515735",
+                "doctDetail": [
+                    {
+                        "hisDoctorId": "2835",
+                        "doctName": "鲁学明",
+                        "doctRegCount": 16,
+                        "doctPreRegCount": 7,
+                        "doctRegTotalNum": 84,
+                        "deptActServCount": 15,
+                        "regUseRate": 0.1905,
+                        "haveCount": 0,
+                        "outCount": 0
+                    }
+                ],
+                "hisDoctList": null,
+                "completeRate": null,
+                "regUseRate": 0.1905,
+                "outCount": 0
+            }
+        ],
+        "regPreNum": 168,
+        "regTodayNum": 518,
+        "examCurrentWeeks": [
+            {
+                "dateStr": "2020-03-02",
+                "weekends": "周一",
+                "value": 0.9340
+            },
+            {
+                "dateStr": "2020-03-03",
+                "weekends": "周二",
+                "value": 0.9231
+            },
+            {
+                "dateStr": "2020-03-04",
+                "weekends": "周三",
+                "value": 0.8760
+            }
+        ],
+        "restSourceNum": 4064,
+        "extraMap": {
+            "hosId": "2222"
+        }
+    },
+    "resultCode": "1",
+    "resultMsg": "成功"
+}

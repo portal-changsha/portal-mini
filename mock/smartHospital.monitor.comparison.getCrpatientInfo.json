@@ -1,0 +1,82 @@
+{
+    "data": [
+        {
+            "ITEM": "艾滋病",
+            "TOTAL": "3997",
+            "detail": [
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市中医医院",
+                    "TOTAL": 2000
+                },
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市第一医院",
+                    "TOTAL": 1997
+                }
+            ]
+        },
+        {
+            "ITEM": "流行性感冒",
+            "TOTAL": "1483",
+            "detail": [
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市中医医院",
+                    "TOTAL": 1483
+                }
+            ]
+        },
+        {
+            "ITEM": "病毒性肝炎",
+            "TOTAL": "801",
+            "detail": [
+                {
+                    "ORGCODE": "430105001",
+                    "ORGNAME": "长沙市第一医院",
+                    "TOTAL": 752
+                },
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市中医医院",
+                    "TOTAL": 49
+                }
+            ]
+        },
+        {
+            "ITEM": "肺结核",
+            "TOTAL": "197",
+            "detail": [
+                {
+                    "ORGCODE": "430105001",
+                    "ORGNAME": "长沙市第一医院",
+                    "TOTAL": 148
+                },
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市中医医院",
+                    "TOTAL": 49
+                }
+            ]
+        },
+        {
+            "ITEM": "梅毒",
+            "TOTAL": "109",
+            "detail": [
+                {
+                    "ORGCODE": "430105001",
+                    "ORGNAME": "长沙市第一医院",
+                    "TOTAL": 55
+                },
+                {
+                    "ORGCODE": "430121002",
+                    "ORGNAME": "长沙市中医医院",
+                    "TOTAL": 54
+                }
+            ]
+        }
+    ],
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 1584427375985
+}

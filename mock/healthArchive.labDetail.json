@@ -1,0 +1,71 @@
+{
+  "data": [{
+      "labName": "血常规",
+      "labTime": "2019-11-20",
+      "labId": "123456789123456789123456789",
+      "detail": [{
+          "project": "尿酸1尿酸1尿酸1尿酸1尿酸1",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "status": "偏低",
+          "reference": "0-100"
+        },
+        {
+          "project": "尿酸2",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "status": "偏高",
+          "reference": "0-100"
+        }
+      ]
+    },
+    {
+      "labName": "尿常规",
+      "labTime": "2019-11-20",
+      "labId": "1",
+      "detail": [{
+          "project": "尿酸3",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "reference": "0-100"
+        },
+        {
+          "project": "尿酸4",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "status": null,
+          "reference": "0-100"
+        }
+      ]
+    },
+    {
+      "labName": "尿常规",
+      "labTime": "2019-11-20",
+      "labId": "1",
+      "detail": [{
+          "project": "尿酸3",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "reference": "0-100"
+        },
+        {
+          "project": "尿酸4",
+          "unit": "ml",
+          "result": "正常",
+          "name": "心血管",
+          "reference": "0-100"
+        }
+      ]
+    }
+  ],
+  "tokenId": "",
+  "resultCode": "1",
+  "errorCode": "",
+  "sysTime": 1557229548640,
+  "resultMsg": ""
+}

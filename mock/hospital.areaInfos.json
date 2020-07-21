@@ -1,0 +1,95 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "id": "101",
+      "name": "佛山市第一人民医院",
+      "initials": "FSSDYRMYY",
+      "logo": "",
+      "address": "广东省佛山市岭南大道北81号",
+      "contact": "0757-83163155",
+      "orgId": "101",
+      "orgName": "佛山市第一人民医院",
+      "extraMap": {},
+      "levelDesc":"三级甲等",
+      "areaList": [
+        {
+          "areaAddr": "2222",
+          "areaId": "",
+          "areaName": "222",
+          "hosId": "",
+          "id": null,
+          "orgId": "",
+          "sortNo": 1
+        },
+        {
+          "areaAddr": "3333",
+          "areaId": "",
+          "areaName": "333",
+          "hosId": "",
+          "id": null,
+          "orgId": "",
+          "sortNo": 2
+        }
+      ]
+    },
+    {
+      "id": "101",
+      "name": "佛山市第二人民医院",
+      "initials": "FSSDYRMYY",
+      "logo": "http://114.115.204.39/archive/resource/20190328/hos_430121002.png",
+      "address": "广东省佛山市岭南大道北81号",
+      "contact": "0757-83163155",
+      "orgId": "101",
+      "orgName": "佛山市第一人民医院",
+      "levelDesc":"三级甲等",
+      "extraMap": {},
+      "areaList": [
+        {
+          "id": "101",
+          "name": "佛山市第一人民医院",
+          "initials": "FSSDYRMYY",
+          "logo": "http://daozhen.gwi.com/logo/1001.jpg",
+          "address": "广东省佛山市岭南大道北81号",
+          "areaLevel": "1",
+          "levelDesc": "三级甲等",
+          "contact": "0757-83163155",
+          "areaId": "1",
+          "areaName": "总院",
+          "longitude": "113.040798",
+          "latitude": "28.22596",
+          "areaAddr": "",
+          "distance": "68881.5",
+          "orgId": "1011",
+          "orgName": "佛山市第一人民医院",
+          "extraMap": { }
+        },
+        {
+          "id": "101",
+          "name": "佛山市第一人民医院",
+          "initials": "FSSDYRMYY",
+          "logo": "http://daozhen.gwi.com/logo/1001.jpg",
+          "address": "广东省佛山市岭南大道北81号",
+          "areaLevel": "1",
+          "levelDesc": "三级甲等",
+          "contact": "0757-83163155",
+          "areaId": "1",
+          "areaName": "总院",
+          "longitude": "113.040798",
+          "latitude": "28.22596",
+          "areaAddr": "",
+          "distance": "68881.5",
+          "orgId": "1011",
+          "orgName": "佛山市第一人民医院",
+          "extraMap": { }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+	    ,{
+            "path" : "pages/userCenter/userCenter",
+            "style" : {
+				"navigationBarTitleText": "个人中心"
+			}
+        }
+        ,{
+            "path" : "pages/userCenter/profile",
+            "style" : {
+				"navigationBarTitleText": "电子健康卡"
+			}
+        }
+        ,{
+            "path" : "pages/userCenter/voucherDetail",
+            "style" : {
+				"navigationBarTitleText": "电子健康卡详情"
+			}
+        }
+        ,{
+            "path" : "pages/hospitalSelect/hospitalSelect",
+            "style" : {
+				"navigationBarTitleText": "选择医院"
+			}
+        }
+        ,{
+            "path" : "pages/map/getLocation",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/map/outMap",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/inpatientRecharge/inpatientRecharge",
+            "style" : {
+				"navigationBarTitleText":"住院预缴金充值"
+			}
+        }
+        ,{
+            "path" : "pages/voucherSelect/voucherSelect",
+            "style" : {
+				"navigationBarTitleText":"选择电子健康卡"
+			}
+        }
+        ,{
+            "path" : "pages/pay/pay",
+            "style" : {
+				"navigationBarTitleText":"选择支付方式"
+			}
+        }
+        ,{
+            "path" : "pages/inpatientCostList/inpatientCostList",
+            "style" : {
+				"navigationBarTitleText":"住院费用查询"
+			}
+        }
+        ,{
+            "path" : "pages/myRecharge/myRecharge",
+            "style" : {
+				"navigationBarTitleText":"住院预缴金充值查询"
+			}
+        }
+        ,{
+            "path" : "pages/waitDoctor/waitDoctor",
+            "style" : {
+				"navigationBarTitleText":"排队候诊"
+			}
+        }
+        ,{
+            "path" : "pages/myReport/myReport",
+            "style" : {
+				"navigationBarTitleText":"我的报告"
+			}
+        }
+        ,{
+            "path" : "pages/myReport/labDetail",
+            "style" : {
+				"navigationBarTitleText":"检验报告"
+			}
+        }
+        ,{
+            "path" : "pages/myReport/examDetail",
+            "style" : {
+				"navigationBarTitleText":"检查报告"
+			}
+        }
+        ,{
+            "path" : "pages/myPay/myPay",
+            "style" : {
+				"navigationBarTitleText":"缴费记录"
+			}
+        }
+        ,{
+            "path" : "pages/clinic/clinicDetail",
+            "style" : {
+				"navigationBarTitleText":"缴费明细"
+			}
+        }
+        ,{
+            "path" : "pages/clinic/clinicUnpayList",
+            "style" : {
+				"navigationBarTitleText":"门诊缴费"
+			}
+        }
+        ,{
+            "path" : "pages/myRegister/myRegister",
+            "style" : {
+				"navigationBarTitleText":"挂号记录"
+			}
+        }
+        ,{
+            "path" : "pages/pay/payResult",
+            "style" : {
+				"navigationBarTitleText":"支付状态"
+			}
+        }
+        ,{
+            "path" : "pages/pay/bookingResult",
+            "style" : {
+				"navigationBarTitleText":"预约结果"
+			}
+        }
+        ,{
+            "path" : "pages/myRegister/regDetail",
+            "style" : {
+				"navigationBarTitleText":"订单详情"
+			}
+        }
+        ,{
+            "path" : "pages/survey/survey",
+            "style" : {
+				"navigationBarTitleText":"满意度评价"
+			}
+        }
+        ,{
+            "path" : "pages/survey/surveyDoctorList",
+            "style" : {
+				"navigationBarTitleText":"满意度调查"
+			}
+        }
+        ,{
+            "path" : "pages/myPrescription/myPrescription",
+            "style" : {
+				"navigationBarTitleText":"电子处方"
+			}
+        }
+        ,{
+            "path" : "pages/myPrescription/prescriptionDetail",
+            "style" : {
+				"navigationBarTitleText":"处方详情"
+			}
+        },
+		{
+            "path" : "pages/triage/triage",
+            "style" : {
+				"navigationBarTitleText":"智能导诊"
+			}
+        },
+		{
+		    "path" : "pages/triage/recommend",
+		    "style" : {
+				"navigationBarTitleText":"推荐科室"
+			}
+		}
+        ,{
+            "path" : "pages/register/departDoctor",
+            "style" : {
+				"navigationBarTitleText":"选择科室或医生"
+			}
+        }
+        ,{
+            "path" : "pages/register/dateDoctorSchedule",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/register/timeSchedule",
+            "style" : {
+				"navigationBarTitleText":"号源详情"
+			}
+        }
+        ,{
+            "path" : "pages/register/registerConfirm",
+            "style" : {
+				"navigationBarTitleText":"确认挂号"
+			}
+        }
+        ,{
+            "path" : "pages/pay/wechatPay",
+            "style" : {
+				"navigationBarTitleText":"微信支付"
+			}
+        }
+        ,{
+            "path" : "pages/searchSelect/searchSelect",
+            "style" : {
+				"navigationBarTitleText":"搜索医院、科室或医生"
+			}
+        }
+        ,{
+            "path" : "pages/searchSelect/departSearch",
+            "style" : {
+				"navigationBarTitleText":"搜索"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthArchive",
+            "style" : {
+				"navigationBarTitleText":"健康档案"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/disclaimer",
+            "style" : {
+				"navigationBarTitleText":"免责声明"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/patientInfo",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/healthCheck/healthCheck",
+            "style" : {
+				"navigationBarTitleText":"健康体检"
+			}
+        }
+        ,{
+            "path" : "pages/developing/developing",
+            "style" : {
+				"navigationBarTitleText":"正在建设中"
+			}
+        }
+        ,{
+            "path" : "pages/csmy/csmy",
+            "style" : {
+				"navigationBarTitleText":"长沙名医"
+			}
+        }
+        ,{
+            "path" : "pages/healthCard/checkInfomation",
+            "style" : {
+				"navigationBarTitleText":"电子健康卡办理(1/2)"
+			}
+        }
+        ,{
+            "path" : "pages/healthCard/completeCard",
+            "style" : {
+				"navigationBarTitleText":"电子健康卡办理(2/2)"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/costList",
+            "style" : {
+				"navigationBarTitleText":"门诊费用"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/examDetail",
+            "style" : {
+				"navigationBarTitleText":"检查报告"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/healthClinicDetail",
+            "style" : {
+				"navigationBarTitleText":"门诊记录详情"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/healthClinicList",
+            "style" : {
+				"navigationBarTitleText":"门诊记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/labDetail",
+            "style" : {
+				"navigationBarTitleText":"检验报告"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/traditionalRecipe",
+            "style" : {
+				"navigationBarTitleText":"中药处方"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthClinic/westernRecipe",
+            "style" : {
+				"navigationBarTitleText":"药品处方"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/voucherSelect/voucherSelect",
+            "style" : {
+				"navigationBarTitleText":"选择电子健康卡"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/examDetail",
+            "style" : {
+				"navigationBarTitleText":"检查报告"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/healthInpatientDetail",
+            "style" : {
+				"navigationBarBackgroundColor":"住院信息"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/healthInpatientList",
+            "style" : {
+				"navigationBarTitleText":"住院记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/inHosRecord",
+            "style" : {
+				"navigationBarTitleText":"入院记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/labDetail",
+            "style" : {
+				"navigationBarTitleText":"检验报告"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/outHosCost",
+            "style" : {
+				"navigationBarTitleText":"出院结算"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthInpatient/outHosRecord",
+            "style" : {
+				"navigationBarTitleText":"出院记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthVisit/healthVisitDetail",
+            "style" : {
+				"navigationBarTitleText":"公卫详情"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/healthVisit/healthVisitList",
+            "style" : {
+				"navigationBarTitleText":"公卫记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/physicalExamination/physicalExaminationDetails",
+            "style" : {
+				"navigationBarTitleText":"体检记录详情"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/physicalExamination/physicalExaminationList",
+            "style" : {
+				"navigationBarTitleText":"体检记录"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/vaccination/vaccinationDetails",
+            "style" : {
+				"navigationBarTitleText":"预防接种详情"
+			}
+        }
+        ,{
+            "path" : "pages/healthArchive/vaccination/vaccinationList",
+            "style" : {
+				"navigationBarTitleText":"预防接种"
+			}
+        }
+    ],
+	"globalStyle": {
+		// #ifdef H5
+		"navigationStyle": "custom",
+		// #endif
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

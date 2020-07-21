@@ -1,0 +1,13 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data":{
+    "evaluation": "异常描述:心电图异常：1.窦性心律2.STv3-v6后低0.05-0.1m红细胞偏低     血脂偏高小便常规异常关节肿痛;",
+    "advice": "多喝热水"
+  }
+}

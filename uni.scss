@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'iconfont';  /* project id 1800052 */
+  src: url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.eot');
+  src: url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1800052_pnt0kg9fyb.svg#iconfont') format('svg');
+}
+// @font-face {
+//     font-family: 'PingFang-SC-Bold';
+//     src: url("~@/static/font/PingFangBold.ttf");
+//     font-weight: bold;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'PingFang-SC-Medium';
+//     src: url("~@/static/font/PingFangMedium.ttf");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@import './styles/_variable.scss';
+@import './styles/_reset.scss';
+@import './styles/_frame.scss';
+@import './styles/_button.scss';
+@import './styles/_form.scss';
+@import './styles/_icon.scss';
+@import './styles/_uni.scss';
+@import './styles/_flex.scss';
+@import './styles/iconfont.scss';
+@import './styles/_frameHc.scss'

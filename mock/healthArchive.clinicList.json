@@ -1,0 +1,35 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "directoryCode":"C0101.02",
+      "extId":"8169846328227328",
+      "extraMap":{},
+      "hospitalName":"宁乡县人民医院宁乡县人民医院宁乡县人民医院",
+      "deptName": "科室名称科室名称科室名称科室名称科室名称",
+      "visitData":"2019-07-12 00:00:00"
+    },
+    {
+      "directoryCode":"C0101.02",
+      "extId":"8169842908362240",
+      "extraMap":{},
+      "hospitalName":"宁乡县人民医院",
+      "deptName": "科室名称",
+      "visitData":"2018-12-20 00:00:00"
+    },
+    {
+      "directoryCode":"C0101.02",
+      "extId":"8169842908558848",
+      "extraMap":{},
+      "hospitalName":"宁乡县人民医院",
+      "deptName": "科室名称",
+      "visitData":"2018-12-20 00:00:00"
+    }
+  ]
+}

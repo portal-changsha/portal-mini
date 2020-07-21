@@ -1,0 +1,36 @@
+{
+  "resultCode": "1",
+  "resultMsg":"成功",
+  "errorCode":"",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "labId": "2001",
+      "labTime": "2016-12-31 12:00",
+      "labItem": "血常规5项",
+      "repDoctName": "",
+      "deptName": "消化内科",
+      "hospitalId": "1001",
+      "hospitalName": "佛山市第一人民医院",
+      "labType": "1",
+      "cardNo": "7310001",
+      "holderName": "张三"
+    },
+    {
+      "labId": "2002",
+      "labTime": "2016-12-31 12:00",
+      "labItem": "血液胰腺2项组合",
+      "repDoctName": "崔西玉",
+      "deptName": "消化内科",
+      "hospitalId": "1001",
+      "hospitalName": "佛山市第一人民医院",
+      "cardType": "1",
+      "cardNo": "7310001",
+      "holderName": "张三"
+    }
+  ]
+
+}

@@ -1,0 +1,126 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "inpatientHospital": "八医院",
+    "inHospitalTime": "2019-11-19",
+    "deptName": "内科",
+    "doctName": "崔西玉",
+    "inHospitalRecord": {
+      "inHosCondition": "醉了",
+      "inHosDiagnosis": "酒精中毒",
+      "inHosPath": "救护车",
+      "inHosReasons": "喝假酒",
+      "inHosSymptoms": "头晕目眩"
+    },
+    "examReport": [
+      {
+        "type": "1234",
+        "part": "血管1",
+        "describe": "无异常",
+        "diagnose": "血管正常，加强锻炼"
+      },
+      {
+        "type": "5678",
+        "part": "血管1",
+        "describe": "无异常",
+        "diagnose": "血管正常，加强锻炼"
+      }
+    ],
+    "verifyReport": [
+      {
+        "labName": "血常规",
+        "labTime": "2019-11-20 09:40:29",
+        "labId": "1",
+        "detail": [
+          {
+            "project": "尿酸1",
+            "unit": "ml",
+            "result": "正常",
+            "name": "心血管",
+            "reference": "0-100"
+          },
+          {
+            "project": "尿酸2",
+            "unit": "ml",
+            "result": "正常",
+            "name": "心血管",
+            "reference": "0-100"
+          }
+        ]
+      },
+      {
+        "labName": "尿常规",
+        "labTime": "2019-11-20 09:20:30",
+        "labId": "1",
+        "detail": [
+          {
+            "project": "尿酸3",
+            "unit": "ml",
+            "result": "正常",
+            "name": "心血管",
+            "reference": "0-100"
+          },
+          {
+            "project": "尿酸4",
+            "unit": "ml",
+            "result": "正常",
+            "name": "心血管",
+            "reference": "0-100"
+          }
+        ]
+      }
+    ],
+    "operationRecord": [{
+      "electronApplicationFormNo": "SS23423424",
+      "operationCode": "SS23423424",
+      "operationName": "骨头矫正",
+      "operationRank": "高级",
+      "operationPosition": "腿部"
+    }],
+    "outHospitalRecord": {
+      "bedNo":"无为null",
+      "deptName":"肝胆胰·血管外科",
+      "extraMap":{},
+      "outHosAdvice":"没有医嘱这个字段",
+      "inHosDiagnosis":"_",
+      "inHosNo":"1910300912",
+      "inHosTime":"没有入院时间这个字段",
+      "inHosdays":"没有入院时间算不出来",
+      "outHosDiagnosis":"Z98.8111",
+      "outHosTime":"2019-08-22 15:00:02",
+      "sickRoom":"无为null",
+      "outHosStatus": "出院情况"
+    },
+    "outHosSettlement": {
+      "total": "500",
+      "costList": [
+        {
+          "cost":"186",
+          "name":"放射费"
+        },
+        {
+          "cost":"125.76",
+          "name":"中成药"
+        },
+        {
+          "cost":"0",
+          "name":"其他费用"
+        },
+        {
+          "cost":"251.7",
+          "name":"西药"
+        },
+        {
+          "cost":"15",
+          "name":"诊察费"
+        }
+      ]
+    }
+  }
+}

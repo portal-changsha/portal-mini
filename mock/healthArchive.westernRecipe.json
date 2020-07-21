@@ -1,0 +1,58 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [{
+      "recipeId": "11111111111111",
+      "recipeType": "处方类型1",
+      "recipeName": "处方名称1",
+      "medicine": [{
+          "frequency": "每天二次",
+          "method": "含服",
+          "name": "艾瑞昔布片",
+          "unit": "盒",
+          "specification": "100/tian",
+          "dosage": "XXX剂量"
+        },
+        {
+          "frequency": "每天二次",
+          "method": "含服",
+          "name": "双醋瑞因胶囊",
+          "unit": "粒"
+        },
+        {
+          "frequency": "每天三次",
+          "method": "含服",
+          "name": "活络消痛胶囊",
+          "unit": "盒"
+        }
+      ]
+    },
+    {
+      "recipeId": "处方编号2",
+      "recipeType": "处方类型2",
+      "recipeName": "处方名称2",
+      "medicine": [{
+          "frequency": "每天二次",
+          "name": "艾瑞昔布片",
+          "unit": "盒"
+        },
+        {
+          "frequency": "每天二次",
+          "name": "双醋瑞因胶囊",
+          "unit": "粒"
+        },
+        {
+          "frequency": "每天三次",
+          "method": "含服",
+          "name": "活络消痛胶囊",
+          "unit": "盒"
+        }
+      ]
+    }
+  ]
+}

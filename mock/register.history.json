@@ -1,0 +1,34 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "hospitalId": "1001",
+      "hospitalName": "佛山第一人民医院",
+      "areaId": "1",
+      "areaName": "总院",
+      "regId": "2|7021|7922|11",
+      "bookType": "2",
+      "visitDate": "2017-10-19",
+      "typeId": "849772",
+      "typeName": "普通",
+      "deptId": "0702",
+      "deptName": "心血管内科",
+      "rankId": "1",
+      "rankName": "主任医生",
+      "doctId": "07021",
+      "doctName": "崔西玉",
+      "phaseId": "1",
+      "phaseDesc": "09:00~09:30",
+      "location": "门诊大楼2楼心血管内科候诊室",
+      "regTime": "2017-10-18 10:11:35",
+      "doctAvatar": "https://csmh.hngwmt.com/portal/archive/resource/doct/hos_430121002/谭晓燕.jpg",
+      "extraMap": { }
+    }
+  ]
+}

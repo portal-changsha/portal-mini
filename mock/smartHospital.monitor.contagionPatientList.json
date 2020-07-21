@@ -1,0 +1,62 @@
+{
+  "data": [{
+      "CFMX": "氯化钠注射液,注射用头孢美唑钠,葡萄糖注射液,维生素C注射液,葡萄糖注射液,注射用炎琥宁,葡萄糖注射液,注射用盐酸溴己新,葡萄糖注射液",
+      "HZXM": "汤**",
+      "JBMC": "慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎",
+      "JCXM": "-",
+      "JZLSH": "BA2F8A25-0EC6-47DA-A22A-AB3600D45A7C",
+      "KSMC": "儿科发热门诊",
+      "QZSJ": "2020-01-02 12:53:09",
+      "YSXM": "李**",
+      "ZDBM": "J11.101",
+      "ZDMC": "慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎慢性乙肝病毒性肝炎",
+      "ZDSJ": "2020-01-02 12:53:09",
+      "dzblurl": "http://172.16.139.141:10004/workstation/#/printCaseAPI/BA2F8A25-0EC6-47DA-A22A-AB3600D45A7C"
+    },
+    {
+      "CFMX": "氯化钠注射液,注射用头孢美唑钠,葡萄糖注射液,维生素C注射液,葡萄糖注射液,注射用炎琥宁,葡萄糖注射液,注射用盐酸溴己新,葡萄糖注射液",
+      "HZXM": "阳**",
+      "JBMC": "流行性感冒",
+      "JCXM": "-",
+      "JZLSH": "BDC366CC-BDFE-466D-8B62-AB3500CFBABA",
+      "KSMC": "急诊儿科",
+      "QZSJ": "2020-01-01 12:36:19",
+      "YSXM": "孙**",
+      "ZDBM": "J11.101",
+      "ZDMC": "流行性感冒",
+      "ZDSJ": "2020-01-01 12:36:19",
+      "dzblurl": "http://172.16.139.141:10004/workstation/#/printCaseAPI/BDC366CC-BDFE-466D-8B62-AB3500CFBABA"
+    },
+    {
+      "CFMX": "",
+      "HZXM": "吴**",
+      "JBMC": "人类免疫缺陷病毒[HIV]阳性",
+      "JCXM": "-",
+      "JZLSH": "BDC366CC-BDFE-466D-8B62-AB3500CFBABA",
+      "KSMC": "急诊儿科",
+      "QZSJ": "2020-02-01 12:36:19",
+      "YSXM": "孙**",
+      "ZDBM": "J11.101",
+      "ZDMC": "人类免疫缺陷病毒[HIV]阳性",
+      "ZDSJ": "2020-02-01 12:36:19",
+      "dzblurl": "http://172.16.139.141:10004/workstation/#/printCaseAPI/BDC366CC-BDFE-466D-8B62-AB3500CFBABA"
+    },
+    {
+      "CFMX": "氯化钠注射液,注射用头孢美唑钠,葡萄糖注射液,维生素C注射液,葡萄糖注射液,注射用炎琥宁,葡萄糖注射液,注射用盐酸溴己新,葡萄糖注射液",
+      "HZXM": "杨**",
+      "JBMC": "AIDS",
+      "JCXM": "-",
+      "JZLSH": "BDC366CC-BDFE-466D-8B62-AB3500CFBABA",
+      "KSMC": "急诊儿科",
+      "QZSJ": "2020-03-01 12:36:19",
+      "YSXM": "孙**",
+      "ZDBM": "J11.101",
+      "ZDMC": "HIV/AIDS",
+      "ZDSJ": "2020-03-01 12:36:19",
+      "dzblurl": "http://172.16.139.141:10004/workstation/#/printCaseAPI/BDC366CC-BDFE-466D-8B62-AB3500CFBABA"
+    }
+  ],
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "sysTime": 1584423844237
+}

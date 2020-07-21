@@ -1,0 +1,186 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "totalNum": "2",
+    "visitInfos": [
+      {
+        "visitId": "1001",
+        "deptName": "五官科五官科五官科五官科五官科五官科五官科五官科",
+        "doctName": "效而",
+        "totalFee": "1000",
+        "diagnosis": "少吃辣,多吃蔬菜,少吃辣,多吃蔬菜,少吃辣,多吃蔬菜,少吃辣,多吃蔬菜,少吃辣,多吃蔬菜",
+        "recipes": [
+          {
+            "recipeId": "10001",
+            "recipeName": "处方名1",
+            "recipeType": "1",
+            "recipeTime": "2019-03-12 12:00:12",
+            "recipeFee": "500",
+            "execDoctor": "执医名",
+            "checkDoctor": "核一名",
+            "location": "一楼大厅",
+            "tranSerNo": "10001010001",
+            "items": [
+              {
+                "itemId": "1",
+                "itemType": "西药1",
+                "itemName": "阿斯匹林1",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "100",
+                "qty": "5",
+                "instructions": "",
+                "factory": "生产厂商",
+                "extraMap": {}
+              }
+            ],
+            "extraMap": {}
+          },
+          {
+            "recipeId": "10001",
+            "recipeName": "处方名2",
+            "recipeType": "2",
+            "recipeTime": "2019-03-12 12:00:12",
+            "recipeFee": "500",
+            "execDoctor": "执医名",
+            "checkDoctor": "核一名",
+            "location": "一楼大厅",
+            "tranSerNo": "10001010001",
+            "items": [
+              {
+                "itemId": "1",
+                "itemType": "西药2",
+                "itemName": "阿斯匹林2",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "200",
+                "qty": "5",
+                "instructions": "",
+                "factory": "生产厂商",
+                "extraMap": {}
+              },{
+                "itemId": "1",
+                "itemType": "西药2",
+                "itemName": "阿斯匹林2",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "200",
+                "qty": "5",
+                "instructions": "",
+                "factory": "生产厂商",
+                "extraMap": {}
+              }
+            ],
+            "extraMap": {}
+          },
+          {
+            "recipeId": "10001",
+            "recipeName": "处方名3",
+            "recipeType": "3",
+            "recipeTime": "2019-03-12 12:00:12",
+            "recipeFee": "500",
+            "execDoctor": "执医名",
+            "checkDoctor": "核一名",
+            "location": "一楼大厅",
+            "tranSerNo": "10001010001",
+            "items": [
+              {
+                "itemId": "1",
+                "itemType": "西药3",
+                "itemName": "阿斯匹林3",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "300",
+                "qty": "3",
+                "instructions": "精确到小数点后2位，如100",
+                "factory": "生产厂商",
+                "extraMap": {}
+              }
+            ],
+            "extraMap": {}
+          }
+        ],
+        "extraMap": {}
+      },
+      {
+        "visitId": "1002",
+        "deptName": "内分泌科",
+        "doctName": "晓尔",
+        "totalFee": "1000",
+        "diagnosis": "正常",
+        "recipes": [
+          {
+            "recipeId": "10001",
+            "recipeName": "处方名",
+            "recipeType": "1",
+            "recipeTime": "2019-03-12 12:00:12",
+            "recipeFee": "500",
+            "execDoctor": "执医名",
+            "checkDoctor": "核一名",
+            "location": "一楼大厅",
+            "tranSerNo": "10001010001",
+            "items": [
+              {
+                "itemId": "1",
+                "itemType": "西药",
+                "itemName": "阿斯匹林",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "100",
+                "qty": "5",
+                "instructions": "",
+                "factory": "生产厂商",
+                "extraMap": {}
+              }
+            ],
+            "extraMap": {}
+          }
+        ],
+        "extraMap": {}
+      },
+      {
+        "visitId": "1003",
+        "deptName": "内分泌科",
+        "doctName": "晓尔",
+        "totalFee": "1000",
+        "diagnosis": "正常",
+        "recipes": [
+          {
+            "recipeId": "10001",
+            "recipeName": "处方名",
+            "recipeType": "3",
+            "recipeTime": "2019-03-12 12:00:12",
+            "recipeFee": "500",
+            "execDoctor": "执医名",
+            "checkDoctor": "核一名",
+            "location": "一楼大厅",
+            "tranSerNo": "10001010001",
+            "items": [
+              {
+                "itemId": "1",
+                "itemType": "西药",
+                "itemName": "阿斯匹林",
+                "specs": "规格",
+                "unit": "盒",
+                "price": "100",
+                "qty": "5",
+                "instructions": "",
+                "factory": "生产厂商",
+                "extraMap": {}
+              }
+            ],
+            "extraMap": {}
+          }
+        ],
+        "extraMap": {}
+      }
+    ],
+    "extraMap": {}
+  }
+}

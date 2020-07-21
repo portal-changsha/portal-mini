@@ -1,0 +1,28 @@
+{
+  "data": [{
+      "expiryDate": "1",
+      "medicine": [{
+        "dosage": "计量计量计量计量计量计量",
+        "name": "药物名称药物名称药物名称药物名称",
+        "unit": "12"
+      }],
+      "recipeId": "45",
+      "recipeType": "9999"
+    },
+    {
+      "expiryDate": "2",
+      "medicine": [{
+        "dosage": "12",
+        "name": "1212",
+        "unit": "12"
+      }],
+      "recipeId": "45",
+      "recipeType": "9999"
+    }
+  ],
+  "tokenId": "",
+  "resultCode": "1",
+  "errorCode": "",
+  "sysTime": 1557229548640,
+  "resultMsg": ""
+}

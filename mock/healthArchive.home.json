@@ -1,0 +1,24 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": 
+    {
+      "name": "马云",
+	  "avatar": "",
+	  "familyDoctor": "李连杰",
+	  "archivalOrg": "长沙市开福区洪山街道社区卫生服务中心",
+	  "clinicCount": "20",
+	  "InHosCount": "2",
+	  "serviceCount": "3",
+	  "hypertension": true,
+	  "diabetes": false,
+	  "older": true,
+	  "legalUrl": "",
+	  "extraMap": {}
+	}
+}

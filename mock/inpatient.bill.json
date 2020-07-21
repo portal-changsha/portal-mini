@@ -1,0 +1,48 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "rows": [
+      {
+        "itemId": "123",
+        "itemName": "haha",
+        "itemType": "1",
+        "operTime": "2019-04-15",
+        "qty": "1",
+        "price": "1",
+        "totalFee": "100",
+        "extraMap": {},
+        "note": ""
+      },
+      {
+        "itemId": "123",
+        "itemName": "haha",
+        "itemType": "1",
+        "operTime": "2019-04-15",
+        "qty": "mh/2344343",
+        "price": "1",
+        "totalFee": "100",
+        "extraMap": {},
+        "note": ""
+      },
+      {
+        "itemId": "123",
+        "itemName": "haha",
+        "itemType": "1",
+        "operTime": "2019-04-16",
+        "qty": "1",
+        "price": "1",
+        "totalFee": "100",
+        "extraMap": { },
+        "note": ""
+      }
+    ],
+    "total": "200",
+    "extraMap": {}
+  }
+}

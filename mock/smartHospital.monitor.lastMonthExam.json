@@ -1,0 +1,89 @@
+{
+  "data": {
+    "examNum": "1209",
+    "examPositiveNum": "1138",
+    "examPositivePrecent": "0.9413",
+    "examPositiveRank": [{
+        "RID": "1",
+        "itemName": "专家爱大叔大婶门诊1",
+        "precent": "0.3333"
+      },
+      {
+        "RID": "2",
+        "itemName": "消化内科阿斯达苏似懂非懂双方的身份的打水门诊2",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "3",
+        "itemName": "内科门诊3",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "4",
+        "itemName": "专家爱大叔大婶门诊4",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "5",
+        "itemName": "专家爱大叔大婶门诊5",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "6",
+        "itemName": "专家爱大叔大婶门诊6",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "7",
+        "itemName": "专家爱大叔大婶门诊7",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "8",
+        "itemName": "专家爱大叔大婶门诊8",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "9",
+        "itemName": "专家爱大叔大婶门诊9",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "10",
+        "itemName": "消化内科阿斯达门诊",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "11",
+        "itemName": "消化内科门诊",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "12",
+        "itemName": "消化内科门诊",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "13",
+        "itemName": "儿科",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "14",
+        "itemName": "儿委屈委屈委屈科",
+        "precent": "0.9219"
+      },
+      {
+        "RID": "15",
+        "itemName": "儿科",
+        "precent": "0.9219"
+      }
+    ],
+    "extraMap": {
+      "hosId": "430105001"
+    }
+  },
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "sysTime": 0
+}

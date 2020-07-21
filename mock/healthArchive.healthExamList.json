@@ -1,0 +1,25 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [{
+      "checkNo": "431025198801",
+      "checkDate": "2019-12-12",
+      "checkOrganization": "长沙市妇幼保健院"
+    },
+    {
+      "checkNo": "431025198802",
+      "checkDate": "2019-12-12",
+      "checkOrganization": "长沙市中心医院"
+    },
+    {
+      "checkNo": "431025198803",
+      "checkDate": "2019-12-12",
+      "checkOrganization": "长沙市中医院"
+    }
+  ]
+}

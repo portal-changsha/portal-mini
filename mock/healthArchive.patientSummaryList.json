@@ -1,0 +1,48 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data":{
+    "extraMap":{},
+    "family":{
+      "brother":"高血压,冠心病",
+      "father":"无  ",
+      "mother":"高血压",
+      "sonAndDaughter":"冠心病"
+    },
+    "genetic":{
+      "havaOrNot":"2",
+      "name":"高血压,冠心病"
+    },
+    "history":{
+      "illness":[
+        {
+          "name":"糖尿病",
+          "time":"2015-10-01 00:00:00"
+        },
+        {
+          "name":"高血压",
+          "time":"2016-10-01 00:00:00"
+        },
+        {
+          "name":"冠心病",
+          "time":"2017-10-01 00:00:00"
+        }
+      ],
+      "operation":[
+        {
+          "name":"高血压",
+          "time":"2016-10-01 00:00:00"
+        },
+        {
+          "name":"冠心病",
+          "time":"2017-10-01 00:00:00"
+        }
+      ]
+    }
+  }
+}

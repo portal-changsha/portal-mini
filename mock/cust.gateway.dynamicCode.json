@@ -1,0 +1,15 @@
+{
+  "resultCode": "1",
+  "resultMsg":"成功",
+  "errorCode":"",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "qrcodeText": "1A52355A7496938FFCD886FAD2CD00600D589832FAD243253ADEF765A26C0A4F:0:57C04EF3F84A295479203D1EC7B5B7B3",
+    "qrcodeColor": "#51A8EF",
+    "extraMap": { }
+  }
+
+}

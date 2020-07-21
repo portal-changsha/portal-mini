@@ -1,0 +1,84 @@
+input {
+    outline: none;
+    box-sizing: border-box;
+}
+
+//无边框输入框
+.gwi-ipt {
+    width: 100%;
+    height: $common-input-height;
+    border: none;
+    font-size: .7rem;
+}
+
+.gwi-ipt-inline {
+    height: $common-input-height;
+    border: none;
+    font-size: .7rem;
+}
+
+.form-line {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding: 10px .75rem;
+    @include display-flex();
+    @include align-items(center);
+    &.in-list{
+        padding: 2px .75rem;
+    }
+    .ipt-code{
+        @include flex(9);
+    }
+}
+
+//输入框前面的图标 选择框
+.form-icon{
+    width: 23px;
+    height: 23px;
+    margin-right: .5rem;
+    background-size:contain;
+    background-repeat:no-repeat;
+    &.pwd{
+        background-image: url($redirect-url + $img-file-path + "password-icon.png");
+    }
+    &.phone{
+        background-image: url($redirect-url + $img-file-path + "phone-icon.png");
+    }
+}
+
+//单行表单
+.form-inline {
+    display: inline-block;
+}
+
+.dropdown {
+    font-weight: normal;
+    display: inline-block;
+    height: $common-input-height;
+    line-height: $common-input-height;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    display: none;
+}
+
+.cb {
+    display: none;
+    + .icon-cb{
+        @extend .form-icon;
+        vertical-align: middle;
+        display: inline-block;
+        background-image:url($redirect-url + $img-file-path + "choice-define.png");
+    }
+    &:checked {
+        + .icon-cb{
+            background-image:url($redirect-url + $img-file-path + "choice-success.png");
+        }
+    }
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}

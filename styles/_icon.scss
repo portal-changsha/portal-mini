@@ -1,0 +1,114 @@
+
+%icon-register{
+    background-image: url($redirect-url + $img-file-path + "register.png");
+}
+%icon-pay{
+    background-image:url($redirect-url + $img-file-path + "pay.png");
+}
+%icon-report{
+    background-image:url($redirect-url + $img-file-path + "report.png");
+}
+
+.pay-icon{
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &.weixin{
+        background-image: url($redirect-url + $img-file-path + "center_icon_wechat.png") ;
+    }
+    &.zhifubao{
+        background-image: url($redirect-url + $img-file-path + "ico-zhifubao.png");
+    }
+    &.zizhu{
+        background-image: url($redirect-url + $img-file-path + "ico-payment-gwi.png");
+    }
+    &.union{
+        background-image: url($redirect-url + $img-file-path + "ico-union.png");
+    }
+    &.hebao{
+        background-image: url($redirect-url + $img-file-path + "icon_payhebao.png");
+    }
+    &.qianbao{
+        background-image: url($redirect-url + $img-file-path + "icon_payqianbao.png");
+    }
+    &.zr_jh{
+        background-image: url($redirect-url + $img-file-path + "icon_jianhang.png");
+    }
+    &.zr_wx{
+        background-image: url($redirect-url + $img-file-path + "icon_weixin.png");
+    }
+}
+.pay_icon_zhifubao{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 0.5rem;
+    margin-top: 0.1rem;
+    background: url($redirect-url + $img-file-path + "ico-zhifubao.png") no-repeat;
+    background-size: contain;
+}
+.pay_icon_zizhu{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 0.5rem;
+    margin-top: 0.1rem;
+    background: url($redirect-url + $img-file-path + "ico-payment-gwi.png") no-repeat;
+    background-size: contain;
+}
+.success-photo{
+    width:113px;
+    height: 118px;
+    margin: 50px auto 10px auto;
+    background: url($redirect-url + $img-file-path + "success-bg.png");
+    background-size: contain;
+}
+.failed-photo{
+    width:113px;
+    height: 118px;
+    margin: 50px auto 10px auto;
+    background: url($redirect-url + $img-file-path + "error-bg.png");
+    background-size: contain;
+}
+.success-scan{
+    width:204px;
+    height: 225px;
+    margin: 20px auto 20px auto;
+    background: url($redirect-url + $img-file-path + "btn-zizhuji-success.png");
+    background-size: contain;
+}
+.details-doc-photo{
+    margin-left: -70px;
+    margin-top: -43px;
+    width: 2rem;
+    height: 2rem;
+    background: url($redirect-url + $img-file-path + "ico-doctor.png");
+    background-size: contain;
+}
+.icon-x{
+    height: 14px;
+    width: 14px;
+    display: block;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+}
+.icon-x:before, .icon-x:after{
+    content: '';
+    height: 3px;
+    width: 14px;
+    display: block;
+    background: #4C4C4C;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    -webkit-transform:rotate(45deg);
+    transform: rotate(-45deg);
+}
+.icon-x:after{
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}

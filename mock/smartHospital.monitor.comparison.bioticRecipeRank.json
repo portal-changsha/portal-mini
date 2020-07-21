@@ -1,0 +1,18 @@
+{
+    "data":[
+        {
+            "ORGCODE":"430105001",
+            "TOTAL":23,
+            "ORGNAME":"长沙市第一医院",
+            "percent":"0.754"
+        },
+        {
+            "ORGCODE":"430121002",
+            "TOTAL":11,
+            "ORGNAME":"长沙市中医医院",
+            "percent":"0.354"
+        }
+    ],
+    "resultCode":"1",
+    "resultMsg":"成功"
+}

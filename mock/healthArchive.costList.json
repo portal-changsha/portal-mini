@@ -1,0 +1,33 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "total": "500",
+    "costList": [{
+        "cost": "186",
+        "name": "放射费"
+      },
+      {
+        "cost": "125.76",
+        "name": "中成药"
+      },
+      {
+        "cost": "0",
+        "name": "其他费用"
+      },
+      {
+        "cost": "251.7",
+        "name": "西药"
+      },
+      {
+        "cost": "15",
+        "name": "诊察费"
+      }
+    ]
+  }
+}

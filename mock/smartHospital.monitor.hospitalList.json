@@ -1,0 +1,48 @@
+{
+  "data": [{
+      "address": "长沙市开福区营盘路311号",
+      "areaLevel": "2",
+      "comparison": false,
+      "contact": "",
+      "default": true,
+      "distance": 0.0,
+      "extraMap": {},
+      "id": "430105001",
+      "initials": "CSSDYYY",
+      "levelDesc": "三级甲等",
+      "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430105001.png",
+      "name": "长沙市第一医院",
+      "orgId": "1001",
+      "orgName": "长沙市"
+    },
+    {
+      "address": "长沙市长沙县星沙大道22号",
+      "areaLevel": "2",
+      "comparison": false,
+      "contact": "长沙市中医医院（市八医院）",
+      "default": false,
+      "distance": 0.0,
+      "extraMap": {},
+      "id": "430121002",
+      "initials": "CSSZYYY",
+      "levelDesc": "三级甲等",
+      "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430121002.png",
+      "name": "长沙市中医医院",
+      "orgId": "1001",
+      "orgName": "长沙市"
+    },
+    {
+      "areaLevel": "1",
+      "comparison": true,
+      "default": false,
+      "distance": 0.0,
+      "extraMap": {},
+      "name": "长沙市直属医院",
+      "orgId": "1001",
+      "id": "9999999"
+    }
+  ],
+  "resultCode": "1",
+  "sysTime": 1584517929446,
+  "total": ""
+}

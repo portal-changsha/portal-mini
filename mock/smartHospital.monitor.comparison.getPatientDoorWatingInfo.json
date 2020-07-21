@@ -1,0 +1,49 @@
+{
+  "data": {
+    "averageWaitHours": 1051,
+    "waitDurationTrend": -1,
+    "averageWaitHoursYestoday": 1372,
+    "averageExamHours": 1743,
+    "examWaitDurationTrend": -1,
+    "averageExamHoursYestoday": 1743,
+    "averageExamHoursRank": [
+      {
+        "waitDuration": {
+          "time": [
+            "8:00",
+            "9:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00"
+          ],
+          "value": [12.45, 10.11, 16.23, 20.44, 21.42, 20.12, 22.34, 35.22]
+        },
+        "orgCode": "430105001",
+        "orgName": "长沙市第一医院"
+      },
+      {
+        "waitDuration": {
+          "time": [
+            "8:00",
+            "9:00",
+            "10:00",
+            "11:00",
+            "12:00"
+          ],
+          "value": [1.45, 9.11, 6.23, 2.44, 1.42]
+        },
+        "orgCode": "430121002",
+        "orgName": "长沙市中医医院"
+      }
+    ],
+    "extraMap": {}
+  },
+  "resultCode": "1",
+  "resultMsg": "成功"
+}

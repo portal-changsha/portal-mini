@@ -1,73 +1,39 @@
-// see http://vuejs-templates.github.io/webpack for documentation.
-var path = require('path')
-var fileExtConfig = {
-    swan: {
-        template: 'swan',
-        script: 'js',
-        style: 'css',
-        platform: 'swan'
-    },
-    tt: {
-        template: 'ttml',
-        script: 'js',
-        style: 'ttss',
-        platform: 'tt'
-    },
-    wx: {
-        template: 'wxml',
-        script: 'js',
-        style: 'wxss',
-        platform: 'wx'
-    },
-    my: {
-        template: 'axml',
-        script: 'js',
-        style: 'acss',
-        platform: 'my'
-    }
-}
-// var fileExt = fileExtConfig[process.env.PLATFORM]
-var fileExt = fileExtConfig['wx']
-
-module.exports = {
-  build: {
-    env: require('./prod.env'),
-    index: path.resolve(__dirname, `../dist/${fileExt.platform}/index.html`),
-    assetsRoot: path.resolve(__dirname, `../dist/${fileExt.platform}`),
-    assetsSubDirectory: '',
-    assetsPublicPath: '/',
-    productionSourceMap: false,
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css'],
-    // Run the build command with an extra argument to
-    // View the bundle analyzer report after build finishes:
-    // `npm run build --report`
-    // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report,
-    fileExt: fileExt,
-    REDIRECT_URL: process.env.REDIRECT_URL,
-    IMG_FILE_PATH: process.env.IMG_FILE_PATH
-  },
-  dev: {
-    env: require('./dev.env'),
-    port: 8080,
-    // 在小程序开发者工具中不需要自动打开浏览器
-    autoOpenBrowser: false,
-    assetsSubDirectory: '',
-    assetsPublicPath: '/',
-    proxyTable: {},
-    // CSS Sourcemaps off by default because relative paths are "buggy"
-    // with this option, according to the CSS-Loader README
-    // (https://github.com/webpack/css-loader#sourcemaps)
-    // In our experience, they generally work as expected,
-    // just be aware of this issue when enabling this option.
-    cssSourceMap: false,
-    fileExt: fileExt,
-    REDIRECT_URL: process.env.REDIRECT_URL,
-    IMG_FILE_PATH: process.env.IMG_FILE_PATH
-  }
+/**
+ * @description 系统全局配置
+ */
+export default {
+	VUE_APP_MOCK: true,
+	// #ifdef GWI-PORTAL
+	// 回调地址
+	VUE_APP_REDIRECT_URL: 'https://csmh.hngwmt.com/liwenhong',
+	// 图片地址
+	VUE_APP_IMG_URL: 'https://csmh.hngwmt.com/portal/archive/resource/img/',
+	// 请求地址
+	VUE_APP_REQUEST_URL: 'https://csmh.hngwmt.com/portal',
+	VUE_APP_APPID: 'wx64616ad80452e505',
+	FRONT_URL: '/liwenhong'
+	// #endif
+	
+	// #ifdef GWI-BASE
+	// 回调地址
+	VUE_APP_REDIRECT_URL: 'https://csmh.hngwmt.com/base',
+	// 图片地址
+	VUE_APP_IMG_URL: 'https://csmh.hngwmt.com/base/archive/resource/img/',
+	// 请求地址
+	VUE_APP_REQUEST_URL: 'https://csmh.hngwmt.com/base',
+	// VUE_APP_REQUEST_URL: '',
+	VUE_APP_APPID: 'wx64616ad80452e505',
+	FRONT_URL: '/base'
+	// #endif
+	
+	// #ifdef GWI-JKCS
+	// 回调地址
+	VUE_APP_REDIRECT_URL: 'http://wsjkw.changsha.gov.cn/jkcs',
+	// 图片地址
+	VUE_APP_IMG_URL: 'http://wsjkw.changsha.gov.cn/jkcs/archive/resource/img/',
+	// todo 请求地址
+	VUE_APP_REQUEST_URL: 'https://csmh.hngwmt.com/jkcs',
+	VUE_APP_APPID: 'wx563314d21c5f5cbd',
+	FRONT_URL: '/jkcs'
+	// #endif
 }

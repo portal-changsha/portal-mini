@@ -1,0 +1,28 @@
+{
+  "resultCode": "1",
+  "resultMsg":"成功",
+  "errorCode":"",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [ {
+    "examId": "1001", 
+    "examTime": "2016-12-31 12:00:00",
+    "examItem": "腹部B超", 
+    "repDoctName": "崔西玉", 
+    "checkDoctName": "崔西玉", 
+    "deptName": "消化内科", 
+    "extraMap": { }
+  },
+    {
+      "examId": "1001", 
+      "examTime": "2016-12-31 12:00:00",
+      "examItem": "腹部B超", 
+      "repDoctName": "崔西玉", 
+      "checkDoctName": "崔西玉", 
+      "deptName": "消化内科", 
+      "extraMap": { }
+    }
+  ]
+}

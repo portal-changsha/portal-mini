@@ -1,0 +1,42 @@
+{
+  "total": "",
+  "data": {
+    "followUpDate": "2019-11-21",
+    "other": {
+      "adverseReaction": "1",
+      "drugUsage": "",
+      "followUpClassification": "",
+      "hypoglycemia": "1",
+      "medicationCompliance": "1"
+    },
+    "signs": {
+      "bloodPressure":"160/90",
+      "footPulse":"1",
+      "other":"",
+      "bodyMassIndex":"25.81/24.97",
+      "weight":"62/60"
+    },
+    "transfer": {
+      "reason":"sdfds",
+      "organizationAndRank":"sagsdgds"
+    },
+    "extraMap": {},
+    "followUpType": "",
+    "assistChecks": [],
+    "followUpWay": "3",
+    "lifeStyleGuides": {
+      "dairySmokeAmount": "1",
+      "accordingBehavior":"1",
+      "mindAdjust":"1",
+      "dailyFoodAmount":"260/260",
+      "dairyDrinkAmount":"0/0",
+      "sport":""
+    }
+
+  },
+  "tokenId": "",
+  "resultCode": "1",
+  "errorCode": "",
+  "sysTime": 1574229461147,
+  "resultMsg": ""
+}

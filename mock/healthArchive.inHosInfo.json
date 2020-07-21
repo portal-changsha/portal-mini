@@ -1,0 +1,17 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "inHospitalTime": "2020-06-12 20:30:32",
+    "hosName": "医院名称啊啊啊",
+    "deptName": "入院科室名称啊啊啊",
+    "doctName": "主治医生名称啊啊啊",
+    "diagnose": "出院诊断啊啊啊",
+    "extBid": "123456"
+  }
+}

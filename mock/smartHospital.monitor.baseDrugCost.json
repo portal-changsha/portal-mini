@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "label": "内分泌科门诊",
+      "value": 70516
+    },
+    {
+      "label": "妇科门诊",
+      "value": 55118
+    }
+  ],
+  "resultCode": "1",
+  "resultMsg": "成功"
+}

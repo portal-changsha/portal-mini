@@ -1,0 +1,22 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "deptName": "科室名称啊啊",
+    "sickRoom": "病室啊啊",
+    "bedNo": "床号啊啊",
+    "inHosNo": "住院号啊啊",
+    "inHosTime": "入院时间啊啊",
+    "outHosTime": "出院时间啊啊",
+    "inHosdays": "住院天数啊啊",
+    "inHosDiagnosis": "入院诊断啊啊",
+    "outHosStatus": "出院情况啊啊",
+    "outHosDiagnosis": "出院诊断啊啊",
+    "outHosAdvice": "医院医嘱啊啊啊"
+  }
+}

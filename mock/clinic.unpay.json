@@ -1,0 +1,113 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "11039999",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "visitId": "83109487132",
+      "deptName": "心血管内科",
+      "doctName": "崔西玉",
+      "totalFee": 2500,
+      "visitDate": "2017-10-20",
+      "diagnosis": "患者有既往病史",
+      "extraMap": {},
+      "recipes": [
+        {
+          "recipeType": "1",
+          "recipeId": "1001",
+          "recipeName": "西药",
+          "recipeTime": "2017-10-19 11:21:47",
+          "recipeFee": 2400,
+          "orderIds": ["1000000342"],
+          "canPay": true,
+          "extraMap": {},
+          "items": [
+            {
+              "itemId": "3021",
+              "itemType": "1",
+              "itemName": "阿莫西林",
+              "specs": "20粒/盒",
+              "unit": "0.5um/g",
+              "price": 100,
+              "qty": "2",
+              "itemFee": "3500",
+              "extraMap": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "visitId": "83109487132",
+      "deptName": "心血管内科心血管内科心血管内科心血管心血管内科内科心血管内科",
+      "doctName": "崔西玉",
+      "totalFee": 500,
+      "visitDate": "2017-10-20",
+      "diagnosis": "患者有既往病史",
+      "extraMap": {},
+      "recipes": [
+        {
+          "recipeType": "1",
+          "recipeId": "1010",
+          "recipeName": "西药",
+          "recipeTime": "2017-10-18 12:21:47",
+          "recipeFee": 150,
+          "orderIds": ["1000000342"],
+          "canPay": true,
+          "extraMap": {},
+          "items": [
+            {
+              "itemId": "3021",
+              "itemType": "1",
+              "itemName": "阿莫西林",
+              "specs": "20粒/盒",
+              "unit": "0.5um/g",
+              "price": 350,
+              "qty": "2",
+              "itemFee": "3500",
+              "extraMap": {}
+            },
+            {
+              "itemId": "3021",
+              "itemType": "1",
+              "itemName": "阿莫西林",
+              "specs": "20粒/盒",
+              "unit": "0.5um/g",
+              "price": 1750,
+              "qty": "2",
+              "itemFee": "3500",
+              "extraMap": {}
+            }
+          ]
+        },
+        {
+          "recipeType": "1",
+          "recipeId": "1011",
+          "recipeName": "检查费",
+          "recipeTime": "2017-11-19 06:21:47",
+          "recipeFee": 2500,
+          "orderIds": ["1000000342"],
+          "canPay": true,
+          "extraMap": {},
+          "items": [
+            {
+              "itemId": "3021",
+              "itemType": "1",
+              "itemName": "视力检查",
+              "specs": "",
+              "unit": "0.5um/g",
+              "price": 1750,
+              "qty": "2",
+              "itemFee": "3500",
+              "extraMap": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

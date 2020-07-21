@@ -1,0 +1,26 @@
+{
+  "resultCode": "1",
+  "resultMsg":"成功",
+  "errorCode":"",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": [
+    {
+      "areaNo":"13",
+      "balance":"237500",
+      "bedNo":"64",
+      "birthday":"51",
+      "cost":"2500",
+      "deptName":"(12W)眼科",
+      "inDate":"2019/3/21 12:11:50",
+      "inPatientNo":"201911999",
+      "name":"杨雪群",
+      "outDate":"",
+      "sex":"2",
+      "status":"2",
+      "total":"240000"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+    "data": {
+        "examNum": "25",
+        "examPositiveNum": "25",
+        "examPositivePrecent": "1.0000",
+        "examPositiveRank": [
+            {
+                "RID": "0",
+                "TID": "2113",
+                "itemName": "未找到开单医生",
+                "precent": "1.0000"
+            },
+            {
+                "RID": "0",
+                "TID": "2114",
+                "itemName": "张三",
+                "precent": "0.45"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            },
+            {
+                "RID": "0",
+                "TID": "2106",
+                "itemName": "李四",
+                "precent": "0.36"
+            }
+        ]
+    },
+    "resultCode": "1",
+    "resultMsg": "成功",
+    "sysTime": 0
+}

@@ -1,0 +1,23 @@
+{
+  "resultCode": "1",
+  "resultMsg": "成功",
+  "errorCode": "",
+  "timestamp": 1482974239274,
+  "version": "1.0",
+  "url": "http://www.gwi.com.cn/ydz.cgi",
+  "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
+  "data": {
+    "orderId": "1000000235",
+    "payFee": 70000,
+    "payInfo": {
+      "appid": "wx14cb193b",
+      "noncestr": "iU22L3t6btLyonfa5WoBfA==",
+      "package": "sign=WXPay",
+      "partnerid": "7162930",
+      "prepayid": "olCRwuAZL__hGqGRicXVLqciyWXE",
+      "timestamp": "20150925161125",
+      "sign": "0B8F65E0A3C26718B76689D4BFF46CF1"
+    },
+    "extraMap": {}
+  }
+}
