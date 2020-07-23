@@ -99,7 +99,9 @@
 						vm.isOpen = false
 					})
 				}
+				
 				this.isOpen = !this.isOpen
+				this.isOpen && this.$emit('collapseChange')
 				this.collapse.onChange && this.collapse.onChange()
 				this.$forceUpdate()
 			}

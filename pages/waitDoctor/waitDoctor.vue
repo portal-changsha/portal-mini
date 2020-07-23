@@ -65,10 +65,11 @@ export default {
       this.waitInfo = []
       let hosInfo = getItem('selectedHospital')
       let voucher = getItem('selectedVoucher')
+      let areaInfo = getItem('selectedArea')
       let params = {
 		'orgId': hosInfo.orgId,
-        'hospitalId': hosInfo.hospitald,
-        'areaId': hosInfo.areaId,
+        'hospitalId': hosInfo.id,
+        'areaId': areaInfo.areaId,
         'cardType': voucher.cardType,
         'cardNo': voucher.cardNo,
         'type': type + ''

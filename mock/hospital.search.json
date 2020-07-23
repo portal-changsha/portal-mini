@@ -22,7 +22,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430121002.png",
-        "hospitalId": "430121002",
+        "id": "430121002",
         "orgId": "1001"
       },
       {
@@ -38,7 +38,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430105001.png",
-        "hospitalId": "430105001",
+        "id": "430105001",
         "orgId": "1001"
       },
       {
@@ -54,7 +54,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430111001.png",
-        "hospitalId": "430111001",
+        "id": "430111001",
         "orgId": "1001"
       },
       {
@@ -70,7 +70,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430103001.png",
-        "hospitalId": "430103001",
+        "id": "430103001",
         "orgId": "1001"
       },
       {
@@ -86,7 +86,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430104001.png",
-        "hospitalId": "430104001",
+        "id": "430104001",
         "orgId": "1001"
       },
       {
@@ -102,7 +102,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430111002.png",
-        "hospitalId": "430111002",
+        "id": "430111002",
         "orgId": "1001"
       },
       {
@@ -118,7 +118,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001"
       }
     ],
@@ -136,7 +136,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "deptId": "100",
         "deptName": "内科"
@@ -154,7 +154,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "deptId": "101",
         "deptName": "肾内科"
@@ -172,7 +172,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "deptId": "102",
         "deptName": "内分泌科"
@@ -192,7 +192,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "中医妇科副主任医师，师从湖南中医妇科名家郑纯教授。曾赴上海市中医院进修，博采沪上蔡氏妇科与朱氏妇科之长，潜心研究价廉效验之经方治疗妇产科疾病。\n擅长：用中药治疗月经病、不孕症、妇科炎性疾病、子宫内膜异位症、产后病。",
         "extraMap": {},
@@ -217,7 +217,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "",
         "extraMap": {},
@@ -242,7 +242,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "",
         "extraMap": {},
@@ -267,7 +267,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "",
         "extraMap": {},
@@ -292,7 +292,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "",
         "extraMap": {},
@@ -317,7 +317,7 @@
         "areaId": "1003",
         "areaName": "南院(书院路542号)",
         "logo": "https://csmh.hngwmt.com/portal/archive/resource/hos_430102002.png",
-        "hospitalId": "430102002",
+        "id": "430102002",
         "orgId": "1001",
         "doctDesc": "",
         "extraMap": {},

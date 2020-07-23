@@ -41,8 +41,7 @@ export default {
             this.hasHisRegister = true
             this.hasGoDeptDoctor = true
             this.currentView = config[this.currentViewName]
-            next(false)
-            next(false)
+            return next(false)
         } else {
             next()
         }
@@ -69,7 +68,7 @@ export default {
         this.isHead = this.$consts.TRIAGE.HEAD.NO
 		this.$nextTick(() => {
 			this.showTriage = true
-		})
+		})	
     },
 	onShow(){
 		//加载历史挂号

@@ -14,7 +14,7 @@
       "extraMap": {},
       "depts": [
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "1长沙市第八医院（中医医院）",
           "areaId": "23423",
           "areaName": "星沙本部(星沙)",
@@ -23,7 +23,7 @@
           "extraMap": {}
         },
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "2长沙市第八医院",
           "areaId": "23423",
           "areaName": "星沙本部（河西）",
@@ -32,7 +32,7 @@
           "extraMap": {}
         },
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "3长沙市第八医院（中医医院）",
           "areaId": "23423",
           "areaName": "星沙本部",
@@ -41,7 +41,7 @@
           "extraMap": {}
         },
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "3长沙市第八医院（中医医院）",
           "areaId": "23423",
           "areaName": "星沙本部",
@@ -50,7 +50,7 @@
           "extraMap": {}
         },
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "3长沙市第八医院（中医医院）",
           "areaId": "23423",
           "areaName": "星沙本部",
@@ -59,7 +59,7 @@
           "extraMap": {}
         },
         {
-          "hospitalId": "23423",
+          "id": "23423",
           "hospitalName": "3长沙市第八医院（中医医院）",
           "areaId": "23423",
           "areaName": "星沙本部",

@@ -4,7 +4,7 @@
             <section class="no-bottom">
                 <div class="search-bar">
                     <label></label>
-                    <input class="input-search" type="text" @keypress="contrastText" placeholder="请输入医院、科室或医生姓名" v-model="inputText" autofocus="autofocus">
+                    <input class="input-search" type="text" @keypress="contrastText" placeholder="请输入医院、科室或医生姓名" v-model="inputText" autofocus="autofocus" @input="contrastText">
                     <button @click="backHome()">取消</button>
                 </div>
             </section>
@@ -125,23 +125,29 @@
                 isChoose: false,
                 showNoRecord: true,
                 allRecords: [],
-                tips: '请输入关键词'
+                tips: '请输入关键词',
+				searchTime: null
             }
         },
         methods: {
-            contrastText(event) {
-                if (!this.inputText) {
+            contrastText(e) {
+                if (!e.detail.value) {
 					showToast('请输入关键词')
                     return
                 }
                 this.isChoose = true
-                this.refresh();
+				if(this.searchTime){
+					clearTimeout(this.searchTime)
+				} 
+				this.searchTime = setTimeout(() => {
+					this.refresh(e.detail.value);
+				}, 800)
             },
             backHome() {
                 this.$Router.back()
             },
-            refresh() {
-                this.loadHosDeptDocList();
+            refresh(keyword) {
+                this.loadHosDeptDocList(keyword);
             },
             clearData() {
                 /*初始化数据*/
@@ -157,7 +163,7 @@
                 this.hosNumber = 0
                 this.deptNumber = 0
             },
-            loadHosDeptDocList() {
+            loadHosDeptDocList(keyword) {
                 this.clearData()
                 //界面加载友好提示
 				const point = getItem('locationPoint')
@@ -166,7 +172,7 @@
                     areaLevel: this.$consts.AREA_LEVEL,
                     longitude: point ? point.longitude : '',
                     latitude: point ? point.latitude : '',
-                    keyword: this.inputText
+                    keyword: keyword || this.inputText
                 }
                 fuzzyHosDeptDoctor(areaParams).then((res) => {
                     if (res.resultCode !== this.$consts.RESULT_SUCCESS) return

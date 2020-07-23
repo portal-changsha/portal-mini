@@ -97,26 +97,26 @@ export default {
     },
     async getHospitalDept () {
       this.deptInfo = []
-	  this.allSubDeparts = []
+	    this.allSubDeparts = []
       let data = {
-		orgId: this.hosInfo.orgId,
+		    orgId: this.hosInfo.orgId,
         hospitalId: this.hosInfo.id,
         areaId: this.areaInfo.areaId
       }
       let res = await getRegisterDept(data)
       if (res.resultCode === this.$consts.RESULT_SUCCESS) {
         this.deptInfo = res.data
-		this.deptInfo.forEach((item) => {
-			//搜索数组赋值前屏蔽重点科室，源头上达到去重效果 0: 非重点  1: 重点科室
-			if (item.isKey !== '1' && item.deptName !== '重点科室') {
-				this.allSubDeparts = this.allSubDeparts.concat(item["children"]);
-				//	保存数据
-				this.$store.dispatch('paramStore/updateParam', {
-					namespace:'allSubDeparts',
-					allSubDeparts: this.allSubDeparts
-				})
-			}
-		});
+        this.deptInfo.forEach((item) => {
+          //搜索数组赋值前屏蔽重点科室，源头上达到去重效果 0: 非重点  1: 重点科室
+          if (item.isKey !== '1' && item.deptName !== '重点科室') {
+            this.allSubDeparts = this.allSubDeparts.concat(item["children"]);
+            //	保存数据
+            this.$store.dispatch('paramStore/updateParam', {
+              namespace:'allSubDeparts',
+              allSubDeparts: this.allSubDeparts
+            })
+          }
+        });
       }
     },
     toPage (item, type) {

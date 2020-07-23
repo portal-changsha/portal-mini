@@ -8,7 +8,7 @@
   "sign": "00E9F1D7EB6EF1C136C13A3A5F50DE22",
   "data": [
     {
-      "hospitalId": "1001",
+      "id": "1001",
       "hospitalName": "佛山第一人民医院",
       "areaId": "1",
       "areaName": "总院",

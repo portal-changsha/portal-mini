@@ -2,7 +2,7 @@
  * @description 系统全局配置
  */
 export default {
-	VUE_APP_MOCK: true,
+	VUE_APP_MOCK: false,
 	// #ifdef GWI-PORTAL
 	// 回调地址
 	VUE_APP_REDIRECT_URL: 'https://csmh.hngwmt.com/liwenhong',

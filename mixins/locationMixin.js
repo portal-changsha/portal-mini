@@ -4,6 +4,7 @@
  */
 import { wechatConfig, getLocation } from '@/utils/wxJsSdk.js'
 import { showToast } from '@/utils/uniApi.js'
+import { setItem } from '@/utils/localStore.js'
 
 export default {
 	data(){
@@ -28,11 +29,13 @@ export default {
 						console.log(res)
 						this.latitude = res.latitude
 						this.longitude = res.longitude
+						setItem('locationPoint', res)
 						resolve(res)
 					}).catch((error) => {
 						console.log(error)
 						this.latitude = ''
 						this.longitude = ''
+						setItem('locationPoint', '')
 						showToast('获取定位失败')
 						resolve(error)
 					})

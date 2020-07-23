@@ -3,32 +3,28 @@
 		<div class="app">
 		    <div>
 		      <div v-if="toOutMap" class="search-bar">
-		        <input class="input-search" type="text" placeholder="请输入您想要搜索的医院" v-model="inputText">
-		        <button @click="contrastText"></button>
+		        <input class="input-search" type="text" placeholder="请输入您想要搜索的医院" v-model="inputText" @input="contrastText">
+		        <!-- <button @click="contrastText"></button> -->
 		      </div>
-		      <div class="input-hospital" @click.stop="stopClink" v-else v-show="showAllHospital">
+		      <div class="input-hospital" v-else v-show="showAllHospital">
 		        <i class="icon-search"></i>
-		        <input class="input-search" type="text" placeholder="请输入您想要搜索的医院" v-model.trim="inputText"
-		               @click="contrastText">
+		        <input class="input-search" type="text" placeholder="请输入您想要搜索的医院" v-model.trim="inputText" @input="contrastText">
 		      </div>
-		      <!--<index-bar></index-bar>-->
 		      <ul v-if="selectedHospital.name && selectedArea.areaName" class="list list-header"
 		          v-show="showAllHospital">
-		        <li @click="continueSelect(selectedHospital)" class="hos-list-item last ellipsis"
-		            id="hospitalSelect-li-continue">
+		        <li @click="continueSelect(selectedHospital)" class="hos-list-item last ellipsis" id="hospitalSelect-li-continue">
 		          上次选择：{{selectedHospital.name}}
 		          <span class="continue">继续</span>
 		        </li>
 		      </ul>
 		    </div>
 		    <scroll @refresh="refresh" style="margin-top: 2.5rem" :style="{'margin-top': haveRecommendHos}">
-		      <div id="hospitalSelect-tree">
-		        <uni-collapse accordion="true" v-model="activeNames" v-show="!this.isChoose">
-		          <uni-collapse-item v-for="(v, i) of orgAreaList" :key="i" :name="i.toString()" :title="v.orgName">
+		      <div>
+		        <uni-collapse accordion="true" v-show="!this.isChoose" >
+		          <uni-collapse-item v-for="(v, i) of orgAreaList" :key="i" :name="i.toString()" :title="v.orgName" :open="i === 0" @collapseChange="vanCollapseChange(v, i)">
 		            <!-- v：医院信息数组（相同字母索引），k：字母索引，i：数组下标 -->
 		            <ul v-for="(vv, i) of v.hosList" :key="i" class="list">
-		              <li class="hos-list-item def loc-arr-row"
-		                  :id="'hospitalSelect-li-hospital-' + vv.id" @click="select(vv)">
+		              <li class="hos-list-item def loc-arr-row" @click.stop="select(vv)">
 		                <div class="hospital-info">
 		                  <div class="logo hosLogo" v-if="vv.logo"
 		                       v-bind:style="{backgroundImage: 'url(' +vv.logo+ ')'}"></div>
@@ -40,7 +36,6 @@
 		                      <dt>{{ vv.address }}</dt>
 		                      <dd>
 		                        <span v-if="vv.distance > 0">{{ vv.distance | formateDistance }}</span>
-		                        <span v-else></span>
 		                      </dd>
 		                    </dl>
 		                  </div>
@@ -51,8 +46,8 @@
 		        </uni-collapse>
 		        <div v-show="this.isChoose">
 		          <!-- v：医院信息数组（相同字母索引），k：字母索引，i：数组下标 -->
-		          <ul v-for="(v, k, i) of tempList" :key="i" class="list">
-		            <li class="hos-list-item def loc-arr-row" v-for="(vv, ii) of v" :key="ii"
+		          <ul class="list">
+		            <li class="hos-list-item def loc-arr-row" v-for="(vv, ii) of tempList" :key="ii"
 		                :id="'hospitalSelect-li-hospital-' + vv.id" @click="select(vv)">
 		              <div class="hospital-info">
 		                <div class="logo hosLogo" v-if="vv.logo"
@@ -72,7 +67,7 @@
 		              </div>
 		            </li>
 		          </ul>
-		          <no-record id="hospital-list-norecord" :condition="hospitalList.length === 0" :isLoading="isLoading"
+		          <no-record id="hospital-list-norecord" :condition="tempList.length === 0" :isLoading="isLoading"
 		                     tips='抱歉，暂无医院列表信息'></no-record>
 		        </div>
 		        <no-record id="orgarea-list-norecord" :condition="orgAreaList.length === 0" :isLoading="isLoading"
@@ -92,7 +87,6 @@
 				      <dt>{{ item.areaAddr }}</dt>
 				      <dd>
 				        <span v-if="item.distance > 0">{{ item.distance | formateDistance }}</span>
-				        <span v-else></span>
 				      </dd>
 				    </dl>
 				  </li>
@@ -108,31 +102,30 @@
 	import uniCollapseItem from '@/components/uni-collapse-item/uni-collapse-item.vue'
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import { getItem, removeItem, setItem } from '@/utils/localStore.js'
-	import { getAllHospitals, loadArea } from '@/services/hospitals.js'
+	import { loadArea, loadHosByName, loadHosByOrg, loadHosByNear } from '@/services/hospitals.js'
 	import { showToast } from '@/utils/uniApi.js'
-	import locationMixin from '@/mixins/locationMixin.js'
-	import assign from '@/mixins/assign.js'
+
 	import { openLocation } from '@/utils/wxJsSdk.js'
 	const isSearchModel = ['regList', 'paidList', 'reportList', 'myRecharge', 'inpatientRecharge', 'hospitalCostList', 'waitDoctor', 'surveyDoctorList', 'inMap', 'myPrescription', 'myReport', 'myPay', 'clinicUnpayList', 'myRegister']
-	const moduleIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
-	const moduleUrls = [
-		'departDoctor',
-		'clinicUnpayList',
-		'myReport',
-		'waitDoctor',
-		'myRegister',
-		'myPay',
-		'myPrescription',
-		'surveyDoctorList',
-		'outMap',
-		'inMap',
-		'inpatientRecharge',
-		'hospitalCostList',
-		'myRecharge',
-		'healthCheck',
-	]
+	// const moduleIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
+	const moduleUrls = {
+		'departDoctor': '1',
+		'clinicUnpayList': '2',
+		'myReport': '3',
+		'waitDoctor': '4',
+		'myRegister': '5',
+		'myPay': '6',
+		'myPrescription': '7',
+		'surveyDoctorList': '8',
+		'outMap': '9',
+		'inMap': '10',
+		'inpatientRecharge': '11',
+		'hospitalCostList': '12',
+		'myRecharge': '13',
+		'healthCheck': '14',
+	}
 	export default {
-		mixins:[locationMixin],
+		
 		components:{
 			uniCollapse,
 			uniCollapseItem,
@@ -159,9 +152,11 @@
 				showAllHospital: true,
 				otherPlatformModules: '',
 				otherPlatformHosId: '',
-				latitude: '',
-				longitude: '',
-				redirectModel: this.$store.getters.param.DistrictSelect
+				latitude: getItem('locationPoint') ? getItem('locationPoint').latitude : '',
+				longitude: getItem('locationPoint') ? getItem('locationPoint').longitude : '',
+				redirectModel: this.$store.getters.param.DistrictSelect,
+				tempList: [],
+				searchTime: null
 			};
 		},
 		computed: {
@@ -170,30 +165,6 @@
 			  return 4.5 + "rem"
 			}
 			return 2.5 + "rem"
-		  },
-		  //返回查询后的医院列表
-		  tempList() {
-			let temp = []
-			if (this.hospitalList.length !== 0) {
-			  let hospitals = this.hospitalList
-			  let inputText = this.inputText
-			  let inputList = inputText.split('')
-			  //关键字比较
-			  for (let i = 0; i < hospitals.length; i++) {
-				let flag = true
-				for (let j = 0; j < inputList.length; j++) {
-				  //如果有一个字不匹配则为false
-				  if (hospitals[i].name.indexOf(inputList[j]) == -1) {
-					flag = false
-				  }
-				}
-				//保存匹配后的数组
-				if (flag) {
-				  temp.push(hospitals[i])
-				}
-			  }
-			  return {'医院': temp}
-			}
 		  }
 		},
 		watch: {
@@ -202,10 +173,6 @@
 		  },
 		},
 		async onShow(){
-			//	定位
-			const location = await this.getCurrentLocation()
-			console.log(location)
-			console.log('选择医院页面')
 			//判断是否来源于查询类模块
 			 //  const locationPoint = getItem('locationPoint')
 			 //  if (!locationPoint || this.redirectModel && isSearchModel.includes(this.redirectModel.target)) {
@@ -224,7 +191,6 @@
 				  //	如果是来院导航，直接打开微信内置地图
 				  this.fromMenuUrl = param.menu.url
 				}
-		  
 				//  统一判断是否来自外部链接
 				if (query && query.goToModules || !param || !param.menu || !param.menu.url) {
 				  //判断是否单个医院入口
@@ -249,12 +215,7 @@
 				  this.loadHospitalList()
 				  return
 				}
-				for (let i=0; i<moduleUrls.length; i++) {
-					if (homeModule === moduleUrls[i]) {
-						this.loadHospitalList(moduleIds[i])
-						return;
-					}
-				}
+				this.loadHospitalList(moduleUrls[homeModule])
 			 },
 			loadHospitalList(moduleId) {
 				 this.moduleId = moduleId
@@ -271,7 +232,7 @@
 				   latitude: this.latitude,
 				   longitude: this.longitude
 				 }
-				 getAllHospitals(areaParams).then((res) => {
+				 loadHosByNear(areaParams).then((res) => {
 				   //结束加载提示
 				   // this.isLoading = false;
 				   if (res.resultCode !== this.$consts.RESULT_SUCCESS) {
@@ -281,6 +242,7 @@
 				   let newHosList = []
 				   if (res.data[0] && res.data[0].hosList.length === 0) {
 					 newOrgList = res.data.slice(1);
+					 this.vanCollapseChange(newOrgList[0], 0)
 				   } else {
 					 newOrgList = res.data
 				   }
@@ -333,8 +295,19 @@
 		  stopClink(e) {
 			 e.preventDefault()
 		  },
-		  contrastText() {
-			this.isChoose = !!this.inputText;
+		  contrastText(e) {
+			  console.log(e.detail.value)
+			this.isChoose = !!e.detail.value;
+			console.log(e.detail.value)
+			console.log(this.isChoose)
+			if(this.isChoose){
+			  if(this.searchTime){
+				clearTimeout(this.searchTime)
+			  } 
+			  this.searchTime = setTimeout(() => {
+				this.getHosInfoByName(e.detail.value)
+			  }, 800)
+			}
 		  },
 		  //医院选择
 			select(v) {
@@ -382,7 +355,6 @@
 			selectArea(area, type) {
 			  // this.$store.commit('togglePopup', false);
 			  // sessionStorage.setItem('directFromPopup', 1)
-			  console.log(area)
 			  this.pushToModule(area, type);
 			},
 			/*统一跳转方法*/
@@ -426,7 +398,46 @@
 			}
 			//跳转业务模块
 			this.$Router.push({name: vuexMenuUrl})
-		  }
+		  },
+		  getHosInfoByName(keyword){
+			  this.isLoading = true
+			  this.tempList = []
+			  const params = {
+				latitude: this.latitude,
+				longitude: this.longitude,
+				keyword: keyword,
+				moduleId: this.moduleId
+			  }
+			  loadHosByName(params).then(res => {
+				this.isLoading = false
+				if(res.resultCode !== this.$consts.RESULT_SUCCESS){
+				  showToast(res.resultMsg)
+				  return
+				}
+				if(res.data && res.data.length > 0){
+				  this.tempList = res.data[0].hosList
+				}
+			  })
+			},
+			vanCollapseChange(list, index){
+				if(list.hosList.length > 0) return
+				//  请求接口
+				const params = {
+				  latitude: this.latitude,
+				  longitude: this.longitude,
+				  orgId: list.orgId, 
+				  moduleId: this.moduleId
+				}
+				loadHosByOrg(params).then(res => {
+				  if(res.resultCode !== this.$consts.RESULT_SUCCESS){
+					showToast(res.resultMsg)
+					return
+				  }
+				  const copyList = { ...list }
+				  copyList.hosList = res.data[0].hosList
+				  this.$set(this.orgAreaList, index, copyList)
+				})
+			}
 		}
 	}
 </script>
@@ -439,7 +450,6 @@
       background-color: #51a8ec;
       display: flex;
       align-items: center;
-
       .icon-search {
         position: absolute;
         background: url($redirect-url + $img-file-path + "icon-search.png") no-repeat;
@@ -451,18 +461,19 @@
       }
 
       .input-search {
-        height: .8rem;
+        height: 1.6rem;
         font-size: .8rem;
         width: 90%;
-        padding: .8rem 2.1rem;
+        padding: 0 2.1rem;
         display: block;
         margin: 0 auto;
         border-radius: 18px;
         align-self: center;
         outline: none;
         border: none;
-      }
-    }
+		background: #fff;
+		}
+	}
 
     .guide-bg {
       margin-bottom: 5px;

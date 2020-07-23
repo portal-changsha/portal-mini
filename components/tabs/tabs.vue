@@ -66,7 +66,7 @@ export default {
       content: '';
       position: absolute;
       width: 3rem;
-      bottom: -0.6rem;
+      bottom: -0.2rem;
       left: 0;
       right: 0;
       height: 0.15rem;

@@ -51,9 +51,10 @@
 	const BASE_IMG_URL = config.VUE_APP_IMG_URL
 	import { getItem, removeItem } from '@/utils/localStore.js'
 	import healthArchiveMixin from '@/mixins/healthArchive.js'
-	// import assign from '@/mixins/assign.js'
+	import locationMixin from '@/mixins/locationMixin.js'
+
 	export default {
-		mixins:[healthArchiveMixin],
+		mixins:[healthArchiveMixin, locationMixin],
 		data() {
 			return {
 				voucherList: [],
@@ -100,6 +101,8 @@
 				if(res.resultCode === this.$consts.RESULT_SUCCESS){
 					this.voucherList = res.data
 					matchLocalStoreVoucher(res.data)
+					//	定位
+					this.getCurrentLocation()
 				}
 			})
 		},

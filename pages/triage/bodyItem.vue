@@ -125,6 +125,8 @@ export default {
 					this.$emit('show-head')
 					return
 				}
+			} else {
+				//	其它部分的点击
 			}
 		},
 		clickEvent(e){
