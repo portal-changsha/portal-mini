@@ -2,64 +2,30 @@
 <div class="triage-body">
     <div class="body-bg f-small" :class="[bodyBg, judgePhone]">
         <!-- 男/女正面身体 -->
-        <!-- <svg v-show="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.FRONT " width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> -->
-            <div style="height: 100%;" v-if="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.FRONT ">
-				<body-item sex="m" bodyId="0" @show-head="onShowHead($consts.TRIAGE.HEAD.YES)"></body-item>
-				<body-item sex="m" bodyId="7"></body-item>
-				<body-item sex="m" bodyId="8"></body-item>
-				<body-item sex="m" bodyId="9"></body-item>
-				<body-item sex="m" bodyId="10"></body-item>
-				<body-item sex="m" bodyId="11"></body-item>
-				<body-item sex="m" bodyId="15" :text-offset="-5"></body-item>
-				<body-item sex="m" bodyId="16"></body-item>
-				<body-item sex="m" bodyId="17"></body-item>
-			</div>
-			
-			
-        <!-- </svg> -->
+		<div style="height: 100%;" v-if="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.FRONT">
+			<body-item sex="m" :bodyId="[0,7,8,9,10,11,15,16,17]" @show-head="onShowHead($consts.TRIAGE.HEAD.YES)"></body-item>
+		</div>
         <!-- 男/女反面身体 -->
-     <!--   <svg v-show="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct ==$consts.TRIAGE.DIRECT.BACK " width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <body-item sex="m" bodyId="12"></body-item>
-            <body-item sex="m" bodyId="13"></body-item>
-            <body-item sex="m" bodyId="14"></body-item>
-        </svg> -->
+		<div style="height: 100%;" v-if="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct ==$consts.TRIAGE.DIRECT.BACK">
+			<body-item sex="m" :bodyId="[12,13,14]"></body-item>
+		</div>
         <!-- 男/女头部 -->
- <!--       <svg v-show="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.YES" width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <body-item sex="m" bodyId="1"></body-item>
-            <body-item sex="m" bodyId="2" :text-offset="7"></body-item>
-            <body-item sex="m" bodyId="3" :text-offset="7"></body-item>
-            <body-item sex="m" bodyId="4" :text-offset="7"></body-item>
-            <body-item sex="m" bodyId="5" :text-offset="7"></body-item>
-            <body-item sex="m" bodyId="6"></body-item>
-        </svg> -->
+		<div style="height: 100%;" v-if="crowdId != $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.YES">
+			<body-item sex="m" :bodyId="[1,2,3,4,5,6]"></body-item>
+		</div>
         <!--275-->
         <!-- 儿童正面身体 -->
-      <!--  <svg v-show="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.FRONT " width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <body-item sex="c" bodyId="0" @show-head="onShowHead($consts.TRIAGE.HEAD.YES)"></body-item>
-            <body-item sex="c" bodyId="7" ></body-item>
-            <body-item sex="c" bodyId="8" ></body-item>
-            <body-item sex="c" bodyId="9" ></body-item>
-            <body-item sex="c" bodyId="16" ></body-item>
-            <body-item sex="c" bodyId="10" ></body-item>
-            <body-item sex="c" bodyId="11" ></body-item>
-            <body-item sex="c" bodyId="15" :text-offset="-5"></body-item>
-            <body-item sex="c" bodyId="17" ></body-item>
-        </svg> -->
+		<div style="height: 100%;" v-if="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.FRONT">
+			<body-item sex="c" :bodyId="[0,7,8,9,10,16,11,15,17]"  @show-head="onShowHead($consts.TRIAGE.HEAD.YES)"></body-item>
+		</div>
         <!-- 儿童反面身体 -->
-        <!-- <svg v-show="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.BACK " width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <body-item sex="c" bodyId="12"></body-item>
-            <body-item sex="c" bodyId="13"></body-item>
-            <body-item sex="c" bodyId="14"></body-item>
-        </svg> -->
+		<div style="height: 100%;" v-if="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.NO && direct == $consts.TRIAGE.DIRECT.BACK">
+			<body-item sex="c" :bodyId="[12,13,14]"></body-item>
+		</div>
         <!-- 儿童头部 -->
-   <!--     <svg v-show="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.YES " width="100%" height="100%" viewBox="0,0,300,440" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <body-item sex="c" bodyId="1"></body-item>
-            <body-item sex="c" bodyId="2" :text-offset="7"></body-item>
-            <body-item sex="c" bodyId="3" :text-offset="7"></body-item>
-            <body-item sex="c" bodyId="4" :text-offset="7"></body-item>
-            <body-item sex="c" bodyId="5" :text-offset="7"></body-item>
-            <body-item sex="c" bodyId="6"></body-item>
-        </svg> -->
+		<div style="height: 100%;" v-if="crowdId == $consts.TRIAGE.CROWD.CHILDREN && isHead== $consts.TRIAGE.HEAD.YES">
+			<body-item sex="c" :bodyId="[1,2,3,4,5,6]"></body-item>
+		</div>
     </div>
     <div class="sex-menu">
         <div id="triagebody-menu-sex0" class="sex-icon icon-nan" :class="{active: crowdId == $consts.TRIAGE.CROWD.MAN}" @click="onSelectedSex($consts.TRIAGE.CROWD.MAN)"></div>

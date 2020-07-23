@@ -1,21 +1,5 @@
 <template>
-<!--    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <a :id="sex+bodyId" @click.stop="organSelected()">
-            <circle :cx="organ.cx" :cy="organ.cy" r="22" fill="#dbdbdb">
-                <set attributeName="fill" to="#51a9ec" :begin="activeBegin" :end="activeEnd"/>
-            </circle>
-            <text :x="textX" :y="textY" fill="#333">
-                {{organ.name}}
-                <set attributeName="fill" to="#ffffff" :begin="activeBegin" :end="activeEnd"/>
-            </text>
-            <path :d="linePosition" stroke="#dbdbdb" stroke-width="1" >
-                <set attributeName="stroke" to="#51a9ec" :begin="activeBegin" :end="activeEnd"/>
-            </path>
-        </a>
-    </svg> -->
-	<!-- <div> -->
-		<canvas :canvas-id="sex+bodyId"></canvas>
-	<!-- </div> -->
+	<canvas :canvas-id="'triageCanvasId'" ref="canvas"></canvas>
 </template>
 <script>
 import config from './bodyItemConfig'
@@ -26,52 +10,43 @@ export default {
             default: ''
         }
     },
-    data() {
-        return {
-            organ: config[this.sex + this.bodyId],
-        }
-    },
+	data(){
+		return {
+			unit: 1,
+			ctx: null
+		}
+	},
 	mounted(){
-		this.$nextTick(() =>{
-			this.canvasToStyle()
+		uni.getSystemInfo({
+			success: (res) => {
+			    this.unit= res.windowWidth/375
+			}
 		})
+		this.$nextTick(() =>{
+			this.canvasToStyle(this.unit)
+		})
+	},
+	beforeDestroy(){
+		//	要销毁了
+		const dom = this.$refs.canvas.$el
+		dom && dom.removeEventListener('click', (e) => {
+			this.clickEvent(e)
+		}, false)
 	},
     props: {
         textOffset: {
             default: 0,
         },
         sex: String,
-        bodyId: String,
+        bodyId: Array,
     },
-    computed: {
-        textX() {
-            return (this.organ.cx - 14) + this.textOffset
-        },
-        textY() {
-            return this.organ.cy + 5
-        },
-        linePosition() {
-            return `M${this.organ.lineStartX} ${this.organ.lineStartY} L${this.organ.lineEndX} ${this.organ.lineEndY} Z`
-        },
-        activeBegin() {
-            return `${this.sex + this.bodyId}.touchstart;`
-        },
-        activeEnd() {
-            return `${this.sex + this.bodyId}.touchend;${this.sex}${this.bodyId}.touchcancel;`
-        },
-		lineStartX(){
-			return this.organ.lineStartX
-		},
-		lineStartY(){
-			return this.organ.lineStartY
-		},
-		lineEndX(){
-			return this.organ.lineEndX
-		},
-		lineEndY(){
-			return this.organ.lineEndY
+	watch:{
+		bodyId(newBody, oldBody){
+			console.log(newBody, '...' , oldBody)
+			console.log(this.unit)
+			this.canvasToStyle(this.unit)
 		}
-    },
+	},
     methods: {
         organSelected() {
             if (this.bodyId === '0') {
@@ -81,38 +56,82 @@ export default {
             }
             this.triageBody.$emit("tab-change",{crowdId:this.triageBody.crowdId,bodyId: this.bodyId},true)
         },
-		canvasToStyle(){
-			const id = this.sex + this.bodyId
-			const ctx = uni.createCanvasContext(id)
-			// ctx.setStrokeStyle('red')
-			// ctx.beginPath()
-			// console.log(this.organ.lineStartX, '...', this.organ.lineStartY)
-			// ctx.moveTo(this.organ.lineStartX, this.organ.lineStartY)
-			// ctx.lineTo(this.organ.lineEndX, this.organ.lineEndY)
-			// ctx.closePath()
-			// ctx.stroke()
-			// ctx.draw()
-			
-			// Draw coordinates
-			// ctx.arc(100, 75, 50, 0, 2 * Math.PI)
-			// ctx.setFillStyle('#EEEEEE')
-			// ctx.fill()
-			
-			ctx.beginPath()
-			console.log(this.lineStartX)
-			ctx.moveTo(this.lineStartX, this.lineStartY)
-			ctx.lineTo(this.lineEndX, this.lineEndY)
-			ctx.setStrokeStyle('#dbdbdb')
-			ctx.stroke()
-			
-			ctx.setFontSize(12)
-			ctx.setFillStyle('black')
-			ctx.fillText('0', 165, 78)
-			ctx.fillText('0.5*PI', 83, 145)
-			ctx.fillText('1*PI', 15, 78)
-			ctx.fillText('1.5*PI', 83, 10)
-			
-			ctx.draw()
+		canvasToStyle(unit){
+			this.ctx = uni.createCanvasContext('triageCanvasId', this)
+			const ctx = this.ctx
+			this.bodyId.forEach(item => {
+				let id = this.sex + item
+				const data = config[id]
+				ctx.beginPath()
+				ctx.moveTo(data.lineStartX * unit, data.lineStartY * unit)
+				ctx.lineTo(data.lineEndX * unit, data.lineEndY * unit)
+				ctx.setStrokeStyle('#dbdbdb')
+				ctx.stroke()
+				//	绘制圆形
+				ctx.beginPath()
+				const arcX = data.cx * unit
+				const arcY = data.cy * unit
+				const r = 25 * unit
+				ctx.fillStyle ='#dbdbdb'
+				ctx.arc(arcX, arcY, r,0, 2 * Math.PI)
+				ctx.setStrokeStyle('#dbdbdb')
+				ctx.fill()
+				ctx.stroke()
+				//	绘制文字
+				ctx.beginPath()
+				ctx.setFontSize(14)
+				ctx.setTextAlign('center')
+				ctx.setFillStyle('#333333')
+				ctx.fillText(data.name, arcX, (arcY+5))
+				ctx.stroke()
+			})
+			setTimeout(() => {
+				ctx.draw()
+				this.clickEventLister()
+			}, 300)
+		},
+		getEventPosition(ev){
+			console.log(ev)
+			let x, y;
+			if (ev.layerX || ev.layerX === 0) {
+				x = ev.layerX;
+				y = ev.layerY;
+			} else if (ev.offsetX || ev.offsetX === 0) {
+				x = ev.offsetX;
+				y = ev.offsetY;
+			}
+			return {x: x, y: y}
+		},
+		//对事件进行监听
+		clickEventLister(){
+			const dom = this.$refs.canvas
+			dom.$el.addEventListener('click', (e) => {
+				this.clickEvent(e)
+			}, false)
+		},
+		isClicked(point){
+			//	头部范围
+			const rangeX = [5*this.unit, 70*this.unit]
+			const rangeY = [0, 60*this.unit]
+			const cRangeY = [30*this.unit, 100*this.unit]
+			if(point.x >= rangeX[0] && point.x <= rangeX[1]){
+				if(point.y >= rangeY[0] && point.y < rangeY[1]){
+					//	点击了成人头部
+					this.$emit('show-head')
+					return
+				}
+				if(point.y >= cRangeY[0] && point.y <= cRangeY[1] && this.sex === 'c'){
+					//	点击了儿童头部
+					this.$emit('show-head')
+					return
+				}
+			}
+		},
+		clickEvent(e){
+			const p = this.getEventPosition(e);
+			console.log(p)
+		  //判断点击了
+			this.isClicked(p)
 		}
     },
 }
@@ -120,6 +139,6 @@ export default {
 <style scoped>
 	uni-canvas{
 		width: auto;
-		height: 50px;
+		height: 100%;
 	}
 </style>
